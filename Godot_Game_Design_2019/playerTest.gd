@@ -3,15 +3,14 @@ extends KinematicBody2D
 # This demo shows how to build a kinematic controller.
 
 # Member variables
-const GRAVITY = 1200.0 # pixels/second/second
+var GRAVITY = 1200.0 # pixels/second/second
 
 # Angle in degrees towards either side that the player can consider "floor"
 const FLOOR_ANGLE_TOLERANCE = 40
-const WALK_FORCE = 600
-const WALK_MIN_SPEED = 10
-const WALK_MAX_SPEED = 500
+const WALK_FORCE = 300
+const MAX_WALK = 300
 const STOP_FORCE = 1500
-const JUMP_SPEED = 800
+const JUMP_SPEED = 500
 const JUMP_MAX_AIRBORNE_TIME = 0.5
 
 const SLIDE_STOP_VELOCITY = 1.0 # one pixel/second
@@ -20,6 +19,7 @@ const SLIDE_STOP_MIN_TRAVEL = 1.0 # one pixel
 var velocity = Vector2()
 var on_air_time = 100
 var jumping = false
+var on_ladder = false
 
 var screen_size
 
@@ -30,7 +30,7 @@ func _ready():
 	
 func _process(delta):
 	# Create forces
-	var force = Vector2(0, GRAVITY)
+	var motion = Vector2(0, GRAVITY)
 	
 	var walk_left = Input.is_action_pressed("ui_left")
 	var walk_right = Input.is_action_pressed("ui_right")
@@ -38,17 +38,27 @@ func _process(delta):
 	var stop = true
 	
 	if walk_left:
-		if velocity.x <= WALK_MIN_SPEED and velocity.x > -WALK_MAX_SPEED:
-			force.x -= WALK_FORCE
-			$AnimatedSprite.animation = "walk"
-			stop = false
+		motion.x = -WALK_FORCE
+		$AnimatedSprite.animation = "walk"
+		stop = false
 	elif walk_right:
-		if velocity.x >= -WALK_MIN_SPEED and velocity.x < WALK_MAX_SPEED:
-			force.x += WALK_FORCE
-			$AnimatedSprite.animation = "walk"
-			stop = false
+		motion.x = WALK_FORCE
+		$AnimatedSprite.animation = "walk"
+		stop = false
 	else:
 		$AnimatedSprite.animation = "static"
+		
+	if on_ladder == true:
+		GRAVITY = 0
+		if Input.is_action_just_pressed("ui_up"):
+			jump = false
+			motion.y = -WALK_FORCE
+		elif Input.is_action_just_pressed("ui_down"):
+			motion.y = WALK_FORCE
+		else:
+			motion.y = 0
+	else:
+		GRAVITY = 1200.0
 	
 	if stop:
 		var vsign = sign(velocity.x)
@@ -58,11 +68,15 @@ func _process(delta):
 		if vlen < 0:
 			vlen = 0
 		
-		velocity.x = vlen * vsign
+		velocity.x = (vlen * vsign) * 0.996
 	
 	# Integrate forces to velocity
-	velocity += force * delta	
-	# Integrate velocity into motion and move
+	if(abs(velocity.x) < MAX_WALK):
+		velocity.x += motion.x * delta
+	
+	velocity.y += motion.y * delta
+	
+		# Integrate velocity into motion and move
 	velocity = move_and_slide(velocity, Vector2(0, -1))
 	
 	if is_on_floor():

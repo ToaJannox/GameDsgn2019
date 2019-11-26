@@ -13,4 +13,4 @@
 - d'une zone on peut aller vers une ou plusieurs zone
 -mouvement initiaux: controle de la petite fille
 -possibilité de passer au controle du "pet" qui eput faire plus que la petite fille
-- les entites qu'ellle rencontre naissent de son imagination
+- les entites qu'ellle rencontre naissent de son imaginationy
