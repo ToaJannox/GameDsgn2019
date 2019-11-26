@@ -3,7 +3,7 @@ extends KinematicBody2D
 # This demo shows how to build a kinematic controller.
 
 # Member variables
-const GRAVITY = 800.0 # pixels/second/second
+const GRAVITY = 1200.0 # pixels/second/second
 
 # Angle in degrees towards either side that the player can consider "floor"
 const FLOOR_ANGLE_TOLERANCE = 40
@@ -11,7 +11,7 @@ const WALK_FORCE = 600
 const WALK_MIN_SPEED = 10
 const WALK_MAX_SPEED = 500
 const STOP_FORCE = 1500
-const JUMP_SPEED = 400
+const JUMP_SPEED = 800
 const JUMP_MAX_AIRBORNE_TIME = 0.5
 
 const SLIDE_STOP_VELOCITY = 1.0 # one pixel/second
@@ -35,7 +35,6 @@ func _process(delta):
 	var walk_left = Input.is_action_pressed("ui_left")
 	var walk_right = Input.is_action_pressed("ui_right")
 	var jump = Input.is_action_pressed("ui_up")
-	$AnimatedSprite.animation = "static"
 	var stop = true
 	
 	if walk_left:
@@ -48,6 +47,8 @@ func _process(delta):
 			force.x += WALK_FORCE
 			$AnimatedSprite.animation = "walk"
 			stop = false
+	else:
+		$AnimatedSprite.animation = "static"
 	
 	if stop:
 		var vsign = sign(velocity.x)
@@ -63,10 +64,6 @@ func _process(delta):
 	velocity += force * delta	
 	# Integrate velocity into motion and move
 	velocity = move_and_slide(velocity, Vector2(0, -1))
-	
-	position += velocity * delta
-	position.x = clamp(position.x, 0, screen_size.x)
-	position.y = clamp(position.y, 0, screen_size.y)
 	
 	if is_on_floor():
 		on_air_time = 0
