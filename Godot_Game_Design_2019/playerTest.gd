@@ -21,9 +21,13 @@ var velocity = Vector2()
 var on_air_time = 100
 var jumping = false
 
+var screen_size
+
 var prev_jump_pressed = false
 
-
+func _ready():
+    screen_size = get_viewport_rect().size
+	
 func _process(delta):
 	# Create forces
 	var force = Vector2(0, GRAVITY)
@@ -31,17 +35,18 @@ func _process(delta):
 	var walk_left = Input.is_action_pressed("ui_left")
 	var walk_right = Input.is_action_pressed("ui_right")
 	var jump = Input.is_action_pressed("ui_up")
-	
+	$AnimatedSprite.animation = "static"
 	var stop = true
 	
 	if walk_left:
 		if velocity.x <= WALK_MIN_SPEED and velocity.x > -WALK_MAX_SPEED:
 			force.x -= WALK_FORCE
-			#$AnimatedSprite.animation = "walk"
+			$AnimatedSprite.animation = "walk"
 			stop = false
 	elif walk_right:
 		if velocity.x >= -WALK_MIN_SPEED and velocity.x < WALK_MAX_SPEED:
 			force.x += WALK_FORCE
+			$AnimatedSprite.animation = "walk"
 			stop = false
 	
 	if stop:
@@ -58,6 +63,10 @@ func _process(delta):
 	velocity += force * delta	
 	# Integrate velocity into motion and move
 	velocity = move_and_slide(velocity, Vector2(0, -1))
+	
+	position += velocity * delta
+	position.x = clamp(position.x, 0, screen_size.x)
+	position.y = clamp(position.y, 0, screen_size.y)
 	
 	if is_on_floor():
 		on_air_time = 0

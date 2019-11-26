@@ -26,15 +26,20 @@ points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 } ]
 0/z_index = 0
 
-[sub_resource type="SpriteFrames" id=4]
+[sub_resource type="SpriteFrames" id=3]
 animations = [ {
 "frames": [ ExtResource( 3 ), ExtResource( 4 ) ],
-"loop": false,
-"name": "New Anim",
+"loop": true,
+"name": "walk",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "static",
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=4]
 
 [node name="Node2D" type="Node2D"]
 
@@ -44,16 +49,16 @@ format = 1
 tile_data = PoolIntArray( 458758, 0, 0, 458759, 0, 0, 458760, 0, 0, 458761, 0, 0, 458762, 0, 0, 458763, 0, 0, 458764, 0, 0, 524288, 0, 0, 524289, 0, 0, 524290, 0, 0, 524291, 0, 0, 524292, 0, 0, 524293, 0, 0, 524301, 0, 0, 524302, 0, 0, 524303, 0, 0 )
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="."]
+position = Vector2( 567.677, 183.47 )
 script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="KinematicBody2D"]
-frames = SubResource( 4 )
-animation = "New Anim"
-frame = 1
+frames = SubResource( 3 )
+animation = "static"
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
 scale = Vector2( 5, 7 )
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 
 [node name="Camera2D" type="Camera2D" parent="KinematicBody2D"]
