@@ -8,9 +8,9 @@ const FALL_SPEED = 1500
 const WALK_SPEED = 300
 const WALK_SPEED_MAX = 300
 
-const LADDER_SPEED = 500
+const LADDER_SPEED = 250
 
-const STOP_FORCE = 3000
+const STOP_FORCE = 4000
 
 const JUMP_SPEED = 500
 const MAX_JUMP_TIME = 0.3
@@ -26,33 +26,36 @@ func _process(delta):
 	
 	var motion = Vector2(0, GRAVITY)
 	var stop = true
+	var static_ladder = false
 	
 	var walk_left = Input.is_action_pressed("ui_left")
 	var walk_right = Input.is_action_pressed("ui_right")
 	var walk_up = Input.is_action_pressed("ui_up")
 	var walk_down = Input.is_action_just_pressed("ui_down")
 	
-	# Movements in x
+	# Movements in x TODO Check why player "slide" when change left-right
 	if walk_left && !walk_right:
-		motion.x = -WALK_SPEED
-		$AnimatedSprite.animation = "walk"
+		motion.x -= WALK_SPEED
+		$PlayerSprite.animation = "walk"
 		stop = false
 	elif walk_right && !walk_left:
-		motion.x = WALK_SPEED
-		$AnimatedSprite.animation = "walk"
+		motion.x += WALK_SPEED
+		$PlayerSprite.animation = "walk"
 		stop = false
 	else:
-		$AnimatedSprite.animation = "static"
+		$PlayerSprite.animation = "static"
 		
-	# On ladder TODO !
+	# On ladder --- TODO ---
 	if on_ladder == true:
 		# Climb
 		if walk_up && !walk_down:
-			motion.y = -LADDER_SPEED
+			velocity.y = -LADDER_SPEED
 		# Climb down
 		elif walk_down && !walk_up:
-			motion.y = LADDER_SPEED
+			velocity.y = LADDER_SPEED
 		else:
+			static_ladder = true
+			velocity.y = 0
 			motion.y = 0
 	
 	# Is it flying ?
@@ -65,7 +68,7 @@ func _process(delta):
 	if walk_up && !on_ladder:
 		if on_air_time < MAX_JUMP_TIME and walk_up:
 			velocity.y = -JUMP_SPEED
-			$AnimatedSprite.animation = "static"
+			$PlayerSprite.animation = "static"
 	
 	# Doesn't move
 	if stop:
@@ -81,6 +84,7 @@ func _process(delta):
 	# Integrate forces to velocity
 	if(abs(velocity.x) < WALK_SPEED_MAX):
 		velocity.x += motion.x * delta
+	
 	velocity.y += motion.y * delta
 	
 	# Move Player

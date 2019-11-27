@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tilesheet.png-55e778059ad55a1a47c5237b5db55343.stex"
+path="res://.import/caster.png-0b611e3a96cab60fc8e55cbe2e20fc80.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tilesheet.png"
-dest_files=[ "res://.import/tilesheet.png-55e778059ad55a1a47c5237b5db55343.stex" ]
+source_file="res://ressources/caster.png"
+dest_files=[ "res://.import/caster.png-0b611e3a96cab60fc8e55cbe2e20fc80.stex" ]
 
 [params]
 
