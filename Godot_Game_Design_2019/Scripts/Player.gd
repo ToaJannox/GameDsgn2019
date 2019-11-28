@@ -33,16 +33,16 @@ func _process(delta):
 	var walk_up = Input.is_action_pressed("ui_up")
 	var walk_down = Input.is_action_just_pressed("ui_down")
 	
-	# Movements in x TODO Check why player "slide" when change left-right
 	if walk_left && !walk_right:
 		motion.x -= WALK_SPEED
 		$PlayerSprite.animation = "walk"
 		stop = false
-	elif walk_right && !walk_left:
+	if walk_right && !walk_left:
 		motion.x += WALK_SPEED
 		$PlayerSprite.animation = "walk"
 		stop = false
-	else:
+	if (walk_right && walk_left) || (!walk_right && !walk_left):
+		velocity.x = 0
 		$PlayerSprite.animation = "static"
 		
 	# On ladder --- TODO ---
