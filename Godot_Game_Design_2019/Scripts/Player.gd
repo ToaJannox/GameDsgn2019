@@ -16,17 +16,42 @@ const JUMP_SPEED = 500
 const MAX_JUMP_TIME = 0.3
 
 var velocity = Vector2()
+var motion
 
 var on_ladder = false
+var look_right = false
 
 var on_air_time = 0
 
 # Called every frame, "delta" is the elapsed time since the previous frame.
 func _process(delta):
 	
-	var motion = Vector2(0, GRAVITY)
+	motion = Vector2(0, GRAVITY)
+	var pet_controlled = Input.is_key_pressed(KEY_F)
+	
+	if !pet_controlled:
+		$Camera2D_Player.make_current()
+		controlled(delta)
+	else:
+		motion.x = 0
+		velocity.x = 0
+		$PlayerSprite.animation = "static"
+		$Camera2D_Player.clear_current()
+	
+	if velocity.x < -WALK_SPEED_MAX:
+		velocity.x = -WALK_SPEED_MAX
+	elif velocity.x > WALK_SPEED_MAX:
+		velocity.x = WALK_SPEED_MAX
+		
+	velocity.x += motion.x * delta
+	
+	velocity.y += motion.y * delta
+	
+	# Move Player
+	velocity = move_and_slide(velocity, Vector2(0, -1))
+
+func controlled(delta):
 	var stop = true
-	var static_ladder = false
 	
 	var walk_left = Input.is_action_pressed("ui_left")
 	var walk_right = Input.is_action_pressed("ui_right")
@@ -37,10 +62,12 @@ func _process(delta):
 		motion.x -= WALK_SPEED
 		$PlayerSprite.animation = "walk"
 		stop = false
+		look_right = false
 	if walk_right && !walk_left:
 		motion.x += WALK_SPEED
 		$PlayerSprite.animation = "walk"
 		stop = false
+		look_right = true
 	if (walk_right && walk_left) || (!walk_right && !walk_left):
 		velocity.x = 0
 		$PlayerSprite.animation = "static"
@@ -54,7 +81,6 @@ func _process(delta):
 		elif walk_down && !walk_up:
 			velocity.y = LADDER_SPEED
 		else:
-			static_ladder = true
 			velocity.y = 0
 			motion.y = 0
 	
@@ -80,12 +106,3 @@ func _process(delta):
 			vlen = 0
 		
 		velocity.x = (vlen * vsign)
-	
-	# Integrate forces to velocity
-	if(abs(velocity.x) < WALK_SPEED_MAX):
-		velocity.x += motion.x * delta
-	
-	velocity.y += motion.y * delta
-	
-	# Move Player
-	velocity = move_and_slide(velocity, Vector2(0, -1))
