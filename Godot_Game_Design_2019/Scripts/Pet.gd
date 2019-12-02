@@ -50,7 +50,7 @@ func controlled(delta):
 	var walk_left = Input.is_action_pressed("ui_left")
 	var walk_right = Input.is_action_pressed("ui_right")
 	var walk_up = Input.is_action_pressed("ui_up")
-	var walk_down = Input.is_action_just_pressed("ui_down")
+	var walk_down = Input.is_action_pressed("ui_down")
 	
 	# Left
 	if walk_left && !walk_right:
