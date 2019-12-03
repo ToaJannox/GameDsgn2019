@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/pl_tile2b.wav-8274f115429031f1923adcc7bc73e0dd.sample"
+
+[deps]
+
+source_file="res://ressources/Sounds/pl_tile2b.wav"
+dest_files=[ "res://.import/pl_tile2b.wav-8274f115429031f1923adcc7bc73e0dd.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

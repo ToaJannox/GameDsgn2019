@@ -54,14 +54,16 @@ func controlled(delta):
 	
 	# Left
 	if walk_left && !walk_right:
-		motion.x -= FLY_SPEED
+		velocity.x -= FLY_SPEED
 		
 	# Right
 	if walk_right && !walk_left:
-		motion.x += FLY_SPEED
+		print("right")
+		velocity.x += FLY_SPEED
 		
 	# Up
 	if walk_up && ! walk_down:
+		print("up")
 		velocity.y = -FLY_SPEED
 		
 	# Down
@@ -86,7 +88,8 @@ func controlled(delta):
 	elif velocity.y > FLY_SPEED_MAX:
 		velocity.y = FLY_SPEED_MAX
 		
-	velocity.y += motion.y * delta
+	#velocity.y += motion.y * delta
+	#velocity.x += motion.x * delta
 
 # When the pet just protect the Player
 func autonomous(var player):

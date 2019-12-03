@@ -63,6 +63,7 @@ func controlled(delta):
 			velocity.x = 0
 		motion.x = -WALK_SPEED
 		$PlayerSprite.animation = "walk"
+		$PlayerSprite.flip_h = true
 		stop = false
 		look_right = false
 	if walk_right && !walk_left:
@@ -70,6 +71,7 @@ func controlled(delta):
 			velocity.x = 0
 		motion.x = WALK_SPEED
 		$PlayerSprite.animation = "walk"
+		$PlayerSprite.flip_h = false
 		stop = false
 		look_right = true
 	if (walk_right && walk_left) || (!walk_right && !walk_left):
@@ -79,6 +81,7 @@ func controlled(delta):
 	# On ladder --- TODO ---
 	if on_ladder == true:
 		# Climb
+		$PlayerSprite.animation= "climbing"
 		if walk_up && !walk_down:
 			velocity.y = -LADDER_SPEED
 		# Climb down
