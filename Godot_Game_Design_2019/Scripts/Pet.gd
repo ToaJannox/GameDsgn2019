@@ -12,7 +12,6 @@ const DISTANCE_MAX_X = 160
 const DISTANCE_Y = 100
 
 var velocity = Vector2()
-var motion = Vector2(0, 0)
 
 var time_move = 0
 var up = false
@@ -20,7 +19,6 @@ var check_y = true
 
 func _process(delta):
 	
-	motion = Vector2(0, 0)
 	var controlled = Input.is_key_pressed(KEY_F)
 		
 	var player = get_node("../Player")
@@ -28,7 +26,7 @@ func _process(delta):
 	if controlled:
 		$CollisionShape2D_Pet.disabled = false
 		$Camera2D_Pet.make_current()
-		controlled(delta)
+		controlled()
 		check_y = true
 	else:
 		autonomous(player)	
@@ -38,14 +36,10 @@ func _process(delta):
 	if !check_y:	
 		velocity.y = up_down(delta)
 		velocity.y += player.velocity.y
-	else:
-		velocity.y += motion.y * delta
-		
-	velocity.x += motion.x * delta
 		
 	velocity = move_and_slide(velocity, Vector2(0, -1))
 
-func controlled(delta):
+func controlled():
 		
 	var walk_left = Input.is_action_pressed("ui_left")
 	var walk_right = Input.is_action_pressed("ui_right")
@@ -87,9 +81,6 @@ func controlled(delta):
 		velocity.y = -FLY_SPEED_MAX
 	elif velocity.y > FLY_SPEED_MAX:
 		velocity.y = FLY_SPEED_MAX
-		
-	#velocity.y += motion.y * delta
-	#velocity.x += motion.x * delta
 
 # When the pet just protect the Player
 func autonomous(var player):
@@ -100,7 +91,7 @@ func autonomous(var player):
 		if position.y < player.position.y - 5:
 			velocity.y = FLY_SPEED
 		if position.y > player.position.y + 5:
-			motion.y = -FLY_SPEED
+			velocity.y = -FLY_SPEED
 		if (position.y < player.position.y + 5) && (position.y > player.position.y - 5):
 			position.y = player.position.y
 			check_y = false
@@ -109,25 +100,25 @@ func autonomous(var player):
 	if playerLookRight :
 		# Too far left
 		if (position.x - playerPos.x) < DISTANCE_MIN_X:
-			motion.x = FLY_SPEED
+			velocity.x = FLY_SPEED
 		# Too far right
 		elif (position.x - playerPos.x) > DISTANCE_MAX_X:
-			motion.x = -FLY_SPEED
+			velocity.x = -FLY_SPEED
 		# Just good
 		else :
-			motion.x = 0
+			velocity.x = 0
 			velocity.x = player.velocity.x
 	# Look left
 	if !playerLookRight:
 		# Too far left
 		if (playerPos.x - position.x) > DISTANCE_MAX_X:
-			motion.x = FLY_SPEED
+			velocity.x = FLY_SPEED
 		# Too far right
 		elif (playerPos.x - position.x) < DISTANCE_MIN_X:
-			motion.x = -FLY_SPEED
+			velocity.x = -FLY_SPEED
 		# Just good
 		else :
-			motion.x = 0
+			velocity.x = 0
 			velocity.x = player.velocity.x
 	
 	velocity.y += player.velocity.y

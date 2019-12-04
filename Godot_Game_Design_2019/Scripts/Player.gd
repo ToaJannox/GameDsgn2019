@@ -19,7 +19,7 @@ var velocity = Vector2()
 var motion
 
 var on_ladder = false
-var look_right = false
+var look_right = true
 
 var on_air_time = 0
 
