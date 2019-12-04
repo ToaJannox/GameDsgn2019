@@ -26,7 +26,7 @@ func _process(delta):
 	if controlled:
 		$CollisionShape2D_Pet.disabled = false
 		$Camera2D_Pet.make_current()
-		controlled()
+		controlled(delta)
 		check_y = true
 	else:
 		autonomous(player)	
@@ -34,12 +34,11 @@ func _process(delta):
 		$CollisionShape2D_Pet.disabled = true
 	
 	if !check_y:	
-		velocity.y = up_down(delta)
-		velocity.y += player.velocity.y
+		velocity.y = player.velocity.y
 		
 	velocity = move_and_slide(velocity, Vector2(0, -1))
 
-func controlled():
+func controlled(delta):
 		
 	var walk_left = Input.is_action_pressed("ui_left")
 	var walk_right = Input.is_action_pressed("ui_right")
@@ -48,6 +47,7 @@ func controlled():
 	
 	# Left
 	if walk_left && !walk_right:
+		print("left")
 		velocity.x -= FLY_SPEED
 		
 	# Right
@@ -58,29 +58,28 @@ func controlled():
 	# Up
 	if walk_up && ! walk_down:
 		print("up")
-		velocity.y = -FLY_SPEED
+		velocity.y -= FLY_SPEED
 		
 	# Down
 	if walk_down && !walk_up:
-		velocity.y = FLY_SPEED
+		print("down")
+		velocity.y += FLY_SPEED
 		
 	# Don't move X
-	if (walk_right && walk_left) || (!walk_right && !walk_left):
+	var dontMoveX = (walk_right && walk_left) || (!walk_right && !walk_left)
+	if dontMoveX:
 		velocity.x = 0
 		
 	# Don't move Y
-	if (walk_down && walk_up) || (!walk_down && !walk_up):
+	var dontMoveY = (walk_down && walk_up) || (!walk_down && !walk_up)
+	if dontMoveY:
 		velocity.y = 0
 		
-	if velocity.x < -FLY_SPEED_MAX:
-		velocity.x = -FLY_SPEED_MAX
-	elif velocity.x > FLY_SPEED_MAX:
-		velocity.x = FLY_SPEED_MAX
+	if dontMoveY:
+		velocity.y = up_down(delta)
 		
-	if velocity.y < -FLY_SPEED_MAX:
-		velocity.y = -FLY_SPEED_MAX
-	elif velocity.y > FLY_SPEED_MAX:
-		velocity.y = FLY_SPEED_MAX
+	checkVelocityX()
+	checkVelocityY()
 
 # When the pet just protect the Player
 func autonomous(var player):
@@ -137,3 +136,15 @@ func up_down(delta):
 		time_move = 0
 	
 	return velocity.y
+
+func checkVelocityX():
+	if velocity.x < -FLY_SPEED_MAX:
+		velocity.x = -FLY_SPEED_MAX
+	elif velocity.x > FLY_SPEED_MAX:
+		velocity.x = FLY_SPEED_MAX
+	
+func checkVelocityY():
+	if velocity.y < -FLY_SPEED_MAX:
+		velocity.y = -FLY_SPEED_MAX
+	elif velocity.y > FLY_SPEED_MAX:
+		velocity.y = FLY_SPEED_MAX
