@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/caster.png-0b611e3a96cab60fc8e55cbe2e20fc80.stex"
+path="res://.import/light_quart.png-db8b396d9c5ab7dbc04e1e6f1f0b5781.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ressources/caster.png"
-dest_files=[ "res://.import/caster.png-0b611e3a96cab60fc8e55cbe2e20fc80.stex" ]
+source_file="res://ressources/Light/light_quart.png"
+dest_files=[ "res://.import/light_quart.png-db8b396d9c5ab7dbc04e1e6f1f0b5781.stex" ]
 
 [params]
 

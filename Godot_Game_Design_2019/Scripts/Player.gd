@@ -48,7 +48,7 @@ func _process(delta):
 	velocity.y += motion.y * delta
 	
 	# Move Player
-	velocity = move_and_slide(velocity, Vector2(0, -1))
+	velocity = move_and_slide(velocity, Vector2(0, -1), false, 20)
 
 func controlled(delta):
 	var stop = true

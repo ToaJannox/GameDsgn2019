@@ -16,27 +16,39 @@ var velocity = Vector2()
 var time_move = 0
 var up = false
 var check_y = true
+var activated = false;
 
 func _process(delta):
 	
-	var controlled = Input.is_key_pressed(KEY_F)
-		
 	var player = get_node("../Player")
-		
-	if controlled:
-		$CollisionShape2D_Pet.disabled = false
-		$Camera2D_Pet.make_current()
-		controlled(delta)
-		check_y = true
-	else:
-		autonomous(player)	
-		$Camera2D_Pet.clear_current()
+
+	if !activated :
 		$CollisionShape2D_Pet.disabled = true
-	
-	if !check_y:	
-		velocity.y = player.velocity.y
+		waitGirl(player);
+	else:
+		var controlled = Input.is_key_pressed(KEY_F)
+			
+		if controlled:
+			$CollisionShape2D_Pet.disabled = false
+			$Camera2D_Pet.make_current()
+			controlled(delta)
+			check_y = true
+		else:
+			autonomous(player)	
+			$Camera2D_Pet.clear_current()
+			$CollisionShape2D_Pet.disabled = true
 		
-	velocity = move_and_slide(velocity, Vector2(0, -1))
+		if !check_y:	
+			velocity.y = player.velocity.y
+			
+		velocity = move_and_slide(velocity, Vector2(0, -1))
+
+func waitGirl(player):
+	print("1 ->", player.position.x)
+	print("2 ->", position.x)
+	if player.position.x < position.x + 30:
+		activated = true
+	
 
 func controlled(delta):
 		
