@@ -21,6 +21,8 @@ var motion
 var on_ladder = false
 var look_right = true
 
+var floor_y
+
 var on_air_time = 0
 
 # Called every frame, "delta" is the elapsed time since the previous frame.
@@ -80,8 +82,10 @@ func controlled(delta):
 		
 	# On ladder --- TODO ---
 	if on_ladder == true:
+		if position.y < (floor_y - 10):
+			$PlayerSprite.animation= "climbing"
+			
 		# Climb
-		$PlayerSprite.animation= "climbing"
 		if walk_up && !walk_down:
 			velocity.y = -LADDER_SPEED
 		# Climb down
@@ -93,6 +97,7 @@ func controlled(delta):
 	
 	# Is it flying ?
 	if is_on_floor():
+		floor_y = position.y
 		on_air_time = 0
 	elif !on_ladder:	
 		on_air_time += delta

@@ -24,7 +24,8 @@ func _process(delta):
 
 	if !activated :
 		$CollisionShape2D_Pet.disabled = true
-		waitGirl(player);
+		up_down(delta)
+		waitGirl(player)
 	else:
 		var controlled = Input.is_key_pressed(KEY_F)
 			
@@ -44,8 +45,6 @@ func _process(delta):
 		velocity = move_and_slide(velocity, Vector2(0, -1))
 
 func waitGirl(player):
-	print("1 ->", player.position.x)
-	print("2 ->", position.x)
 	if player.position.x < position.x + 30:
 		activated = true
 	
