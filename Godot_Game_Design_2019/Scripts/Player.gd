@@ -21,6 +21,8 @@ var motion
 var on_ladder = false
 var look_right = true
 
+var level = 1; # "0" = on level, "1,1" = level 1 part 1, "1,2" = level 1 part 2, etc
+
 var floor_y
 
 var on_air_time = 0
@@ -53,6 +55,7 @@ func _process(delta):
 	velocity = move_and_slide(velocity, Vector2(0, -1), false, 20)
 
 func controlled(delta):
+	
 	var stop = true
 	
 	var walk_left = Input.is_action_pressed("ui_left")
