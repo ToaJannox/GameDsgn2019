@@ -21,7 +21,10 @@ var motion
 var on_ladder = false
 var look_right = true
 
-var level = 1; # "0" = on level, "1,1" = level 1 part 1, "1,2" = level 1 part 2, etc
+var level = 1.1; # "0" = on level, "1,1" = level 1 part 1, "1,2" = level 1 part 2, etc
+var cur_level
+var walk_1_2 = true
+var stop_1_2
 
 var floor_y
 
@@ -29,13 +32,22 @@ var on_air_time = 0
 
 # Called every frame, "delta" is the elapsed time since the previous frame.
 func _process(delta):
-	
+		
 	motion = Vector2(0, GRAVITY)
 	var pet_controlled = Input.is_key_pressed(KEY_F)
 	
 	if !pet_controlled:
 		$Camera2D_Player.make_current()
-		controlled(delta)
+		if cur_level == 1.2:
+			if !walk_1_2:
+				controlled(delta)
+			else:
+				if position.x > stop_1_2:
+					motion.x = -WALK_SPEED
+				else:
+					walk_1_2 = false
+		else:
+			controlled(delta)
 	else:
 		motion.x = 0
 		velocity.x = 0
@@ -52,7 +64,7 @@ func _process(delta):
 	velocity.y += motion.y * delta
 	
 	# Move Player
-	velocity = move_and_slide(velocity, Vector2(0, -1), false, 20)
+	velocity = move_and_slide(velocity, Vector2(0, -1))
 
 func controlled(delta):
 	
