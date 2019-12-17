@@ -4,23 +4,29 @@ var level
 var cur_level
 
 func _process(delta):
-	get_node("Player").stop_1_2 = get_node("End_slide_1_2").position.x
+	$"Player".stop_1_2 = $"End_slide_1_2".position.x
 	
-	level = get_node("Player").level
+	level = $"Player".level
 	
 	if level != 0:
 		cur_level = level
-		get_node("Player").cur_level = level
+		$Player.cur_level = level
 	
 	setLevel()
-	setVisibilite(get_node("Visibilité"))
+	setVisibilite($"Visibilité")
 	
 func setVisibilite(canvas):
 	if cur_level == 1.1:
 		canvas.set_color(Color(1, 1, 1))
 	
 	if cur_level == 1.2:
-		var pet = get_node("Pet")
+		if $Player.position.x > $"End_slide_1_2".position.x + 10 && $Player.is_on_floor():
+			$Player.walk_1_2 = true
+			$Player/PlayerSprite.animation = "static"
+			$Player/PlayerSprite.flip_h = true
+			$Player.look_right = false
+			
+		var pet = $Pet
 		if pet.activated:
 			canvas.set_color(Color(0.3, 0.3, 0.3))
 		else:
