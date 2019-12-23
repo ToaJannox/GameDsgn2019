@@ -17,7 +17,19 @@ func _process(delta):
 	
 func setVisibilite(canvas):
 	if cur_level == 1.1:
-		canvas.set_color(Color(1, 1, 1))
+		var color
+		var start_fall = $"World 1_1/Position2D".position.y
+		
+		if $Player.position.y < start_fall:
+			color = 1
+		else :
+			var end_fall = $"World 1_1/Exit 1_1".position.y
+			var dist_player_fall = end_fall - $Player.position.y
+			color = dist_player_fall / end_fall
+			if color < 0:
+				color = 0
+			
+		canvas.set_color(Color(color, color, color))
 	
 	if cur_level == 1.2:
 		if $Player.position.x > $"World 1_2"/"End_slide_1_2".position.x + 10 && $Player.is_on_floor():
@@ -31,7 +43,7 @@ func setVisibilite(canvas):
 			canvas.set_color(Color(0.3, 0.3, 0.3))
 		else:
 			canvas.set_color(Color(0, 0, 0))
-		
+			
 func setLevel():
 	var player = $Player
 	
@@ -43,11 +55,11 @@ func setLevel():
 		player.level = 0;
 		
 	if level == 1.2:
-		$Player/PlayerSprite.animation = "static"
-		$Player/PlayerSprite.flip_h = true
-		player.look_right = false
 		var x = $"World 1_2"/"Start 1_2".position.x
 		var y = $"World 1_2"/"Start 1_2".position.y
 		player.position.x = x
 		player.position.y = y
+		$Player/PlayerSprite.animation = "static"
+		$Player/PlayerSprite.flip_h = true
+		player.look_right = false
 		player.level = 0;

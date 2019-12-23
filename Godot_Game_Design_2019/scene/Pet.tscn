@@ -17,7 +17,6 @@ animations = [ {
 extents = Vector2( 23.9332, 24.2381 )
 
 [node name="Pet" type="KinematicBody2D"]
-editor/display_folded = true
 position = Vector2( -1923.57, 266.453 )
 script = ExtResource( 1 )
 
