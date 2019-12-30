@@ -45,7 +45,14 @@ func _process(delta):
 				if position.x > stop_1_2:
 					motion.x = -WALK_SPEED
 				else:
-					walk_1_2 = false
+					velocity = Vector2(0,0)
+					motion = Vector2(0,0)
+					$Polygon2D.show()
+					$Polygon2D/RichTextLabel.start = true
+					if $Polygon2D/RichTextLabel.finish :
+						$Polygon2D/Timer.stop()
+						$Polygon2D.hide()
+						walk_1_2 = false
 		else:
 			controlled(delta)
 	else:
@@ -75,6 +82,7 @@ func controlled(delta):
 	var walk_up = Input.is_action_pressed("ui_up")
 	var walk_down = Input.is_action_pressed("ui_down")
 	
+	# walk left
 	if walk_left && !walk_right:
 		if look_right:
 			velocity.x = 0
@@ -83,6 +91,8 @@ func controlled(delta):
 		$PlayerSprite.flip_h = true
 		stop = false
 		look_right = false
+		
+	# walk right
 	if walk_right && !walk_left:
 		if !look_right:
 			velocity.x = 0
@@ -91,11 +101,13 @@ func controlled(delta):
 		$PlayerSprite.flip_h = false
 		stop = false
 		look_right = true
+		
+	# don't move x
 	if (walk_right && walk_left) || (!walk_right && !walk_left):
 		velocity.x = 0
 		$PlayerSprite.animation = "static"
 		
-	# On ladder --- TODO ---
+	# On ladder
 	if on_ladder == true:
 		if position.y < (floor_y - 10):
 			$PlayerSprite.animation= "climbing"
