@@ -40,7 +40,7 @@ func setVisibilite(canvas):
 			
 		var pet = $Pet
 		if pet.activated:
-			canvas.set_color(Color(0.3, 0.3, 0.3))
+			canvas.set_color(Color(0.2, 0.2, 0.2))
 		else:
 			canvas.set_color(Color(0, 0, 0))
 			
