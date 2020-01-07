@@ -48,15 +48,15 @@ func setLevel():
 	var player = $Player
 	
 	if level == 1.1:
-		var x = $"World 1_1"/"Start 1_1".position.x
-		var y = $"World 1_1"/"Start 1_1".position.y
+		var x = $"World 1_1"/"Start 1_1".position.x + $"World 1_1".position.x
+		var y = $"World 1_1"/"Start 1_1".position.y + $"World 1_1".position.y
 		player.position.x = x
 		player.position.y = y
 		player.level = 0;
 		
 	if level == 1.2:
-		var x = $"World 1_2"/"Start 1_2".position.x
-		var y = $"World 1_2"/"Start 1_2".position.y
+		var x = $"World 1_2"/"Start 1_2".position.x + $"World 1_2".position.x
+		var y = $"World 1_2"/"Start 1_2".position.y + $"World 1_2".position.y
 		player.position.x = x
 		player.position.y = y
 		$Player/PlayerSprite.animation = "static"
