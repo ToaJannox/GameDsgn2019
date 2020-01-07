@@ -25,7 +25,6 @@ func _ready():
 		preload("res://ressources/Sounds/player/steps/stone/stone3.wav"),
 		preload("res://ressources/Sounds/player/steps/stone/stone4.wav"),
 		preload("res://ressources/Sounds/player/steps/stone/stone5.wav"),
-		preload("res://ressources/Sounds/player/steps/stone/stone6.wav"),
 		]
 		
 	randomize()

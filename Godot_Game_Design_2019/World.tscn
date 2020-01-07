@@ -18,7 +18,7 @@ position = Vector2( 11.585, -2.72949 )
 [node name="Visibilité" type="CanvasModulate" parent="."]
 
 [node name="Player" parent="." instance=ExtResource( 4 )]
-position = Vector2( 16100.4, 1769.64 )
+position = Vector2( -762.801, 358.961 )
 z_index = 1
 
 [node name="Pet" parent="." instance=ExtResource( 5 )]
