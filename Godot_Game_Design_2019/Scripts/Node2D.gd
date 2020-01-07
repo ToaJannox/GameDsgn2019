@@ -48,6 +48,8 @@ func setLevel():
 	var player = $Player
 	
 	if level == 1.1:
+		$"World 1_1".show()
+		$"World 1_2".hide()
 		var x = $"World 1_1"/"Start 1_1".position.x
 		var y = $"World 1_1"/"Start 1_1".position.y
 		player.position.x = x
@@ -55,6 +57,8 @@ func setLevel():
 		player.level = 0;
 		
 	if level == 1.2:
+		$"World 1_1".hide()
+		$"World 1_2".show()
 		var x = $"World 1_2"/"Start 1_2".position.x
 		var y = $"World 1_2"/"Start 1_2".position.y
 		player.position.x = x
