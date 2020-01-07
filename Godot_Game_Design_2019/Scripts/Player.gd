@@ -72,6 +72,7 @@ func _process(delta):
 	
 	# Move Player
 	velocity = move_and_slide(velocity, Vector2(0, -1))
+	
 
 func controlled(delta):
 	
@@ -81,6 +82,11 @@ func controlled(delta):
 	var walk_right = Input.is_action_pressed("ui_right")
 	var walk_up = Input.is_action_pressed("ui_up")
 	var walk_down = Input.is_action_pressed("ui_down")
+	
+
+
+
+		
 	
 	# walk left
 	if walk_left && !walk_right:

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/sand3.wav-e715f7af09f5881d9e17066901f0be2c.sample"
+
+[deps]
+
+source_file="res://ressources/Sounds/player/steps/sand/sand3.wav"
+dest_files=[ "res://.import/sand3.wav-e715f7af09f5881d9e17066901f0be2c.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
