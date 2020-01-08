@@ -58,22 +58,20 @@ func controlled(delta):
 	
 	# Left
 	if walk_left && !walk_right:
-		print("left")
 		velocity.x -= FLY_SPEED
+		$Sprite.flip_h=true
 		
 	# Right
 	if walk_right && !walk_left:
-		print("right")
 		velocity.x += FLY_SPEED
+		$Sprite.flip_h=false
 		
 	# Up
 	if walk_up && ! walk_down:
-		print("up")
 		velocity.y -= FLY_SPEED
 		
 	# Down
 	if walk_down && !walk_up:
-		print("down")
 		velocity.y += FLY_SPEED
 		
 	# Don't move X
@@ -108,6 +106,7 @@ func autonomous(var player):
 	
 	# Look right
 	if playerLookRight :
+		$Sprite.flip_h=false
 		# Too far left
 		if (position.x - playerPos.x) < DISTANCE_MIN_X:
 			velocity.x = FLY_SPEED
@@ -120,6 +119,7 @@ func autonomous(var player):
 			velocity.x = player.velocity.x
 	# Look left
 	if !playerLookRight:
+		$Sprite.flip_h=true
 		# Too far left
 		if (playerPos.x - position.x) > DISTANCE_MAX_X:
 			velocity.x = FLY_SPEED
