@@ -20,7 +20,7 @@ var motion
 
 var on_ladder = false
 var look_right = true
-
+var world = 1
 var level = 1.1; # "0" = on level, "1,1" = level 1 part 1, "1,2" = level 1 part 2, etc
 var cur_level
 var walk_1_2 = true
