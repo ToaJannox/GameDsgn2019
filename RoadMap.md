@@ -1,6 +1,6 @@
 # RoadMap
 
- - [] Version fonctionnelle mais nulle
+ - [x] Version fonctionnelle mais nulle
  - [ ] Version jouable mais lassante
  - [ ] Version complexe et intéressante
  - [ ] Version Ultra Bie,
@@ -14,3 +14,5 @@
 -mouvement initiaux: controle de la petite fille
 -possibilité de passer au controle du "pet" qui eput faire plus que la petite fille
 - les entites qu'ellle rencontre naissent de son imaginationy
+
+# DeadLines
