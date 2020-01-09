@@ -412,7 +412,7 @@ occluder = SubResource( 19 )
 [node name="occluder floor right" type="LightOccluder2D" parent="."]
 occluder = SubResource( 20 )
 
-[node name="Position2D" type="Position2D" parent="."]
+[node name="PitStart" type="Position2D" parent="."]
 position = Vector2( 11257.2, 543.15 )
 [connection signal="body_entered" from="Ladder" to="Ladder" method="_on_Ladder_body_entered"]
 [connection signal="body_exited" from="Ladder" to="Ladder" method="_on_Ladder_body_exited"]
