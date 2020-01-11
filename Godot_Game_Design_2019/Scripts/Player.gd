@@ -20,9 +20,9 @@ var motion
 
 var on_ladder = false
 var look_right = true
-
-var level = 1.1; # "0" = on level, "1,1" = level 1 part 1, "1,2" = level 1 part 2, etc
-var cur_level
+var world = 0
+var level = 0; # "0" = on level, "1,1" = level 1 part 1, "1,2" = level 1 part 2, etc
+var hasPet = false
 var walk_1_2 = true
 var stop_1_2
 
@@ -38,7 +38,7 @@ func _process(delta):
 	
 	if !pet_controlled:
 		$Camera2D_Player.make_current()
-		if cur_level == 1.2:
+		if world == 1 && level == 2:
 			if !walk_1_2:
 				controlled(delta)
 			else:
