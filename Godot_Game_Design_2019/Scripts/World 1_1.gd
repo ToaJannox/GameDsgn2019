@@ -9,11 +9,13 @@ func _ready():
 
 func _on_Exit_body_entered(body):
 	if body.name == "Player":
-		pass
+		game.switchlevel(game.getlevel(1,2),self)
 
 func _startLevel():
 	pass
-	
+
+func _process(delta):
+	_setVisibility()
 func _setVisibility():
 	var color
 	var start_fall = get_node("PitStart").position.y

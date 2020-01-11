@@ -16,35 +16,38 @@ func _ready():
 			for level in world.get_children():
 				level_list.append(level)
 			world_list.append(level_list)
-	getlevel(1,1)._startLevel()
-	setLevel(1,1,null)
+	switchlevel(getlevel(1,1),null)
+	
 	
 
 func _process(delta):
-#	TODO move to level 1 2
-	
-	
-	if level != 0:
-		cur_level = level
-		$Player.cur_level = level
-	
-	setVisibility($"Visibility")
+	pass
 	
 func setVisibility(canvas):
 	pass
 
 			
-func setLevel(world,level,oldlevel):
+func setLevel(newlevel,oldlevel):
 	var player = $Player
-	getlevel(world,level).show()
-	if oldlevel == null:
+	newlevel.show()
+	if oldlevel != null:
 		oldlevel.hide()	
-	var start = getlevel(world,level).get_node("Start").position
+	var start = newlevel.get_node("Start").position
 	var x = start.x
 	var y = start.y
 	player.position.x = x
 	player.position.y = y
-	player.level = 0
+	player.level = newlevel.level
+	player.world = newlevel.world
 	
 func getlevel(world,level):
 	return world_list[world-1][level-1]
+
+func switchlevel(newlevel,oldlevel):
+	if oldlevel != null:
+		oldlevel._endLevel()
+		oldlevel.hide()
+	setLevel(newlevel,oldlevel)
+	newlevel._startLevel()
+	
+	

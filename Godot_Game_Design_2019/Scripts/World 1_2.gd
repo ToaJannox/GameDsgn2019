@@ -9,13 +9,14 @@ func _ready():
 #	print(player.name)
 
 func _process(delta):
-	if not levelStarted:
+	if levelStarted:
 		player.stop_1_2 = get_node("End_slide").position.x
 		if player.position.x > get_node("End_slide").position.x + 10 && player.is_on_floor():
-				$player/PlayerSprite.animation = "static"
-				$player/PlayerSprite.flip_h = true
-				$player.look_right = false
-				$player.walk_1_2 = true
+				player.get_node("PlayerSprite").animation = "static"
+				player.get_node("PlayerSprite").flip_h = true
+				player.look_right = false
+				player.walk_1_2 = true
+		_setVisibility()
 	
 	
 func _setVisibility():

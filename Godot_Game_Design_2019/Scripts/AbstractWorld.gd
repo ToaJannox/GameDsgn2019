@@ -1,4 +1,5 @@
 extends Node2D
+var game
 var world = 0
 var level = 0
 var levelStarted = false
@@ -10,6 +11,7 @@ func _init():
 	pass
 
 func _ready():
+	game = $"/root/Game"
 	player = $"/root/Game/Player"
 	pet = $"/root/Game/Pet"
 	visibility = $"/root/Game/Visibility"
