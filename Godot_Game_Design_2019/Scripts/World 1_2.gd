@@ -1,13 +1,20 @@
 extends "res://Scripts/AbstractWorld.gd"
-
-func _init():
-	print("World 1 2 init")
+var stepBus
 func _ready():
-	print("World 1  ready")
 	world = 1
 	level = 2
 #	print(player.name)
 
+func _startLevel():
+	._startLevel()
+	print("Level 2 started")
+	player._setStepType(player.GROUND_TYPE.STONE)
+	stepBus = AudioServer.get_bus_index("steps")
+	AudioServer.add_bus_effect(stepBus, AudioEffectReverb.new())
+	$Loop.play()
+	$Drips.play()
+	pet.get_node("StaticHover").play()
+	
 func _process(delta):
 	if levelStarted:
 		player.stop_1_2 = get_node("End_slide").position.x

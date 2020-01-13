@@ -15,6 +15,7 @@ func _ready():
 			var level_list = []
 			for level in world.get_children():
 				level_list.append(level)
+				level.hide()
 			world_list.append(level_list)
 	switchlevel(getlevel(1,1),null)
 	

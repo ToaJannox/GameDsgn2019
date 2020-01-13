@@ -1,0 +1,4 @@
+enum GROUND_TYPE {
+	SAND,
+	STONE
+	}

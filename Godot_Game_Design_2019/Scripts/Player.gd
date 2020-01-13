@@ -5,7 +5,7 @@ var GRAVITY = 1500.0
 
 const FALL_SPEED = 1500
 
-const WALK_SPEED = 300
+const WALK_SPEED = 150
 const WALK_SPEED_MAX = 300
 
 const LADDER_SPEED = 250
@@ -15,6 +15,8 @@ const STOP_FORCE = 4000
 const JUMP_SPEED = 500
 const MAX_JUMP_TIME = 0.3
 
+
+const GROUND_TYPE = preload("res://Scripts/Ground_Type.gd").GROUND_TYPE
 var velocity = Vector2()
 var motion
 
@@ -146,3 +148,7 @@ func controlled(delta):
 			vlen = 0
 		
 		velocity.x = (vlen * vsign)
+
+func _setStepType(type):
+	print("Entering function")
+	$step.setStepType(type)

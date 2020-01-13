@@ -20,7 +20,7 @@ var activated = false;
 
 func _process(delta):
 	
-	var player = get_node("../Player")
+	var player = get_node("/root/Game/Player")
 
 	if !activated :
 		$CollisionShape2D_Pet.disabled = true
@@ -46,7 +46,7 @@ func _process(delta):
 
 func waitGirl(player):
 	if player.position.x < position.x + 30:
-		activated = true
+		_activate()
 	
 
 func controlled(delta):
@@ -159,3 +159,9 @@ func checkVelocityY():
 		velocity.y = -FLY_SPEED_MAX
 	elif velocity.y > FLY_SPEED_MAX:
 		velocity.y = FLY_SPEED_MAX
+func _activate():
+	activated = true
+	$StaticHover.stop()
+	
+func _deactivate():
+	activated = false

@@ -1,17 +1,18 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://Scripts/World 1_1.gd" type="Script" id=1]
 [ext_resource path="res://ressources/Decor/Background.png" type="Texture" id=2]
 [ext_resource path="res://Scripts/Ladder.gd" type="Script" id=3]
 [ext_resource path="res://ressources/Decor/ladder.png" type="Texture" id=4]
 [ext_resource path="res://Scripts/Pnj_1.gd" type="Script" id=5]
-[ext_resource path="res://ressources/Perso/old PixelArt/Frame001.png" type="Texture" id=6]
-[ext_resource path="res://ressources/Perso/old PixelArt/Frame002.png" type="Texture" id=7]
+[ext_resource path="res://ressources/graphics/npcs/elder/Frame001.png" type="Texture" id=6]
+[ext_resource path="res://ressources/graphics/npcs/elder/Frame002.png" type="Texture" id=7]
 [ext_resource path="res://ressources/Decor/tileset_floor_1_1.png" type="Texture" id=8]
 [ext_resource path="res://Scripts/Door exit 1_1.gd" type="Script" id=9]
 [ext_resource path="res://icon.png" type="Texture" id=10]
 [ext_resource path="res://ressources/Decor/tilesheet.png" type="Texture" id=11]
 [ext_resource path="res://ressources/Light/light.png" type="Texture" id=12]
+[ext_resource path="res://ressources/sounds/world/desert/desert_wind.ogg" type="AudioStream" id=13]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 57.2085, 132.902 )
@@ -299,7 +300,7 @@ z_index = -1
 texture = ExtResource( 2 )
 
 [node name="Start" type="Position2D" parent="."]
-position = Vector2( 11297.2, 307.002 )
+position = Vector2( 10133.5, 383.594 )
 scale = Vector2( 1.079, 1.00456 )
 
 [node name="Ladder" type="Area2D" parent="."]
@@ -349,6 +350,7 @@ script = ExtResource( 5 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Pnj 1"]
 scale = Vector2( 0.8, 0.8 )
 frames = SubResource( 2 )
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pnj 1"]
@@ -413,6 +415,9 @@ occluder = SubResource( 20 )
 
 [node name="PitStart" type="Position2D" parent="."]
 position = Vector2( 11257.2, 543.15 )
+
+[node name="Loop" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 13 )
 [connection signal="body_entered" from="Ladder" to="Ladder" method="_on_Ladder_body_entered"]
 [connection signal="body_exited" from="Ladder" to="Ladder" method="_on_Ladder_body_exited"]
 [connection signal="body_entered" from="Ladder2" to="Ladder2" method="_on_Ladder_body_entered"]

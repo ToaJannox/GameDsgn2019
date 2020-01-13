@@ -30,4 +30,5 @@ position = Vector2( -762.801, 358.961 )
 z_index = 1
 
 [node name="Pet" parent="." instance=ExtResource( 6 )]
-position = Vector2( -1979.72, 331.719 )
+position = Vector2( -3022.67, 296.879 )
+z_index = 1

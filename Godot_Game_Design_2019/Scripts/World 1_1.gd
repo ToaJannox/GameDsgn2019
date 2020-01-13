@@ -1,9 +1,6 @@
 extends "res://Scripts/AbstractWorld.gd"
 
-func _init():
-	print("World 1 1 init")
 func _ready():
-	print("World 1 1 ready")
 	world = 1
 	level = 1
 
@@ -12,10 +9,17 @@ func _on_Exit_body_entered(body):
 		game.switchlevel(game.getlevel(1,2),self)
 
 func _startLevel():
-	pass
+	._startLevel()
+	player._setStepType(player.GROUND_TYPE.SAND)
+	$"Loop".play()
 
+func _endLevel():
+	._endLevel()
+	$"Loop".stop()
+	
 func _process(delta):
 	_setVisibility()
+	
 func _setVisibility():
 	var color
 	var start_fall = get_node("PitStart").position.y

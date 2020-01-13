@@ -7,9 +7,6 @@ var player
 var pet
 var visibility
 
-func _init():
-	pass
-
 func _ready():
 	game = $"/root/Game"
 	player = $"/root/Game/Player"
@@ -20,6 +17,7 @@ func _process(delta):
 	pass
 func _startLevel():
 	levelStarted = true
+	print("starting level")
 
 func _endLevel():
 	levelStarted = false
