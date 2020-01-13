@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/hum.ogg-d3ea6fb51bbe24507f52570daf01cd4e.oggstr"
+
+[deps]
+
+source_file="res://ressources/sounds/pet/hum.ogg"
+dest_files=[ "res://.import/hum.ogg-d3ea6fb51bbe24507f52570daf01cd4e.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

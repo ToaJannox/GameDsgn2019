@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/drops_loop.ogg-3c09f9bba5fe4655c554bd48f2bde59c.oggstr"
+
+[deps]
+
+source_file="res://ressources/sounds/world/cave/drops_loop.ogg"
+dest_files=[ "res://.import/drops_loop.ogg-3c09f9bba5fe4655c554bd48f2bde59c.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
