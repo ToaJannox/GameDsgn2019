@@ -4,18 +4,15 @@ func _ready():
 	world = 1
 	level = 1
 
-func _on_Exit_body_entered(body):
-	if body.name == "Player":
-		game.switchlevel(game.getlevel(1,2),self)
-
 func _startLevel():
 	._startLevel()
 	player._setStepType(player.GROUND_TYPE.SAND)
-	$"Loop".play()
+	$Loop.play()
+
 
 func _endLevel():
 	._endLevel()
-	$"Loop".stop()
+	$Loop.stop()
 	
 func _process(delta):
 	_setVisibility()
@@ -33,3 +30,7 @@ func _setVisibility():
 		if color < 0:
 			color = 0
 	visibility.set_color(Color(color, color, color))
+	
+func _on_Exit_body_entered(body):
+	if body.name == "Player":
+		game.switchlevel(game.getlevel(1,2),self)

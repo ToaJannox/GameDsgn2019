@@ -7,7 +7,7 @@ func _ready():
 
 func _startLevel():
 	._startLevel()
-	print("Level 2 started")
+#	Audio settings
 	player._setStepType(player.GROUND_TYPE.STONE)
 	stepBus = AudioServer.get_bus_index("steps")
 	AudioServer.add_bus_effect(stepBus, AudioEffectReverb.new())
@@ -15,6 +15,12 @@ func _startLevel():
 	$Drips.play()
 	pet.get_node("StaticHover").play()
 	
+func _endLevel():
+	._endLevel()
+	AudioServer.remove_bus_effect(stepBus,0)
+	$Loop.stop()
+	$Drips.stop()
+
 func _process(delta):
 	if levelStarted:
 		player.stop_1_2 = get_node("End_slide").position.x
