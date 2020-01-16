@@ -343,7 +343,6 @@ texture = ExtResource( 4 )
 shape = SubResource( 1 )
 
 [node name="Pnj 1" type="Area2D" parent="."]
-editor/display_folded = true
 position = Vector2( 9336.8, 412.784 )
 script = ExtResource( 5 )
 

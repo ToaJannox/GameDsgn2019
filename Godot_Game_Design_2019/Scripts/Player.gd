@@ -35,7 +35,7 @@ var on_air_time = 0
 # Called every frame, "delta" is the elapsed time since the previous frame.
 func _process(delta):
 		
-	motion = Vector2(0, GRAVITY)
+	motion = Vector2(WALK_SPEED, GRAVITY)
 	var pet_controlled = Input.is_key_pressed(KEY_F)
 	
 	if !pet_controlled:
@@ -150,5 +150,4 @@ func controlled(delta):
 		velocity.x = (vlen * vsign)
 
 func _setStepType(type):
-	print("Entering function")
 	$step.setStepType(type)

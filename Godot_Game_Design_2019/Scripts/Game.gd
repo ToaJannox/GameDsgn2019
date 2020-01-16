@@ -18,6 +18,7 @@ func _ready():
 				level.hide()
 			world_list.append(level_list)
 	switchlevel(getlevel(1,1),null)
+
 	
 	
 
@@ -52,3 +53,4 @@ func switchlevel(newlevel,oldlevel):
 	newlevel._startLevel()
 	
 	
+

@@ -17,7 +17,7 @@ var time_move = 0
 var up = false
 var check_y = true
 var activated = false;
-
+signal pet_activated
 func _process(delta):
 	
 	var player = get_node("/root/Game/Player")
@@ -162,6 +162,7 @@ func checkVelocityY():
 func _activate():
 	activated = true
 	$StaticHover.stop()
+	emit_signal("pet_activated")
 	
 func _deactivate():
 	activated = false
