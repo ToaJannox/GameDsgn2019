@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tileset_floor_1_1.png-83da584db4784ca181a8c35faf7e4c77.stex"
+path="res://.import/Frame006.png-7bfe71a60e15e7efa7814496f775bdad.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ressources/Decor/tileset_floor_1_1.png"
-dest_files=[ "res://.import/tileset_floor_1_1.png-83da584db4784ca181a8c35faf7e4c77.stex" ]
+source_file="res://ressources/graphics/pet/Pet_wake_up/Frame006.png"
+dest_files=[ "res://.import/Frame006.png-7bfe71a60e15e7efa7814496f775bdad.stex" ]
 
 [params]
 

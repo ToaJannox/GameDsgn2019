@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/floor_1_2.png-3f9b4a73fb75573e980546d73383915c.stex"
+path="res://.import/table.png-6839ccf7305f58df716a7840d707ca3b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ressources/Decor/floor_1_2.png"
-dest_files=[ "res://.import/floor_1_2.png-3f9b4a73fb75573e980546d73383915c.stex" ]
+source_file="res://ressources/Decor/table.png"
+dest_files=[ "res://.import/table.png-6839ccf7305f58df716a7840d707ca3b.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
