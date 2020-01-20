@@ -8,6 +8,7 @@ func _ready():
 func _startLevel():
 	._startLevel()
 	
+# warning-ignore:return_value_discarded
 	connect("pet_activated",self,"pet_obtained")
 #	Audio settings
 	music.stream = load("res://ressources/music/cave-lvl1-theme.ogg")
@@ -25,6 +26,7 @@ func _endLevel():
 	$Loop.stop()
 	$Drips.stop()
 
+# warning-ignore:unused_argument
 func _process(delta):
 	if levelStarted:
 		player.stop_1_2 = get_node("End_slide").position.x
@@ -40,7 +42,7 @@ func _setVisibility():
 	if pet.activated:
 		visibility.set_color(Color(0.2, 0.2, 0.2))
 	else:
-		visibility.set_color(Color(0, 0, 0))
+		visibility.set_color(Color(0.5, 0.5, 0.5))
 		
 func pet_obtained():
 	music.play()

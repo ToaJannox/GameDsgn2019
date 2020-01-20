@@ -1,15 +1,11 @@
 extends Node2D
 
-var level
-var cur_level = 0
-var cur_world = 0
 var world_list = []
 
 
 
 func _ready():
 #	intialize worlds and level list
-	var i = 0
 	for world in get_child(find_node("Worlds").get_index()).get_children():	
 		if world.name != "AbstractWorld":
 			var level_list = []
@@ -19,16 +15,6 @@ func _ready():
 			world_list.append(level_list)
 	switchlevel(getlevel(1,1),null)
 
-	
-	
-
-func _process(delta):
-	pass
-	
-func setVisibility(canvas):
-	pass
-
-			
 func setLevel(newlevel,oldlevel):
 	var player = $Player
 	newlevel.show()
@@ -51,6 +37,4 @@ func switchlevel(newlevel,oldlevel):
 		oldlevel.hide()
 	setLevel(newlevel,oldlevel)
 	newlevel._startLevel()
-	
-	
 

@@ -16,6 +16,8 @@ func _endLevel():
 	$Loop.stop()
 	
 func _process(delta):
+	if player.position.x > $Pos_Disable_NoCollFront.position.x && player.position.y > $Pos_Disable_NoCollFront.position.y:
+		$NoCollisionMap_front.set_z_index(-2)
 	_setVisibility()
 	
 func _setVisibility():

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/playerGrey_up2.png-12f362ddd9bb79120b1975ef12b23e94.stex"
+path="res://.import/House 2.png-96d6b7009b59c5e50118ba18016a69ae.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ressources/Perso/playerGrey_up2.png"
-dest_files=[ "res://.import/playerGrey_up2.png-12f362ddd9bb79120b1975ef12b23e94.stex" ]
+source_file="res://ressources/Decor/map_1_1/House 2.png"
+dest_files=[ "res://.import/House 2.png-96d6b7009b59c5e50118ba18016a69ae.stex" ]
 
 [params]
 

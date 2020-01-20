@@ -2,10 +2,10 @@
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://ressources/graphics/player/walk0.png" type="Texture" id=2]
-[ext_resource path="res://ressources/graphics/player/walk1.png" type="Texture" id=3]
-[ext_resource path="res://ressources/graphics/player/walk3.png" type="Texture" id=4]
-[ext_resource path="res://ressources/graphics/player/climb1.png" type="Texture" id=5]
-[ext_resource path="res://ressources/graphics/player/climb2.png" type="Texture" id=6]
+[ext_resource path="res://ressources/graphics/player/climb1.png" type="Texture" id=3]
+[ext_resource path="res://ressources/graphics/player/climb2.png" type="Texture" id=4]
+[ext_resource path="res://ressources/graphics/player/walk1.png" type="Texture" id=5]
+[ext_resource path="res://ressources/graphics/player/walk3.png" type="Texture" id=6]
 [ext_resource path="res://scenes/RichTextLabel.gd" type="Script" id=7]
 [ext_resource path="res://Scripts/step.gd" type="Script" id=8]
 
@@ -18,13 +18,13 @@ animations = [ {
 }, {
 "frames": [ ExtResource( 3 ), ExtResource( 4 ) ],
 "loop": true,
-"name": "walk",
-"speed": 3.0
+"name": "climbing",
+"speed": 2.0
 }, {
 "frames": [ ExtResource( 5 ), ExtResource( 6 ) ],
 "loop": true,
-"name": "climbing",
-"speed": 2.0
+"name": "walk",
+"speed": 3.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
