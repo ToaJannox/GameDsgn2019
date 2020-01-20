@@ -19,8 +19,6 @@ func _process(delta):
 	pass
 func _startLevel():
 	levelStarted = true
-	
-	
 
 func _endLevel():
 	levelStarted = false

@@ -28,6 +28,10 @@ var hasPet = false
 var walk_1_2 = true
 var stop_1_2
 
+var tuto_is_reading = false
+var tuto_walk = false
+var tuto_jumpt = false
+
 var floor_y
 
 var on_air_time = 0
@@ -38,30 +42,34 @@ func _process(delta):
 	motion = Vector2(WALK_SPEED, GRAVITY)
 	var pet_controlled = Input.is_key_pressed(KEY_F)
 	
-	if !pet_controlled:
-		$Camera2D_Player.make_current()
-		if world == 1 && level == 2:
-			if !walk_1_2:
-				controlled(delta)
-			else:
-				if position.x > stop_1_2:
-					motion.x = -WALK_SPEED
+	if !tuto_is_reading:
+		if !pet_controlled:
+			$Camera2D_Player.make_current()
+			if world == 1 && level == 2:
+				if !walk_1_2:
+					controlled(delta)
 				else:
-					velocity = Vector2(0,0)
-					motion = Vector2(0,0)
-					$Polygon2D.show()
-					$Polygon2D/RichTextLabel.start = true
-					if $Polygon2D/RichTextLabel.finish :
-						$Polygon2D/Timer.stop()
-						$Polygon2D.hide()
-						walk_1_2 = false
+					if position.x > stop_1_2:
+						motion.x = -WALK_SPEED
+					else:
+						velocity = Vector2(0,0)
+						motion = Vector2(0,0)
+						$Polygon2D.show()
+						$Polygon2D/RichTextLabel.start = true
+						if $Polygon2D/RichTextLabel.finish :
+							$Polygon2D/Timer.stop()
+							$Polygon2D.hide()
+							walk_1_2 = false
+			else:
+				controlled(delta)
 		else:
-			controlled(delta)
+			motion.x = 0
+			velocity.x = 0
+			$PlayerSprite.animation = "static"
+			$Camera2D_Player.clear_current()
 	else:
 		motion.x = 0
 		velocity.x = 0
-		$PlayerSprite.animation = "static"
-		$Camera2D_Player.clear_current()
 	
 	if velocity.x < -WALK_SPEED_MAX:
 		velocity.x = -WALK_SPEED_MAX

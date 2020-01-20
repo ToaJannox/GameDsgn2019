@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scripts/Game.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/AbstractWorld.gd" type="Script" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://scenes/levels/World 1_2.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/Pet.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/Tutorial.gd" type="Script" id=7]
 
 [node name="Game" type="Node2D"]
 script = ExtResource( 1 )
@@ -35,4 +36,16 @@ z_index = 1
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 volume_db = -2.101
+
+[node name="Tutorial" type="Polygon2D" parent="."]
+position = Vector2( 6790.28, -49.1455 )
+color = Color( 0.87451, 0.396078, 0.396078, 1 )
+polygon = PoolVector2Array( -710.276, -100.854, 239.724, -100.854, 239.724, 119.146, -710.276, 119.146 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Tutorial"]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 7 )
+
+[node name="Timer" type="Timer" parent="Tutorial"]
 [connection signal="pet_activated" from="Pet" to="Worlds/World1/World 1_2" method="pet_obtained"]

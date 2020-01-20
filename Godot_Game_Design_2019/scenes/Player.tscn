@@ -6,7 +6,7 @@
 [ext_resource path="res://ressources/graphics/player/climb2.png" type="Texture" id=4]
 [ext_resource path="res://ressources/graphics/player/walk1.png" type="Texture" id=5]
 [ext_resource path="res://ressources/graphics/player/walk3.png" type="Texture" id=6]
-[ext_resource path="res://scenes/RichTextLabel.gd" type="Script" id=7]
+[ext_resource path="res://scenes/TextGirl.gd" type="Script" id=7]
 [ext_resource path="res://Scripts/step.gd" type="Script" id=8]
 
 [sub_resource type="SpriteFrames" id=1]
@@ -55,7 +55,7 @@ z_index = 5
 color = Color( 0.392157, 0.392157, 0.392157, 1 )
 polygon = PoolVector2Array( -412.3, -301.446, 367.7, -301.446, 367.7, -131.446, -412.3, -131.446 )
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Polygon2D"]
+[node name="TextGirl" type="RichTextLabel" parent="Polygon2D"]
 margin_left = -393.0
 margin_top = -282.0
 margin_right = -174.0
@@ -73,4 +73,4 @@ autostart = true
 bus = "steps"
 script = ExtResource( 8 )
 [connection signal="frame_changed" from="PlayerSprite" to="step" method="step"]
-[connection signal="timeout" from="Polygon2D/Timer" to="Polygon2D/RichTextLabel" method="_on_Timer_timeout"]
+[connection signal="timeout" from="Polygon2D/Timer" to="Polygon2D/TextGirl" method="_on_Timer_timeout"]
