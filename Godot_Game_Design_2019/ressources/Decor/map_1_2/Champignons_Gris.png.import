@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ambiant.png-b9054c4062937fbb8d1bb07e40a927eb.stex"
+path="res://.import/Champignons_Gris.png-db7971c0e89d1fe48972f08b17fb8cc9.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ressources/Decor/map_1_2/ambiant.png"
-dest_files=[ "res://.import/ambiant.png-b9054c4062937fbb8d1bb07e40a927eb.stex" ]
+source_file="res://ressources/Decor/map_1_2/Champignons_Gris.png"
+dest_files=[ "res://.import/Champignons_Gris.png-db7971c0e89d1fe48972f08b17fb8cc9.stex" ]
 
 [params]
 

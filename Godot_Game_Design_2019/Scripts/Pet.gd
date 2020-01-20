@@ -16,8 +16,9 @@ var velocity = Vector2()
 var time_move = 0
 var up = false
 var check_y = true
-var activated = false;
+var activated = false
 signal pet_activated
+
 func _process(delta):
 	
 	var player = get_node("/root/Game/Player")
@@ -48,7 +49,6 @@ func waitGirl(player):
 	if player.position.x < position.x + 30:
 		_activate()
 	
-
 func controlled(delta):
 		
 	var walk_left = Input.is_action_pressed("ui_left")
@@ -159,6 +159,7 @@ func checkVelocityY():
 		velocity.y = -FLY_SPEED_MAX
 	elif velocity.y > FLY_SPEED_MAX:
 		velocity.y = FLY_SPEED_MAX
+		
 func _activate():
 	activated = true
 	$StaticHover.stop()

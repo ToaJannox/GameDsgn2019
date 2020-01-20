@@ -23,7 +23,7 @@ var motion
 var on_ladder = false
 var look_right = true
 var world = 0
-var level = 0; # "0" = on level, "1,1" = level 1 part 1, "1,2" = level 1 part 2, etc
+var level = 0;
 var hasPet = false
 var walk_1_2 = true
 var stop_1_2

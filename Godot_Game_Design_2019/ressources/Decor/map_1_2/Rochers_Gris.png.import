@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/meubles.png-b9f87d6575d4786d962b23bd4bf60ef8.stex"
+path="res://.import/Rochers_Gris.png-8e940a40d7e68e38afc4ef676dd847e5.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ressources/Decor/map_1_2/meubles.png"
-dest_files=[ "res://.import/meubles.png-b9f87d6575d4786d962b23bd4bf60ef8.stex" ]
+source_file="res://ressources/Decor/map_1_2/Rochers_Gris.png"
+dest_files=[ "res://.import/Rochers_Gris.png-8e940a40d7e68e38afc4ef676dd847e5.stex" ]
 
 [params]
 

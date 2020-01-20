@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/plantes.png-be264093a45e735068b401a341f2d28d.stex"
+path="res://.import/Rochers_Color.png-633eb24fe85264109ae782092fac7ead.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ressources/Decor/map_1_2/plantes.png"
-dest_files=[ "res://.import/plantes.png-be264093a45e735068b401a341f2d28d.stex" ]
+source_file="res://ressources/Decor/map_1_2/Rochers_Color.png"
+dest_files=[ "res://.import/Rochers_Color.png-633eb24fe85264109ae782092fac7ead.stex" ]
 
 [params]
 

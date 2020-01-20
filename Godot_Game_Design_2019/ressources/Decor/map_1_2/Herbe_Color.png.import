@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/champi.png-9c581a3432210f5031da9d969e764cb9.stex"
+path="res://.import/Herbe_Color.png-a011eb93e760fbf95a03b23a0534f425.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ressources/Decor/map_1_2/champi.png"
-dest_files=[ "res://.import/champi.png-9c581a3432210f5031da9d969e764cb9.stex" ]
+source_file="res://ressources/Decor/map_1_2/Herbe_Color.png"
+dest_files=[ "res://.import/Herbe_Color.png-a011eb93e760fbf95a03b23a0534f425.stex" ]
 
 [params]
 

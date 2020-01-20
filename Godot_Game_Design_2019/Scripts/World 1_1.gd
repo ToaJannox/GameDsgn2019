@@ -4,21 +4,16 @@ func _ready():
 	world = 1
 	level = 1
 	
-	
-
 func _startLevel():
 	._startLevel()
 	music.stream = load("res://ressources/music/desert-theme.ogg");
 	player._setStepType(player.GROUND_TYPE.SAND)
 	$Loop.play()
 	music.play()
-	
-
 
 func _endLevel():
 	._endLevel()
 	$Loop.stop()
-	
 	
 func _process(delta):
 	_setVisibility()
