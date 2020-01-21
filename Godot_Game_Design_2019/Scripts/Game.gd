@@ -28,9 +28,9 @@ func setLevel(newlevel,oldlevel):
 	
 func _process(delta):
 	var player = $Player
-	if player.level == 1:
-		if !(player.tuto_walk) && player.is_on_floor():
-			launch_tuto(0) 
+	#if player.level == 1:
+	#	if !(player.tuto_walk) && player.is_on_floor():
+	#		launch_tuto(0) 
 		
 func getlevel(world,level):
 	return world_list[world-1][level-1]
