@@ -46,7 +46,7 @@ func _process(delta):
 		velocity = move_and_slide(velocity, Vector2(0, -1))
 
 func waitGirl(player):
-	if player.position.x < position.x + 30:
+	if player.position.x < position.x + 30 && player.level == 2 && player.world == 1:
 		_activate()
 	
 func controlled(delta):
