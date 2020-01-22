@@ -9,6 +9,7 @@
 extents = Vector2( 23.9332, 24.2381 )
 
 [node name="Pet" type="KinematicBody2D"]
+z_index = 1
 script = ExtResource( 1 )
 
 [node name="CollisionShape2D_Pet" type="CollisionShape2D" parent="."]

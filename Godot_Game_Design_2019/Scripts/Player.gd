@@ -5,8 +5,7 @@ var GRAVITY = 1500.0
 
 const FALL_SPEED = 1500
 
-const WALK_SPEED = 150
-const WALK_SPEED_MAX = 300
+const WALK_SPEED = 300
 
 const LADDER_SPEED = 250
 
@@ -25,7 +24,7 @@ var look_right = true
 var world = 0
 var level = 0;
 var hasPet = false
-var walk_1_2 = true
+var playerControlled = true
 var stop_1_2
 
 var tuto_is_reading = false
@@ -41,40 +40,17 @@ func _process(delta):
 		
 	motion = Vector2(WALK_SPEED, GRAVITY)
 	var pet_controlled = Input.is_key_pressed(KEY_F)
-	
-	if !tuto_is_reading:
-		if !pet_controlled:
-			$Camera2D_Player.make_current()
-			if world == 1 && level == 2:
-				if !walk_1_2:
-					controlled(delta)
-				else:
-					if position.x > stop_1_2:
-						motion.x = -WALK_SPEED
-					else:
-						velocity = Vector2(0,0)
-						motion = Vector2(0,0)
-						$Polygon2D.show()
-						$Polygon2D/RichTextLabel.start = true
-						if $Polygon2D/RichTextLabel.finish :
-							$Polygon2D/Timer.stop()
-							$Polygon2D.hide()
-							walk_1_2 = false
-			else:
-				controlled(delta)
-		else:
-			motion.x = 0
-			velocity.x = 0
-			$PlayerSprite.animation = "static"
-			$Camera2D_Player.clear_current()
-	else:
+	if pet_controlled || !playerControlled:
 		motion.x = 0
 		velocity.x = 0
-	
-	if velocity.x < -WALK_SPEED_MAX:
-		velocity.x = -WALK_SPEED_MAX
-	elif velocity.x > WALK_SPEED_MAX:
-		velocity.x = WALK_SPEED_MAX
+		
+	if playerControlled:
+		if !pet_controlled:
+			$Camera2D_Player.make_current()
+			controlled(delta)	
+		else:
+			$PlayerSprite.animation = "static"
+			$Camera2D_Player.clear_current()
 		
 	velocity.x += motion.x * delta
 	
@@ -97,7 +73,7 @@ func controlled(delta):
 	if walk_left && !walk_right:
 		if look_right:
 			velocity.x = 0
-		motion.x = -WALK_SPEED
+		velocity.x = -WALK_SPEED
 		$PlayerSprite.animation = "walk"
 		$PlayerSprite.flip_h = true
 		stop = false
@@ -107,7 +83,7 @@ func controlled(delta):
 	if walk_right && !walk_left:
 		if !look_right:
 			velocity.x = 0
-		motion.x = WALK_SPEED
+		velocity.x = WALK_SPEED
 		$PlayerSprite.animation = "walk"
 		$PlayerSprite.flip_h = false
 		stop = false
@@ -159,3 +135,13 @@ func controlled(delta):
 
 func _setStepType(type):
 	$step.setStepType(type)
+	
+func playerEnterAbyss():
+	velocity = Vector2(0,0)
+	motion = Vector2(0,0)
+	$Polygon2D.show()
+	$Polygon2D/TextGirl.start = true
+	if $Polygon2D/TextGirl.finish :
+		$Polygon2D/Timer.stop()
+		$Polygon2D.hide()
+		playerControlled = false

@@ -522,7 +522,7 @@ z_index = -1
 texture = ExtResource( 2 )
 
 [node name="Start" type="Position2D" parent="."]
-position = Vector2( -4173, -4239.82 )
+position = Vector2( 10510.9, 215.994 )
 scale = Vector2( 1.079, 1.00456 )
 
 [node name="Pos_Disable_NoCollFront" type="Position2D" parent="."]
@@ -561,7 +561,6 @@ script = ExtResource( 6 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Pnj 1"]
 scale = Vector2( 0.8, 0.8 )
 frames = SubResource( 3 )
-frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pnj 1"]

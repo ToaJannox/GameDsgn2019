@@ -19,6 +19,11 @@ config/name="Godot_Game_Design_2019"
 run/main_scene="res://scenes/Game.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Player="*res://scenes/Player.tscn"
+Pet="*res://scenes/Pet.tscn"
+
 [rendering]
 
 quality/2d/use_pixel_snap=true

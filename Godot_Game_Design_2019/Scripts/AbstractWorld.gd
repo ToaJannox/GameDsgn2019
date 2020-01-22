@@ -10,8 +10,6 @@ var music
 
 func _ready():
 	game = $"/root/Game"
-	player = $"/root/Game/Player"
-	pet = $"/root/Game/Pet"
 	visibility = $"/root/Game/Visibility"
 	music = $"/root/Game/Music"
 	
