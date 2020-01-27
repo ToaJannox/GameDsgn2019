@@ -12,12 +12,16 @@ func _startLevel():
 	connect("pet_activated",self,"pet_obtained")
 #	Audio settings
 	music.stream = load("res://ressources/music/cave-lvl1-theme.ogg")
-	player._setStepType(player.GROUND_TYPE.STONE)
+	Player._setStepType(Player.GROUND_TYPE.STONE)
 	stepBus = AudioServer.get_bus_index("steps")
 	AudioServer.add_bus_effect(stepBus, AudioEffectReverb.new())
 	$Loop.play()
 	$Drips.play()
-	pet.get_node("StaticHover").play()
+	
+	
+	Player.playerControlled = false
+	Pet.get_node("StaticHover").play()
+	Pet.position = $StartPet.position
 	
 	
 func _endLevel():
@@ -29,20 +33,26 @@ func _endLevel():
 # warning-ignore:unused_argument
 func _process(delta):
 	if levelStarted:
-		player.stop_1_2 = get_node("End_slide").position.x
-		if player.position.x > get_node("End_slide").position.x + 10 && player.is_on_floor():
-				player.get_node("PlayerSprite").animation = "static"
-				player.get_node("PlayerSprite").flip_h = true
-				player.look_right = false
-				player.walk_1_2 = true
+#		Player.stop_1_2 = get_node("End_slide").position.x
+		if Player.position.x > get_node("End_slide").position.x + 10 && Player.is_on_floor():
+			Player.get_node("PlayerSprite").animation = "static"
+			Player.get_node("PlayerSprite").flip_h = true
+			Player.look_right = false
+			Player.playerControlled= false
+			Player.move_and_slide(Vector2(-10,10),Vector2(-1,-1))
+			
+		else :
+			Player.playerControlled= true
+			
+				
 		_setVisibility()
 	
 	
 func _setVisibility():
-	if pet.activated:
+	if Pet.activated:
 		visibility.set_color(Color(0.2, 0.2, 0.2))
 	else:
-		visibility.set_color(Color(0.5, 0.5, 0.5))
+		visibility.set_color(Color(0.0, 0.0, 0.0))
 		
 func pet_obtained():
 	music.play()

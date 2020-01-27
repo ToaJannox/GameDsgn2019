@@ -7,7 +7,7 @@ func _ready():
 func _startLevel():
 	._startLevel()
 	music.stream = load("res://ressources/music/desert-theme.ogg");
-	player._setStepType(player.GROUND_TYPE.SAND)
+	Player._setStepType(Player.GROUND_TYPE.SAND)
 	$Loop.play()
 	music.play()
 
@@ -16,7 +16,7 @@ func _endLevel():
 	$Loop.stop()
 	
 func _process(delta):
-	if player.position.x > $Pos_Disable_NoCollFront.position.x && player.position.y > $Pos_Disable_NoCollFront.position.y:
+	if Player.position.x > $Pos_Disable_NoCollFront.position.x && Player.position.y > $Pos_Disable_NoCollFront.position.y:
 		$NoCollisionMap_front.set_z_index(-2)
 	_setVisibility()
 	
@@ -24,11 +24,11 @@ func _setVisibility():
 	var color
 	var start_fall = get_node("PitStart").position.y
 		
-	if player.position.y < start_fall:
+	if Player.position.y < start_fall:
 		color = 1
 	else :
 		var end_fall = get_node("Exit").position.y
-		var dist_player_fall = end_fall - player.position.y
+		var dist_player_fall = end_fall - Player.position.y
 		color = dist_player_fall / end_fall
 		if color < 0:
 			color = 0

@@ -1,38 +1,12 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Scripts/Game.gd" type="Script" id=1]
-[ext_resource path="res://Scripts/AbstractWorld.gd" type="Script" id=2]
-[ext_resource path="res://scenes/levels/World 1_1.tscn" type="PackedScene" id=3]
-[ext_resource path="res://scenes/levels/World 1_2.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=5]
-[ext_resource path="res://scenes/Pet.tscn" type="PackedScene" id=6]
-[ext_resource path="res://scenes/Tutorial.gd" type="Script" id=7]
+[ext_resource path="res://scenes/Tutorial.gd" type="Script" id=2]
 
 [node name="Game" type="Node2D"]
 script = ExtResource( 1 )
 
-[node name="Worlds" type="Node" parent="."]
-
-[node name="AbstractWorld" type="Node2D" parent="Worlds"]
-script = ExtResource( 2 )
-
-[node name="World1" type="Node" parent="Worlds"]
-
-[node name="World 1_1" parent="Worlds/World1" instance=ExtResource( 3 )]
-position = Vector2( 14.6606, -8.74438 )
-
-[node name="World 1_2" parent="Worlds/World1" instance=ExtResource( 4 )]
-position = Vector2( 11.585, -2.72949 )
-
 [node name="Visibility" type="CanvasModulate" parent="."]
-
-[node name="Player" parent="." instance=ExtResource( 5 )]
-position = Vector2( -10452.9, 368.375 )
-z_index = 1
-
-[node name="Pet" parent="." instance=ExtResource( 6 )]
-position = Vector2( -3022.67, 296.879 )
-z_index = 1
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 volume_db = -2.101
@@ -45,7 +19,6 @@ polygon = PoolVector2Array( -710.276, -100.854, 239.724, -100.854, 239.724, 119.
 [node name="RichTextLabel" type="RichTextLabel" parent="Tutorial"]
 margin_right = 40.0
 margin_bottom = 40.0
-script = ExtResource( 7 )
+script = ExtResource( 2 )
 
 [node name="Timer" type="Timer" parent="Tutorial"]
-[connection signal="pet_activated" from="Pet" to="Worlds/World1/World 1_2" method="pet_obtained"]

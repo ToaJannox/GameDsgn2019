@@ -21,12 +21,12 @@ signal pet_activated
 
 func _process(delta):
 	
-	var player = get_node("/root/Game/Player")
+	
 
 	if !activated :
 		$CollisionShape2D_Pet.disabled = true
 		up_down(delta)
-		waitGirl(player)
+		waitGirl(Player)
 	else:
 		var controlled = Input.is_key_pressed(KEY_F)
 			
@@ -36,12 +36,12 @@ func _process(delta):
 			controlled(delta)
 			check_y = true
 		else:
-			autonomous(player)	
+			autonomous(Player)	
 			$Camera2D_Pet.clear_current()
 			$CollisionShape2D_Pet.disabled = true
 		
 		if !check_y:	
-			velocity.y = player.velocity.y
+			velocity.y = Player.velocity.y
 			
 		velocity = move_and_slide(velocity, Vector2(0, -1))
 
@@ -92,16 +92,16 @@ func controlled(delta):
 
 # When the pet just protect the Player
 func autonomous(var player):
-	var playerPos = player.position
-	var playerLookRight = player.look_right
+	var playerPos = Player.position
+	var playerLookRight = Player.look_right
 	
 	if check_y:
-		if position.y < player.position.y - 5:
+		if position.y < Player.position.y - 5:
 			velocity.y = FLY_SPEED
-		if position.y > player.position.y + 5:
+		if position.y > Player.position.y + 5:
 			velocity.y = -FLY_SPEED
-		if (position.y < player.position.y + 5) && (position.y > player.position.y - 5):
-			position.y = player.position.y
+		if (position.y < Player.position.y + 5) && (position.y > Player.position.y - 5):
+			position.y = Player.position.y
 			check_y = false
 	
 	# Look right
@@ -116,7 +116,7 @@ func autonomous(var player):
 		# Just good
 		else :
 			velocity.x = 0
-			velocity.x = player.velocity.x
+			velocity.x = Player.velocity.x
 	# Look left
 	if !playerLookRight:
 		$Sprite.flip_h=true
@@ -129,9 +129,9 @@ func autonomous(var player):
 		# Just good
 		else :
 			velocity.x = 0
-			velocity.x = player.velocity.x
+			velocity.x = Player.velocity.x
 	
-	velocity.y += player.velocity.y
+	velocity.y += Player.velocity.y
 	
 # Make the up/down constant movement
 func up_down(delta):
