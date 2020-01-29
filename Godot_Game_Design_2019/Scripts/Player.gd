@@ -23,11 +23,10 @@ var on_ladder = false
 var look_right = true
 var world = 0
 var level = 0;
-var hasPet = false
 var playerControlled = true
+var hasPet = false
 var stop_1_2
 
-var tuto_is_reading = false
 var tuto_walk = false
 var tuto_jumpt = false
 
@@ -37,25 +36,28 @@ var on_air_time = 0
 
 # Called every frame, "delta" is the elapsed time since the previous frame.
 func _process(delta):
-		
+	
 	motion = Vector2(WALK_SPEED, GRAVITY)
 	var pet_controlled = Input.is_key_pressed(KEY_F)
-	if pet_controlled || !playerControlled:
+	
+	if pet_controlled: 
+		$Camera2D_Player.clear_current()
+		playerControlled = false
+	
+	if !playerControlled:
+		if hasPet:
+			$PlayerSprite.animation = "static_with_pet"
+		else:
+			$PlayerSprite.animation = "static_without_pet"
 		motion.x = 0
 		velocity.x = 0
 		
 	if playerControlled:
-		if !pet_controlled:
-			$Camera2D_Player.make_current()
-			controlled(delta)	
-		else:
-			$PlayerSprite.animation = "static"
-			$Camera2D_Player.clear_current()
-		
-	velocity.x += motion.x * delta
+		$Camera2D_Player.make_current()
+		controlled(delta)	
+		velocity.x += motion.x * delta
 	
 	velocity.y += motion.y * delta
-	
 	# Move Player
 	velocity = move_and_slide(velocity, Vector2(0, -1))
 	
@@ -74,7 +76,10 @@ func controlled(delta):
 		if look_right:
 			velocity.x = 0
 		velocity.x = -WALK_SPEED
-		$PlayerSprite.animation = "walk"
+		if hasPet:
+			$PlayerSprite.animation = "walk_with_pet"
+		else:
+			$PlayerSprite.animation = "walk_without_pet"
 		$PlayerSprite.flip_h = true
 		stop = false
 		look_right = false
@@ -84,7 +89,10 @@ func controlled(delta):
 		if !look_right:
 			velocity.x = 0
 		velocity.x = WALK_SPEED
-		$PlayerSprite.animation = "walk"
+		if hasPet:
+			$PlayerSprite.animation = "walk_with_pet"
+		else:
+			$PlayerSprite.animation = "walk_without_pet"
 		$PlayerSprite.flip_h = false
 		stop = false
 		look_right = true
@@ -92,7 +100,10 @@ func controlled(delta):
 	# don't move x
 	if (walk_right && walk_left) || (!walk_right && !walk_left):
 		velocity.x = 0
-		$PlayerSprite.animation = "static"
+		if hasPet:
+			$PlayerSprite.animation = "static_with_pet"
+		else:
+			$PlayerSprite.animation = "static_without_pet"
 		
 	# On ladder
 	if on_ladder == true:

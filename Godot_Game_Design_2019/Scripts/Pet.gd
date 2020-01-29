@@ -7,43 +7,56 @@ const SPEED_MOVE = 25
 const FLY_SPEED = 600
 var FLY_SPEED_MAX = 600
 
-const DISTANCE_MIN_X = 140
-const DISTANCE_MAX_X = 160
-const DISTANCE_Y = 100
+const DISTANCE_MIN = 5
+const DISTANCE_MAX = 50
 
 var velocity = Vector2()
 
 var time_move = 0
 var up = false
 var check_y = true
+var check_x = true
 var activated = false
+var show = true
 signal pet_activated
 
 func _process(delta):
 	
+	Player.hasPet = false
 	
-
-	if !activated :
+	#Waiting for the girl
+	if !activated : 
 		$CollisionShape2D_Pet.disabled = true
 		up_down(delta)
 		waitGirl(Player)
-	else:
-		var controlled = Input.is_key_pressed(KEY_F)
-			
-		if controlled:
+	#Is with the girl
+	else: 
+		#Is controlled
+		if Input.is_key_pressed(KEY_F):
 			$CollisionShape2D_Pet.disabled = false
 			$Camera2D_Pet.make_current()
 			controlled(delta)
+			$Sprite.show()
+			show = true
 			check_y = true
+			check_x = true
+			velocity = move_and_slide(velocity, Vector2(0, -1))
+		
+		#Isn't controlled
 		else:
-			autonomous(Player)	
 			$Camera2D_Pet.clear_current()
 			$CollisionShape2D_Pet.disabled = true
-		
-		if !check_y:	
-			velocity.y = Player.velocity.y
 			
-		velocity = move_and_slide(velocity, Vector2(0, -1))
+			#Is moving to the girl
+			if show:
+				$Sprite.show()
+				show = true
+				autonomous(Player)
+				velocity = move_and_slide(velocity, Vector2(0, -1))
+			#Is on the girl's hands
+			else:
+				Player.hasPet = true
+				position = Player.position
 
 func waitGirl(player):
 	if player.position.x < position.x + 30 && player.level == 2 && player.world == 1:
@@ -56,24 +69,6 @@ func controlled(delta):
 	var walk_up = Input.is_action_pressed("ui_up")
 	var walk_down = Input.is_action_pressed("ui_down")
 	
-	# Left
-	if walk_left && !walk_right:
-		velocity.x -= FLY_SPEED
-		$Sprite.flip_h=true
-		
-	# Right
-	if walk_right && !walk_left:
-		velocity.x += FLY_SPEED
-		$Sprite.flip_h=false
-		
-	# Up
-	if walk_up && ! walk_down:
-		velocity.y -= FLY_SPEED
-		
-	# Down
-	if walk_down && !walk_up:
-		velocity.y += FLY_SPEED
-		
 	# Don't move X
 	var dontMoveX = (walk_right && walk_left) || (!walk_right && !walk_left)
 	if dontMoveX:
@@ -82,10 +77,25 @@ func controlled(delta):
 	# Don't move Y
 	var dontMoveY = (walk_down && walk_up) || (!walk_down && !walk_up)
 	if dontMoveY:
-		velocity.y = 0
+		up_down(delta)
+	
+	# Left
+	if walk_left:
+		velocity.x -= FLY_SPEED
+		$Sprite.flip_h = true
 		
-	if dontMoveY:
-		velocity.y = up_down(delta)
+	# Right
+	if walk_right:
+		velocity.x += FLY_SPEED
+		$Sprite.flip_h = false
+		
+	# Up
+	if walk_up:
+		velocity.y -= FLY_SPEED
+		
+	# Down
+	if walk_down:
+		velocity.y += FLY_SPEED
 		
 	checkVelocityX()
 	checkVelocityY()
@@ -96,42 +106,45 @@ func autonomous(var player):
 	var playerLookRight = Player.look_right
 	
 	if check_y:
-		if position.y < Player.position.y - 5:
+		if (position.y - playerPos.y) < DISTANCE_MIN:
 			velocity.y = FLY_SPEED
-		if position.y > Player.position.y + 5:
+		elif (position.y - playerPos.y) > DISTANCE_MAX:
 			velocity.y = -FLY_SPEED
-		if (position.y < Player.position.y + 5) && (position.y > Player.position.y - 5):
+		else:
 			position.y = Player.position.y
 			check_y = false
 	
 	# Look right
 	if playerLookRight :
-		$Sprite.flip_h=false
+		$Sprite.flip_h = false
 		# Too far left
-		if (position.x - playerPos.x) < DISTANCE_MIN_X:
+		if (position.x - playerPos.x) < DISTANCE_MIN:
 			velocity.x = FLY_SPEED
 		# Too far right
-		elif (position.x - playerPos.x) > DISTANCE_MAX_X:
+		elif (position.x - playerPos.x) > DISTANCE_MAX:
 			velocity.x = -FLY_SPEED
 		# Just good
 		else :
-			velocity.x = 0
-			velocity.x = Player.velocity.x
+			check_x = false
+			
 	# Look left
 	if !playerLookRight:
-		$Sprite.flip_h=true
+		$Sprite.flip_h = true
 		# Too far left
-		if (playerPos.x - position.x) > DISTANCE_MAX_X:
+		if (playerPos.x - position.x) > DISTANCE_MAX:
 			velocity.x = FLY_SPEED
 		# Too far right
-		elif (playerPos.x - position.x) < DISTANCE_MIN_X:
+		elif (playerPos.x - position.x) < DISTANCE_MIN:
 			velocity.x = -FLY_SPEED
 		# Just good
 		else :
-			velocity.x = 0
-			velocity.x = Player.velocity.x
+			check_x = false
 	
-	velocity.y += Player.velocity.y
+	if !check_x && !check_y :
+		$Sprite.hide()
+		velocity.x = 0
+		velocity.y = 0
+		show = false
 	
 # Make the up/down constant movement
 func up_down(delta):
@@ -146,7 +159,7 @@ func up_down(delta):
 		up = !up
 		time_move = 0
 	
-	return velocity.y
+	velocity = move_and_slide(velocity, Vector2(0, -1))
 
 func checkVelocityX():
 	if velocity.x < -FLY_SPEED_MAX:

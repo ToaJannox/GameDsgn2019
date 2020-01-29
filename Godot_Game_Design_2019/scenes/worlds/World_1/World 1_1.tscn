@@ -522,7 +522,7 @@ z_index = -1
 texture = ExtResource( 2 )
 
 [node name="Start" type="Position2D" parent="."]
-position = Vector2( 10510.9, 215.994 )
+position = Vector2( 7969.86, 179.706 )
 scale = Vector2( 1.079, 1.00456 )
 
 [node name="Pos_Disable_NoCollFront" type="Position2D" parent="."]

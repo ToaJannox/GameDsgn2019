@@ -18,11 +18,9 @@ func _startLevel():
 	$Loop.play()
 	$Drips.play()
 	
-	
 	Player.playerControlled = false
 	Pet.get_node("StaticHover").play()
 	Pet.position = $StartPet.position
-	
 	
 func _endLevel():
 	._endLevel()
@@ -44,7 +42,6 @@ func _process(delta):
 		else :
 			Player.playerControlled= true
 			
-				
 		_setVisibility()
 	
 	

@@ -26,16 +26,12 @@ func switchlevel(newlevel,oldlevel,keep = false):
 	Player.level = newlevel.level
 	Player.world = newlevel.world
 	newlevel._startLevel()
-	
-func _process(delta):
-	print(Player.position)
 
-		
 func getlevel(world,level):
 	return world_list[world-1][level-1].instance()
 
 func launch_tuto(page):
-	Player.tuto_is_reading = true
+	Player.playerControlled = false
 	$Tutorial/RichTextLabel.page = page
 	$Tutorial.position.x = Player.get_node("Camera2D_Player").position.x
 	$Tutorial.position.y = Player.get_node("Camera2D_Player").position.y
