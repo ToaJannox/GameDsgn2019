@@ -8,6 +8,8 @@ func _startLevel():
 	._startLevel()
 	music.stream = load("res://ressources/music/desert-theme.ogg");
 	Player._setStepType(Player.GROUND_TYPE.SAND)
+	Player.launch_tuto = true
+	Player.page_tuto = 0
 	$Loop.play()
 	music.play()
 

@@ -1,16 +1,20 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://ressources/graphics/player/Hana_without_pet/walk1.png" type="Texture" id=2]
 [ext_resource path="res://ressources/graphics/player/Hana_without_pet/walk3.png" type="Texture" id=3]
 [ext_resource path="res://ressources/graphics/player/Hana_with_pet/walk0.png" type="Texture" id=4]
-[ext_resource path="res://ressources/graphics/player/climb1.png" type="Texture" id=5]
-[ext_resource path="res://ressources/graphics/player/climb2.png" type="Texture" id=6]
+[ext_resource path="res://ressources/graphics/player/Hana_with_pet/walk1.png" type="Texture" id=5]
+[ext_resource path="res://ressources/graphics/player/Hana_with_pet/walk3.png" type="Texture" id=6]
 [ext_resource path="res://ressources/graphics/player/Hana_without_pet/walk0.png" type="Texture" id=7]
-[ext_resource path="res://ressources/graphics/player/Hana_with_pet/walk1.png" type="Texture" id=8]
-[ext_resource path="res://ressources/graphics/player/Hana_with_pet/walk3.png" type="Texture" id=9]
-[ext_resource path="res://scenes/TextGirl.gd" type="Script" id=10]
-[ext_resource path="res://Scripts/step.gd" type="Script" id=11]
+[ext_resource path="res://ressources/graphics/player/climb1.png" type="Texture" id=8]
+[ext_resource path="res://ressources/graphics/player/climb2.png" type="Texture" id=9]
+[ext_resource path="res://Scripts/TextGirl.gd" type="Script" id=10]
+[ext_resource path="res://Scripts/Tutorial.gd" type="Script" id=11]
+[ext_resource path="res://Scripts/Tutorial_text.gd" type="Script" id=12]
+[ext_resource path="res://Scripts/step.gd" type="Script" id=13]
+
+
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -26,8 +30,8 @@ animations = [ {
 }, {
 "frames": [ ExtResource( 5 ), ExtResource( 6 ) ],
 "loop": true,
-"name": "climbing",
-"speed": 2.0
+"name": "walk_with_pet",
+"speed": 4.0
 }, {
 "frames": [ ExtResource( 7 ) ],
 "loop": false,
@@ -36,15 +40,14 @@ animations = [ {
 }, {
 "frames": [ ExtResource( 8 ), ExtResource( 9 ) ],
 "loop": true,
-"name": "walk_with_pet",
-"speed": 4.0
+"name": "climbing",
+"speed": 2.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 50.3044, 73.7841 )
 
 [node name="Player" type="KinematicBody2D"]
-position = Vector2( 11412.3, 701.446 )
 z_index = 1
 script = ExtResource( 1 )
 
@@ -59,9 +62,12 @@ position = Vector2( 0, 0.369751 )
 shape = SubResource( 2 )
 
 [node name="Camera2D_Player" type="Camera2D" parent="."]
+position = Vector2( 0, -300 )
 scale = Vector2( 1.3136, 1.41073 )
 current = true
 zoom = Vector2( 2, 2 )
+drag_margin_h_enabled = false
+drag_margin_v_enabled = false
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
 visible = false
@@ -83,8 +89,55 @@ script = ExtResource( 10 )
 wait_time = 0.05
 autostart = true
 
+[node name="Tutorial" type="Polygon2D" parent="."]
+visible = false
+position = Vector2( -57.8426, -812.936 )
+scale = Vector2( 0.941573, 0.851061 )
+z_index = 3
+color = Color( 0.376471, 0.376471, 0.376471, 1 )
+polygon = PoolVector2Array( -990, 240, 1112.86, 238.451, 1112.86, -67.05, -990, -67.05 )
+script = ExtResource( 11 )
+
+[node name="Polygon2D" type="Polygon2D" parent="Tutorial"]
+color = Color( 1, 0.705882, 0.705882, 1 )
+polygon = PoolVector2Array( -979.379, 238.451, 1091.62, 238.451, 1091.62, 320.701, -979.379, 320.701 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Tutorial/Polygon2D"]
+modulate = Color( 0, 0, 0, 1 )
+margin_left = -967.0
+margin_top = 250.0
+margin_right = -425.0
+margin_bottom = 276.0
+rect_scale = Vector2( 1.8713, 2.31997 )
+text = "Appuyez sur la flèche du haut pour faire défiler le texte plus vite"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Tutorial/Polygon2D"]
+modulate = Color( 0, 0, 0, 1 )
+anchor_bottom = 0.78
+margin_left = 69.0
+margin_top = 249.0
+margin_right = 583.0
+margin_bottom = 274.0
+rect_scale = Vector2( 1.89427, 2.27807 )
+text = "Appuyez sur la touche entrée pour passer."
+
+[node name="Tutorial_text" type="RichTextLabel" parent="Tutorial"]
+margin_left = -965.0
+margin_top = -34.0
+margin_right = -360.0
+margin_bottom = 41.0
+rect_scale = Vector2( 3.37199, 3.30021 )
+bbcode_enabled = true
+tab_size = 1
+script = ExtResource( 12 )
+
+[node name="Timer" type="Timer" parent="Tutorial"]
+wait_time = 0.05
+autostart = true
+
 [node name="step" type="AudioStreamPlayer2D" parent="."]
 bus = "steps"
-script = ExtResource( 11 )
+script = ExtResource( 13 )
 [connection signal="frame_changed" from="PlayerSprite" to="step" method="step"]
 [connection signal="timeout" from="Polygon2D/Timer" to="Polygon2D/TextGirl" method="_on_Timer_timeout"]
+[connection signal="timeout" from="Tutorial/Timer" to="Tutorial/Tutorial_text" method="_on_Timer_timeout"]

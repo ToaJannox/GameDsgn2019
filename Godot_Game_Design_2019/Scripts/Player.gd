@@ -23,12 +23,13 @@ var on_ladder = false
 var look_right = true
 var world = 0
 var level = 0;
-var playerControlled = true
+var playerControlled = false
+var petControlled = false
 var hasPet = false
 var stop_1_2
 
-var tuto_walk = false
-var tuto_jumpt = false
+var launch_tuto = false
+var page_tuto = 0
 
 var floor_y
 
@@ -36,19 +37,24 @@ var on_air_time = 0
 
 # Called every frame, "delta" is the elapsed time since the previous frame.
 func _process(delta):
-	
 	motion = Vector2(WALK_SPEED, GRAVITY)
-	var pet_controlled = Input.is_key_pressed(KEY_F)
-	
-	if pet_controlled: 
+
+	if launch_tuto:
+		$Camera2D_Player.make_current()
+		motion.x = 0
+		velocity.x = 0
+		if is_on_floor():
+			$Tutorial.launch_tuto(page_tuto)
+
+	if petControlled: 
 		$Camera2D_Player.clear_current()
 		playerControlled = false
 	
 	if !playerControlled:
-#		if hasPet:
-#			$PlayerSprite.animation = "static_with_pet"
-#		else:
-#			$PlayerSprite.animation = "static_without_pet"
+		if hasPet:
+			$PlayerSprite.animation = "static_with_pet"
+		else:
+			$PlayerSprite.animation = "static_without_pet"
 		motion.x = 0
 		velocity.x = 0
 		
@@ -60,10 +66,8 @@ func _process(delta):
 	velocity.y += motion.y * delta
 	# Move Player
 	velocity = move_and_slide(velocity, Vector2(0, -1))
-	
 
 func controlled(delta):
-	
 	var stop = true
 	
 	var walk_left = Input.is_action_pressed("ui_left")
@@ -131,7 +135,6 @@ func controlled(delta):
 	if walk_up && !on_ladder:
 		if on_air_time < MAX_JUMP_TIME and walk_up:
 			velocity.y = -JUMP_SPEED
-#			$PlayerSprite.animation = "static"
 	
 	# Doesn't move
 	if stop:

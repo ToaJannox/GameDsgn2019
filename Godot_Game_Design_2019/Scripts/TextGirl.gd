@@ -17,7 +17,7 @@ func _ready():
 func _process(delta):
 	if get_visible_characters() > get_total_character_count():
 		change_wait = true
-		if wait == 20: 
+		if wait == 20 || Input.is_action_pressed("ui_up"): 
 			if page_enter_1_2 < dialog_enter_1_2.size()-1:
 				page_enter_1_2 += 1
 				set_bbcode(dialog_enter_1_2[page_enter_1_2])

@@ -24,15 +24,16 @@ func _process(delta):
 	
 	Player.hasPet = false
 	
-	#Waiting for the girl
+	# Waiting for the girl
 	if !activated : 
 		$CollisionShape2D_Pet.disabled = true
 		up_down(delta)
 		waitGirl(Player)
-	#Is with the girl
-	else: 
+	# Is with the girl
+	elif !Player.launch_tuto: 
 		#Is controlled
 		if Input.is_key_pressed(KEY_F):
+			Player.petControlled = true
 			$CollisionShape2D_Pet.disabled = false
 			$Camera2D_Pet.make_current()
 			controlled(delta)
@@ -42,7 +43,7 @@ func _process(delta):
 			check_x = true
 			velocity = move_and_slide(velocity, Vector2(0, -1))
 		
-		#Isn't controlled
+		# Isn't controlled
 		else:
 			$Camera2D_Pet.clear_current()
 			$CollisionShape2D_Pet.disabled = true
