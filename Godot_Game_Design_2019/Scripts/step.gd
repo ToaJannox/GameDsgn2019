@@ -28,7 +28,7 @@ func _ready():
 	
 		
 func step():
-	if(get_node("../PlayerSprite").animation=="walk")&&(get_node("..").is_on_floor()):
+	if((get_node("../PlayerSprite").animation=="walk_with_pet")||(get_node("../PlayerSprite").animation=="walk_without_pet"))&&(get_node("..").is_on_floor()):
 		stream = sounds[randi()% sounds.size()]
 		play()
 	

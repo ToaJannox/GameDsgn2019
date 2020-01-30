@@ -557,7 +557,7 @@ texture = ExtResource( 2 )
 offset = Vector2( 25.2695, 12.0527 )
 
 [node name="Start" type="Position2D" parent="."]
-position = Vector2( -2284.72, -47.08 )
+position = Vector2( 2636.58, -3479.22 )
 
 [node name="End_slide" type="Position2D" parent="."]
 position = Vector2( 2129.86, 451.931 )

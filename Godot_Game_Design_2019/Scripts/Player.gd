@@ -45,10 +45,10 @@ func _process(delta):
 		playerControlled = false
 	
 	if !playerControlled:
-		if hasPet:
-			$PlayerSprite.animation = "static_with_pet"
-		else:
-			$PlayerSprite.animation = "static_without_pet"
+#		if hasPet:
+#			$PlayerSprite.animation = "static_with_pet"
+#		else:
+#			$PlayerSprite.animation = "static_without_pet"
 		motion.x = 0
 		velocity.x = 0
 		
@@ -131,7 +131,7 @@ func controlled(delta):
 	if walk_up && !on_ladder:
 		if on_air_time < MAX_JUMP_TIME and walk_up:
 			velocity.y = -JUMP_SPEED
-			$PlayerSprite.animation = "static"
+#			$PlayerSprite.animation = "static"
 	
 	# Doesn't move
 	if stop:

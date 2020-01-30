@@ -33,7 +33,7 @@ func _process(delta):
 	if levelStarted:
 #		Player.stop_1_2 = get_node("End_slide").position.x
 		if Player.position.x > get_node("End_slide").position.x + 10 && Player.is_on_floor():
-			Player.get_node("PlayerSprite").animation = "static"
+#			Player.get_node("PlayerSprite").animation = "static_"
 			Player.get_node("PlayerSprite").flip_h = true
 			Player.look_right = false
 			Player.playerControlled= false
