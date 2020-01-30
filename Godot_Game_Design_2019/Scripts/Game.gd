@@ -11,7 +11,6 @@ func _ready():
 	dir.list_dir_begin()
 	_add_dir_contents(dir,world_list)
 	self.call_deferred("switchlevel",getlevel(1,1),null)
-#	switchlevel(getlevel(1,1),null)
 
 
 func switchlevel(newlevel,oldlevel,keep = false):
@@ -55,8 +54,14 @@ func _add_dir_contents(dir, list):
 				subDir.open(path)
 				subDir.list_dir_begin(true, false)
 				_add_dir_contents(subDir,levels)
-				list.push_front(levels)
+				if(OS.get_name()=="Windows"):
+					list.push_back(levels)
+				else:
+					list.push_front(levels)
 			else:
-				list.push_front(load(path))
+				if(OS.get_name()=="Windows"):
+					list.push_back(load(path))
+				else:	
+					list.push_front(load(path))
 		file_name = dir.get_next()
 	dir.list_dir_end()

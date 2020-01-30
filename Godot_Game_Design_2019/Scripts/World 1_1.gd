@@ -37,4 +37,3 @@ func _setVisibility():
 func _on_Exit_body_entered(body):
 	if body.name == "Player":
 		game.call_deferred("switchlevel",game.getlevel(1,2),self)
-#		game.switchlevel(game.getlevel(1,2),self)
