@@ -10,7 +10,8 @@ func _ready():
 	dir.open(worldsPath)
 	dir.list_dir_begin()
 	_add_dir_contents(dir,world_list)
-	switchlevel(getlevel(1,1),null)
+	self.call_deferred("switchlevel",getlevel(1,1),null)
+#	switchlevel(getlevel(1,1),null)
 
 
 func switchlevel(newlevel,oldlevel,keep = false):
@@ -20,6 +21,7 @@ func switchlevel(newlevel,oldlevel,keep = false):
 			oldlevel._endLevel()
 			self.remove_child(oldlevel)
 	self.add_child(newlevel)
+	
 	newlevel.show()	
 	var start = newlevel.get_node("Start").position #TODO fix level position switch
 	Player.position= start
