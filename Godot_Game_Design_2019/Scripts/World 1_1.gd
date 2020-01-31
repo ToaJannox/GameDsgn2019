@@ -19,7 +19,7 @@ func _endLevel():
 	
 func _process(delta):
 	if Player.position.x > $Pos_Disable_NoCollFront.position.x && Player.position.y > $Pos_Disable_NoCollFront.position.y:
-		$NoCollisionMap_front.set_z_index(-2)
+		$Tilemaps/No_Collsisions/NoCollisionMap_front.set_z_index(-4)
 	_setVisibility()
 	
 func _setVisibility():
