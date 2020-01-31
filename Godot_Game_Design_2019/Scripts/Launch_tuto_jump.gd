@@ -1,7 +1,10 @@
 extends Area2D
 
+var is_passed = false
+
 func _on_Launch_tuto_jump_body_entered(body):
-	print("hjer")
 	if body.name == "Player":
-		Player.launch_tuto = true
-		Player.page_tuto = 1
+		if !is_passed:
+			Player.launch_tuto = true
+			Player.page_tuto = 1
+			is_passed = true

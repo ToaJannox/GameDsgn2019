@@ -26,15 +26,15 @@ animations = [ {
 "name": "static_with_pet",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ],
-"loop": true,
-"name": "walk_with_pet",
-"speed": 4.0
-}, {
 "frames": [ ExtResource( 2 ) ],
 "loop": false,
 "name": "static_without_pet",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "walk_with_pet",
+"speed": 4.0
 }, {
 "frames": [ ExtResource( 8 ), ExtResource( 9 ) ],
 "loop": true,
@@ -42,8 +42,9 @@ animations = [ {
 "speed": 2.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 43.7597, 73.7841 )
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 50.2503
+height = 48.6652
 
 [node name="Player" type="KinematicBody2D"]
 z_index = 1
@@ -56,7 +57,7 @@ animation = "static_without_pet"
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 6.98334, 2.46475 )
+position = Vector2( 0.0259881, -0.0439703 )
 shape = SubResource( 2 )
 
 [node name="Camera2D_Player" type="Camera2D" parent="."]
@@ -96,11 +97,12 @@ color = Color( 0.376471, 0.376471, 0.376471, 1 )
 polygon = PoolVector2Array( -990, 240, 1112.86, 238.451, 1112.86, -67.05, -990, -67.05 )
 script = ExtResource( 11 )
 
-[node name="Polygon2D" type="Polygon2D" parent="Tutorial"]
+[node name="Controles_Text" type="Polygon2D" parent="Tutorial"]
+editor/display_folded = true
 color = Color( 1, 0.705882, 0.705882, 1 )
 polygon = PoolVector2Array( -979.379, 238.451, 1091.62, 238.451, 1091.62, 320.701, -979.379, 320.701 )
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Tutorial/Polygon2D"]
+[node name="RichTextLabel" type="RichTextLabel" parent="Tutorial/Controles_Text"]
 modulate = Color( 0, 0, 0, 1 )
 margin_left = -967.0
 margin_top = 250.0
@@ -109,7 +111,7 @@ margin_bottom = 276.0
 rect_scale = Vector2( 1.8713, 2.31997 )
 text = "Appuyez sur la flèche du haut pour faire défiler le texte plus vite"
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="Tutorial/Polygon2D"]
+[node name="RichTextLabel2" type="RichTextLabel" parent="Tutorial/Controles_Text"]
 modulate = Color( 0, 0, 0, 1 )
 anchor_bottom = 0.78
 margin_left = 69.0

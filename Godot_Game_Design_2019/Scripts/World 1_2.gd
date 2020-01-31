@@ -37,7 +37,8 @@ func _process(delta):
 			Player.get_node("PlayerSprite").flip_h = true
 			Player.look_right = false
 			Player.playerControlled= false
-			Player.move_and_slide(Vector2(-10,10),Vector2(-1,-1))
+			Player.velocity.x = -(Player.WALK_SPEED)
+			Player.move_and_slide(Player.velocity,Vector2(-1,-1))
 			
 		else :
 			Player.playerControlled= true

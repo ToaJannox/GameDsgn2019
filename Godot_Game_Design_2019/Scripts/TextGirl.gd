@@ -1,6 +1,6 @@
 extends RichTextLabel
 
-var dialog_enter_1_2 = ["Mais, comment je vais remonter tout ça moi ?", "Et mon doudou !"]
+var dialog_enter_1_2 = ["Mais, comment je vais remonter tout ça moi ?", "Et mon doudou !", "aled"]
 var page_enter_1_2 = 0
 
 var finish = false
@@ -17,7 +17,7 @@ func _ready():
 func _process(delta):
 	if get_visible_characters() > get_total_character_count():
 		change_wait = true
-		if wait == 20 || Input.is_action_pressed("ui_up"): 
+		if wait == 30 || Input.is_action_just_pressed("ui_accept"): 
 			if page_enter_1_2 < dialog_enter_1_2.size()-1:
 				page_enter_1_2 += 1
 				set_bbcode(dialog_enter_1_2[page_enter_1_2])
@@ -26,6 +26,9 @@ func _process(delta):
 				finish = true
 			change_wait = false
 			wait = 0
+	elif get_visible_characters() > 0:
+		if Input.is_action_pressed("ui_up"):
+			set_visible_characters(get_total_character_count())
 
 func _on_Timer_timeout():
 	if start :

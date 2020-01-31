@@ -1,28 +1,50 @@
 extends RichTextLabel
 
-var tuto_walk = ["Bienvenue dans le jeu Shades ! Dans ce tutoriel vous allez apprendre les bases des commandes du jeu, tout d'abord, utilisez les touches directionnelles pour vous déplacez"]
-var tuto_jump = ["Des caisses vous bloquent la route, appuyez sur la flèche du haut pour sauter et pouvoir passer de l'autre côté"]
+var tuto_walk = ["Bienvenue dans le jeu Shades !",
+			"Voici Hana, jeune fille du village, je vous l'aurais bien présentée un peu plus mais pour le moment vous devez l'aider à récuperer son doudou",
+			"Première étape : utilisez les touches directionnelles pour vous déplacez"]
+			
+var tuto_jump = ["moment de sauter"]
 
 var tuto = [tuto_walk, tuto_jump]
-
-var page_tuto = 0 # wich tuto
+			
+var wich_tuto
+var page_tuto
+var cur_page
 
 var finish = false
 var start = false
+var setted = false
 
 var change_wait = false
 var wait = 0
 
 func _ready():
-	set_bbcode(tuto[page_tuto][0])
-	set_visible_characters(0)
+	wich_tuto = 0
+	set_tuto()
 	set_process_input(true)
+	
+func set_tuto():
+	cur_page = 0
+	page_tuto = cur_page
+	print(tuto[wich_tuto][page_tuto])
+	set_bbcode(tuto[wich_tuto][page_tuto])
+	set_visible_characters(0)
+	setted = true
 
 func _process(delta):
 	if get_visible_characters() > get_total_character_count():
 		change_wait = true
-		if wait == 200 || Input.is_action_just_pressed("ui_accept"): 
-			finish = true
+		if wait == 1000 || Input.is_action_just_pressed("ui_accept"): 
+			if cur_page < tuto[wich_tuto].size()-1:
+				print("change")
+				cur_page += 1
+				page_tuto = cur_page
+				set_bbcode(tuto[wich_tuto][page_tuto])
+				set_visible_characters(0)
+			elif cur_page >= tuto[wich_tuto].size()-1:
+				finish = true
+				setted = false
 			change_wait = false
 			wait = 0
 	elif get_visible_characters() > 0:

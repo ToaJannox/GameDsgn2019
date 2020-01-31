@@ -37,7 +37,7 @@ var on_air_time = 0
 
 # Called every frame, "delta" is the elapsed time since the previous frame.
 func _process(delta):
-	motion = Vector2(WALK_SPEED, GRAVITY)
+	motion = Vector2(0, GRAVITY)
 
 	if launch_tuto:
 		$Camera2D_Player.make_current()
