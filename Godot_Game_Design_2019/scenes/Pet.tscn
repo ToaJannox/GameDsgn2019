@@ -2,26 +2,26 @@
 
 [ext_resource path="res://Scripts/Pet.gd" type="Script" id=1]
 [ext_resource path="res://ressources/Light/light.png" type="Texture" id=2]
-[ext_resource path="res://ressources/graphics/pet/Pet_sleep/Frame001.png" type="Texture" id=3]
-[ext_resource path="res://ressources/graphics/pet/Pet_sleep/Frame002.png" type="Texture" id=4]
-[ext_resource path="res://ressources/graphics/pet/Frame001.png" type="Texture" id=5]
-[ext_resource path="res://ressources/graphics/pet/Frame002.png" type="Texture" id=6]
+[ext_resource path="res://ressources/graphics/pet/Frame001.png" type="Texture" id=3]
+[ext_resource path="res://ressources/graphics/pet/Frame002.png" type="Texture" id=4]
+[ext_resource path="res://ressources/graphics/pet/Pet_sleep/Frame001.png" type="Texture" id=5]
+[ext_resource path="res://ressources/graphics/pet/Pet_sleep/Frame002.png" type="Texture" id=6]
 [ext_resource path="res://ressources/sounds/pet/hover.wav" type="AudioStream" id=7]
 
-[sub_resource type="SpriteFrames" id=2]
+[sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 3 ), ExtResource( 4 ) ],
 "loop": true,
-"name": "sleep",
-"speed": 2.0
+"name": "Fly",
+"speed": 1.75
 }, {
 "frames": [ ExtResource( 5 ), ExtResource( 6 ) ],
-"loop": true,
-"name": "Fly",
-"speed": 3.0
+"loop": false,
+"name": "sleep",
+"speed": 2.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 23.9332, 24.2381 )
 
 [node name="Pet" type="KinematicBody2D"]
@@ -43,13 +43,14 @@ shadow_filter = 3
 shadow_filter_smooth = 25.0
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 0.25, 0.25 )
 z_index = 1
-frames = SubResource( 2 )
-animation = "New Anim"
+frames = SubResource( 1 )
+animation = "Fly"
 playing = true
 
 [node name="CollisionShape2D_Pet" type="CollisionShape2D" parent="."]
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="StaticHover" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 7 )

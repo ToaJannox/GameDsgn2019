@@ -28,7 +28,7 @@ func _process(delta):
 	if !activated : 
 		$AnimatedSprite.animation = "sleep"
 		$CollisionShape2D_Pet.disabled = true
-		up_down(delta)
+		#up_down(delta)
 		waitGirl(Player)
 	# Is with the girl
 	elif !Player.launch_tuto: 
@@ -38,7 +38,7 @@ func _process(delta):
 			$CollisionShape2D_Pet.disabled = false
 			$Camera2D_Pet.make_current()
 			controlled(delta)
-			$Sprite.show()
+			$AnimatedSprite.show()
 			show = true
 			check_y = true
 			check_x = true
@@ -52,7 +52,7 @@ func _process(delta):
 			#Is moving to the girl
 		if show:
 			$AnimatedSprite.animation = "fly"
-			$Sprite.show()
+			$AnimatedSprite.show()
 			show = true
 			autonomous(Player)
 			velocity = move_and_slide(velocity, Vector2(0, -1))
@@ -85,12 +85,12 @@ func controlled(delta):
 	# Left
 	if walk_left:
 		velocity.x -= FLY_SPEED
-		$Sprite.flip_h = true
+		$AnimatedSprite.flip_h = true
 		
 	# Right
 	if walk_right:
 		velocity.x += FLY_SPEED
-		$Sprite.flip_h = false
+		$AnimatedSprite.flip_h = false
 		
 	# Up
 	if walk_up:
@@ -119,7 +119,7 @@ func autonomous(var player):
 	
 	# Look right
 	if playerLookRight :
-		$Sprite.flip_h = false
+		$AnimatedSprite.flip_h = false
 		# Too far left
 		if (position.x - playerPos.x) < DISTANCE_MIN:
 			velocity.x = FLY_SPEED
@@ -132,7 +132,7 @@ func autonomous(var player):
 			
 	# Look left
 	if !playerLookRight:
-		$Sprite.flip_h = true
+		$AnimatedSprite.flip_h = true
 		# Too far left
 		if (playerPos.x - position.x) > DISTANCE_MAX:
 			velocity.x = FLY_SPEED
@@ -144,7 +144,7 @@ func autonomous(var player):
 			check_x = false
 	
 	if !check_x && !check_y :
-		$Sprite.hide()
+		$AnimatedSprite.hide()
 		velocity.x = 0
 		velocity.y = 0
 		show = false

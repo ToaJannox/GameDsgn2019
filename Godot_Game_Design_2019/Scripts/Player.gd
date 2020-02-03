@@ -29,6 +29,7 @@ var hasPet = false
 var stop_1_2
 
 var launch_tuto = false
+var launch_dialog = false
 var page_tuto = 0
 
 var floor_y
@@ -38,12 +39,13 @@ var on_air_time = 0
 func _process(delta):
 	motion = Vector2(0, GRAVITY)
 
-	if launch_tuto:
+	if launch_tuto || launch_dialog:
 		$Camera2D_Player.make_current()
-		motion.x = 0
-		velocity.x = 0
-		if is_on_floor():
+		playerControlled = false
+		if is_on_floor() && launch_tuto:
 			$Tutorial.launch_tuto(page_tuto)
+		if is_on_floor() && launch_dialog:
+			$Girl_speak.launch_girl_speak(0)
 
 	if petControlled: 
 		$Camera2D_Player.clear_current()
@@ -56,8 +58,7 @@ func _process(delta):
 			$PlayerSprite.animation = "static_without_pet"
 		motion.x = 0
 		velocity.x = 0
-		
-	if playerControlled:
+	else:
 		$Camera2D_Player.make_current()
 		controlled(delta)	
 		velocity.x += motion.x * delta
@@ -148,13 +149,3 @@ func controlled(delta):
 
 func _setStepType(type):
 	$step.setStepType(type)
-	
-func playerEnterAbyss():
-	velocity = Vector2(0,0)
-	motion = Vector2(0,0)
-	$Polygon2D.show()
-	$Polygon2D/TextGirl.start = true
-	if $Polygon2D/TextGirl.finish :
-		$Polygon2D/Timer.stop()
-		$Polygon2D.hide()
-		playerControlled = false

@@ -31,20 +31,28 @@ func _endLevel():
 # warning-ignore:unused_argument
 func _process(delta):
 	if levelStarted:
-#		Player.stop_1_2 = get_node("End_slide").position.x
-		if Player.position.x > get_node("End_slide").position.x + 10 && Player.is_on_floor():
-#			Player.get_node("PlayerSprite").animation = "static_"
-			Player.get_node("PlayerSprite").flip_h = true
-			Player.look_right = false
-			Player.playerControlled= false
-			Player.velocity.x = -(Player.WALK_SPEED)
-			Player.move_and_slide(Player.velocity,Vector2(-1,-1))
-			
-		else :
-			Player.playerControlled= true
+		Player.stop_1_2 = get_node("End_slide").position.x
+		if Player.position.x > get_node("End_slide").position.x && Player.is_on_floor():
+			player_slide(delta)
 			
 		_setVisibility()
 	
+func player_slide(delta):
+	Player.get_node("PlayerSprite").animation = "static_"
+	Player.get_node("PlayerSprite").flip_h = true
+	Player.look_right = false
+	Player.playerControlled = false
+	
+	Player.velocity.x = -(Player.WALK_SPEED)
+	var vsign = sign(Player.velocity.x)
+	var vlen = abs(Player.velocity.x)
+	
+	vlen -= Player.STOP_FORCE * delta
+	if vlen < 0:
+		vlen = 0
+	
+	Player.velocity.x = (vlen * vsign)
+	Player.velocity = Player.move_and_slide(Player.velocity,Vector2(0,-1))
 	
 func _setVisibility():
 	if Pet.activated:

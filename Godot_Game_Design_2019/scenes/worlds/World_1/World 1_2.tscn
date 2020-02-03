@@ -1,17 +1,21 @@
-[gd_scene load_steps=46 format=2]
+[gd_scene load_steps=48 format=2]
 
 [ext_resource path="res://Scripts/World 1_2.gd" type="Script" id=1]
 [ext_resource path="res://ressources/Decor/Background.png" type="Texture" id=2]
-[ext_resource path="res://ressources/Decor/table.png" type="Texture" id=3]
-[ext_resource path="res://ressources/Light/light.png" type="Texture" id=4]
-[ext_resource path="res://ressources/Decor/map_1_2/Rochers_Gris.png" type="Texture" id=5]
-[ext_resource path="res://ressources/Decor/map_1_2/Herbe_Gris.png" type="Texture" id=6]
-[ext_resource path="res://ressources/Decor/map_1_2/Champignons_Gris.png" type="Texture" id=7]
-[ext_resource path="res://ressources/Decor/champi.png" type="Texture" id=8]
-[ext_resource path="res://ressources/Light/light_demi.png" type="Texture" id=9]
-[ext_resource path="res://ressources/Decor/map_1_2/floor_1_2.png" type="Texture" id=10]
-[ext_resource path="res://ressources/sounds/world/cave/drops_loop.ogg" type="AudioStream" id=11]
-[ext_resource path="res://ressources/sounds/world/cave/loop_creepy_01.ogg" type="AudioStream" id=12]
+[ext_resource path="res://Scripts/End_slide.gd" type="Script" id=3]
+[ext_resource path="res://ressources/Decor/table.png" type="Texture" id=4]
+[ext_resource path="res://ressources/Light/light.png" type="Texture" id=5]
+[ext_resource path="res://ressources/Decor/map_1_2/Rochers_Gris.png" type="Texture" id=6]
+[ext_resource path="res://ressources/Decor/map_1_2/Herbe_Gris.png" type="Texture" id=7]
+[ext_resource path="res://ressources/Decor/map_1_2/Champignons_Gris.png" type="Texture" id=8]
+[ext_resource path="res://ressources/Decor/champi.png" type="Texture" id=9]
+[ext_resource path="res://ressources/Light/light_demi.png" type="Texture" id=10]
+[ext_resource path="res://ressources/Decor/map_1_2/floor_1_2.png" type="Texture" id=11]
+[ext_resource path="res://ressources/sounds/world/cave/drops_loop.ogg" type="AudioStream" id=12]
+[ext_resource path="res://ressources/sounds/world/cave/loop_creepy_01.ogg" type="AudioStream" id=13]
+
+[sub_resource type="RectangleShape2D" id=34]
+extents = Vector2( 37.9133, 334.362 )
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 70, 130 )
@@ -21,7 +25,7 @@ extents = Vector2( 165.076, 78.6831 )
 
 [sub_resource type="TileSet" id=3]
 0/name = "Rochers_Gris.png 0"
-0/texture = ExtResource( 5 )
+0/texture = ExtResource( 6 )
 0/tex_offset = Vector2( 0, 0 )
 0/modulate = Color( 1, 1, 1, 1 )
 0/region = Rect2( 0, 0, 128, 128 )
@@ -31,7 +35,7 @@ extents = Vector2( 165.076, 78.6831 )
 0/shapes = [  ]
 0/z_index = 0
 1/name = "Rochers_Gris.png 1"
-1/texture = ExtResource( 5 )
+1/texture = ExtResource( 6 )
 1/tex_offset = Vector2( 0, 0 )
 1/modulate = Color( 1, 1, 1, 1 )
 1/region = Rect2( 128, 32, 128, 32 )
@@ -41,7 +45,7 @@ extents = Vector2( 165.076, 78.6831 )
 1/shapes = [  ]
 1/z_index = 0
 2/name = "Rochers_Gris.png 2"
-2/texture = ExtResource( 5 )
+2/texture = ExtResource( 6 )
 2/tex_offset = Vector2( 0, 0 )
 2/modulate = Color( 1, 1, 1, 1 )
 2/region = Rect2( 128, 64, 160, 64 )
@@ -51,7 +55,7 @@ extents = Vector2( 165.076, 78.6831 )
 2/shapes = [  ]
 2/z_index = 0
 3/name = "Rochers_Gris.png 3"
-3/texture = ExtResource( 5 )
+3/texture = ExtResource( 6 )
 3/tex_offset = Vector2( 0, 0 )
 3/modulate = Color( 1, 1, 1, 1 )
 3/region = Rect2( 0, 128, 128, 64 )
@@ -61,7 +65,7 @@ extents = Vector2( 165.076, 78.6831 )
 3/shapes = [  ]
 3/z_index = 0
 4/name = "Herbe_Gris.png 4"
-4/texture = ExtResource( 6 )
+4/texture = ExtResource( 7 )
 4/tex_offset = Vector2( 0, 0 )
 4/modulate = Color( 1, 1, 1, 1 )
 4/region = Rect2( 192, 0, 64, 64 )
@@ -71,7 +75,7 @@ extents = Vector2( 165.076, 78.6831 )
 4/shapes = [  ]
 4/z_index = 0
 5/name = "Herbe_Gris.png 5"
-5/texture = ExtResource( 6 )
+5/texture = ExtResource( 7 )
 5/tex_offset = Vector2( 0, 0 )
 5/modulate = Color( 1, 1, 1, 1 )
 5/region = Rect2( 0, 32, 192, 32 )
@@ -81,7 +85,7 @@ extents = Vector2( 165.076, 78.6831 )
 5/shapes = [  ]
 5/z_index = 0
 6/name = "Herbe_Gris.png 6"
-6/texture = ExtResource( 6 )
+6/texture = ExtResource( 7 )
 6/tex_offset = Vector2( 0, 0 )
 6/modulate = Color( 1, 1, 1, 1 )
 6/region = Rect2( 0, 64, 192, 64 )
@@ -91,7 +95,7 @@ extents = Vector2( 165.076, 78.6831 )
 6/shapes = [  ]
 6/z_index = 0
 7/name = "Herbe_Gris.png 7"
-7/texture = ExtResource( 6 )
+7/texture = ExtResource( 7 )
 7/tex_offset = Vector2( 0, 0 )
 7/modulate = Color( 1, 1, 1, 1 )
 7/region = Rect2( 0, 160, 192, 32 )
@@ -101,7 +105,7 @@ extents = Vector2( 165.076, 78.6831 )
 7/shapes = [  ]
 7/z_index = 0
 8/name = "Herbe_Gris.png 8"
-8/texture = ExtResource( 6 )
+8/texture = ExtResource( 7 )
 8/tex_offset = Vector2( 0, 0 )
 8/modulate = Color( 1, 1, 1, 1 )
 8/region = Rect2( 0, 192, 96, 64 )
@@ -111,7 +115,7 @@ extents = Vector2( 165.076, 78.6831 )
 8/shapes = [  ]
 8/z_index = 0
 9/name = "Herbe_Gris.png 9"
-9/texture = ExtResource( 6 )
+9/texture = ExtResource( 7 )
 9/tex_offset = Vector2( 0, 0 )
 9/modulate = Color( 1, 1, 1, 1 )
 9/region = Rect2( 96, 192, 96, 64 )
@@ -121,7 +125,7 @@ extents = Vector2( 165.076, 78.6831 )
 9/shapes = [  ]
 9/z_index = 0
 10/name = "Herbe_Gris.png 10"
-10/texture = ExtResource( 6 )
+10/texture = ExtResource( 7 )
 10/tex_offset = Vector2( 0, 0 )
 10/modulate = Color( 1, 1, 1, 1 )
 10/region = Rect2( 0, 256, 160, 64 )
@@ -131,7 +135,7 @@ extents = Vector2( 165.076, 78.6831 )
 10/shapes = [  ]
 10/z_index = 0
 11/name = "Champignons_Gris.png 11"
-11/texture = ExtResource( 7 )
+11/texture = ExtResource( 8 )
 11/tex_offset = Vector2( 0, 0 )
 11/modulate = Color( 1, 1, 1, 1 )
 11/region = Rect2( 0, 32, 64, 32 )
@@ -141,7 +145,7 @@ extents = Vector2( 165.076, 78.6831 )
 11/shapes = [  ]
 11/z_index = 0
 12/name = "Champignons_Gris.png 12"
-12/texture = ExtResource( 7 )
+12/texture = ExtResource( 8 )
 12/tex_offset = Vector2( 0, 0 )
 12/modulate = Color( 1, 1, 1, 1 )
 12/region = Rect2( 64, 32, 32, 32 )
@@ -151,7 +155,7 @@ extents = Vector2( 165.076, 78.6831 )
 12/shapes = [  ]
 12/z_index = 0
 13/name = "Champignons_Gris.png 13"
-13/texture = ExtResource( 7 )
+13/texture = ExtResource( 8 )
 13/tex_offset = Vector2( 0, 0 )
 13/modulate = Color( 1, 1, 1, 1 )
 13/region = Rect2( 96, 32, 96, 32 )
@@ -161,7 +165,7 @@ extents = Vector2( 165.076, 78.6831 )
 13/shapes = [  ]
 13/z_index = 0
 14/name = "Champignons_Gris.png 14"
-14/texture = ExtResource( 7 )
+14/texture = ExtResource( 8 )
 14/tex_offset = Vector2( 0, 0 )
 14/modulate = Color( 1, 1, 1, 1 )
 14/region = Rect2( 192, 32, 64, 32 )
@@ -171,7 +175,7 @@ extents = Vector2( 165.076, 78.6831 )
 14/shapes = [  ]
 14/z_index = 0
 15/name = "Champignons_Gris.png 15"
-15/texture = ExtResource( 7 )
+15/texture = ExtResource( 8 )
 15/tex_offset = Vector2( 0, 0 )
 15/modulate = Color( 1, 1, 1, 1 )
 15/region = Rect2( 256, 32, 64, 32 )
@@ -181,7 +185,7 @@ extents = Vector2( 165.076, 78.6831 )
 15/shapes = [  ]
 15/z_index = 0
 16/name = "Champignons_Gris.png 16"
-16/texture = ExtResource( 7 )
+16/texture = ExtResource( 8 )
 16/tex_offset = Vector2( 0, 0 )
 16/modulate = Color( 1, 1, 1, 1 )
 16/region = Rect2( 256, 96, 64, 32 )
@@ -191,7 +195,7 @@ extents = Vector2( 165.076, 78.6831 )
 16/shapes = [  ]
 16/z_index = 0
 17/name = "Champignons_Gris.png 17"
-17/texture = ExtResource( 7 )
+17/texture = ExtResource( 8 )
 17/tex_offset = Vector2( 0, 0 )
 17/modulate = Color( 1, 1, 1, 1 )
 17/region = Rect2( 192, 96, 64, 32 )
@@ -201,7 +205,7 @@ extents = Vector2( 165.076, 78.6831 )
 17/shapes = [  ]
 17/z_index = 0
 18/name = "Champignons_Gris.png 18"
-18/texture = ExtResource( 7 )
+18/texture = ExtResource( 8 )
 18/tex_offset = Vector2( 0, 0 )
 18/modulate = Color( 1, 1, 1, 1 )
 18/region = Rect2( 128, 96, 64, 32 )
@@ -211,7 +215,7 @@ extents = Vector2( 165.076, 78.6831 )
 18/shapes = [  ]
 18/z_index = 0
 19/name = "Champignons_Gris.png 19"
-19/texture = ExtResource( 7 )
+19/texture = ExtResource( 8 )
 19/tex_offset = Vector2( 0, 0 )
 19/modulate = Color( 1, 1, 1, 1 )
 19/region = Rect2( 64, 96, 64, 32 )
@@ -221,7 +225,7 @@ extents = Vector2( 165.076, 78.6831 )
 19/shapes = [  ]
 19/z_index = 0
 20/name = "Champignons_Gris.png 20"
-20/texture = ExtResource( 7 )
+20/texture = ExtResource( 8 )
 20/tex_offset = Vector2( 0, 0 )
 20/modulate = Color( 1, 1, 1, 1 )
 20/region = Rect2( 0, 64, 64, 64 )
@@ -239,7 +243,7 @@ polygon = PoolVector2Array( 19.4262, 51.0723, 45.2025, 51.8475, 50.4353, 48.5529
 
 [sub_resource type="TileSet" id=6]
 4/name = "champi.png 4"
-4/texture = ExtResource( 8 )
+4/texture = ExtResource( 9 )
 4/tex_offset = Vector2( 0, 0 )
 4/modulate = Color( 1, 1, 1, 1 )
 4/region = Rect2( 192, 512, 64, 64 )
@@ -250,7 +254,7 @@ polygon = PoolVector2Array( 19.4262, 51.0723, 45.2025, 51.8475, 50.4353, 48.5529
 4/shapes = [  ]
 4/z_index = 0
 5/name = "champi.png 5"
-5/texture = ExtResource( 8 )
+5/texture = ExtResource( 9 )
 5/tex_offset = Vector2( 0, 0 )
 5/modulate = Color( 1, 1, 1, 1 )
 5/region = Rect2( 192, 320, 64, 64 )
@@ -261,7 +265,7 @@ polygon = PoolVector2Array( 19.4262, 51.0723, 45.2025, 51.8475, 50.4353, 48.5529
 5/shapes = [  ]
 5/z_index = 0
 6/name = "champi.png 6"
-6/texture = ExtResource( 8 )
+6/texture = ExtResource( 9 )
 6/tex_offset = Vector2( 0, 0 )
 6/modulate = Color( 1, 1, 1, 1 )
 6/region = Rect2( 512, 192, 64, 64 )
@@ -321,7 +325,7 @@ points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 
 [sub_resource type="TileSet" id=23]
 8/name = "floor_1_2.png 8"
-8/texture = ExtResource( 10 )
+8/texture = ExtResource( 11 )
 8/tex_offset = Vector2( 0, 0 )
 8/modulate = Color( 1, 1, 1, 1 )
 8/region = Rect2( 0, 0, 64, 64 )
@@ -338,7 +342,7 @@ points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 } ]
 8/z_index = 0
 9/name = "floor_1_2.png 9"
-9/texture = ExtResource( 10 )
+9/texture = ExtResource( 11 )
 9/tex_offset = Vector2( 0, 0 )
 9/modulate = Color( 1, 1, 1, 1 )
 9/region = Rect2( 64, 0, 64, 64 )
@@ -355,7 +359,7 @@ points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 } ]
 9/z_index = 0
 10/name = "floor_1_2.png 10"
-10/texture = ExtResource( 10 )
+10/texture = ExtResource( 11 )
 10/tex_offset = Vector2( 0, 0 )
 10/modulate = Color( 1, 1, 1, 1 )
 10/region = Rect2( 128, 0, 64, 64 )
@@ -372,7 +376,7 @@ points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 } ]
 10/z_index = 0
 11/name = "floor_1_2.png 11"
-11/texture = ExtResource( 10 )
+11/texture = ExtResource( 11 )
 11/tex_offset = Vector2( 0, 0 )
 11/modulate = Color( 1, 1, 1, 1 )
 11/region = Rect2( 192, 0, 64, 64 )
@@ -389,7 +393,7 @@ points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 } ]
 11/z_index = 0
 12/name = "floor_1_2.png 12"
-12/texture = ExtResource( 10 )
+12/texture = ExtResource( 11 )
 12/tex_offset = Vector2( 0, 0 )
 12/modulate = Color( 1, 1, 1, 1 )
 12/region = Rect2( 192, 64, 64, 64 )
@@ -406,7 +410,7 @@ points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 } ]
 12/z_index = 0
 13/name = "floor_1_2.png 13"
-13/texture = ExtResource( 10 )
+13/texture = ExtResource( 11 )
 13/tex_offset = Vector2( 0, 0 )
 13/modulate = Color( 1, 1, 1, 1 )
 13/region = Rect2( 256, 64, 64, 64 )
@@ -423,7 +427,7 @@ points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 } ]
 13/z_index = 0
 14/name = "floor_1_2.png 14"
-14/texture = ExtResource( 10 )
+14/texture = ExtResource( 11 )
 14/tex_offset = Vector2( 0, 0 )
 14/modulate = Color( 1, 1, 1, 1 )
 14/region = Rect2( 192, 128, 64, 64 )
@@ -440,7 +444,7 @@ points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 } ]
 14/z_index = 0
 15/name = "floor_1_2.png 15"
-15/texture = ExtResource( 10 )
+15/texture = ExtResource( 11 )
 15/tex_offset = Vector2( 0, 0 )
 15/modulate = Color( 1, 1, 1, 1 )
 15/region = Rect2( 256, 128, 64, 64 )
@@ -486,7 +490,7 @@ polygon = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 
 [sub_resource type="TileSet" id=33]
 18/name = "floor_1_2.png 18"
-18/texture = ExtResource( 10 )
+18/texture = ExtResource( 11 )
 18/tex_offset = Vector2( 0, 0 )
 18/modulate = Color( 1, 1, 1, 1 )
 18/region = Rect2( 0, 0, 64, 64 )
@@ -497,7 +501,7 @@ polygon = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 18/shapes = [  ]
 18/z_index = 0
 19/name = "floor_1_2.png 19"
-19/texture = ExtResource( 10 )
+19/texture = ExtResource( 11 )
 19/tex_offset = Vector2( 0, 0 )
 19/modulate = Color( 1, 1, 1, 1 )
 19/region = Rect2( 64, 0, 64, 64 )
@@ -508,7 +512,7 @@ polygon = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 19/shapes = [  ]
 19/z_index = 0
 20/name = "floor_1_2.png 20"
-20/texture = ExtResource( 10 )
+20/texture = ExtResource( 11 )
 20/tex_offset = Vector2( 0, 0 )
 20/modulate = Color( 1, 1, 1, 1 )
 20/region = Rect2( 128, 0, 64, 64 )
@@ -519,7 +523,7 @@ polygon = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 20/shapes = [  ]
 20/z_index = 0
 21/name = "floor_1_2.png 21"
-21/texture = ExtResource( 10 )
+21/texture = ExtResource( 11 )
 21/tex_offset = Vector2( 0, 0 )
 21/modulate = Color( 1, 1, 1, 1 )
 21/region = Rect2( 192, 0, 64, 64 )
@@ -530,7 +534,7 @@ polygon = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 21/shapes = [  ]
 21/z_index = 0
 22/name = "floor_1_2.png 22"
-22/texture = ExtResource( 10 )
+22/texture = ExtResource( 11 )
 22/tex_offset = Vector2( 0, 0 )
 22/modulate = Color( 1, 1, 1, 1 )
 22/region = Rect2( 192, 64, 64, 64 )
@@ -541,7 +545,7 @@ polygon = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 22/shapes = [  ]
 22/z_index = 0
 23/name = "floor_1_2.png 23"
-23/texture = ExtResource( 10 )
+23/texture = ExtResource( 11 )
 23/tex_offset = Vector2( 0, 0 )
 23/modulate = Color( 1, 1, 1, 1 )
 23/region = Rect2( 256, 64, 64, 64 )
@@ -552,7 +556,7 @@ polygon = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 23/shapes = [  ]
 23/z_index = 0
 24/name = "floor_1_2.png 24"
-24/texture = ExtResource( 10 )
+24/texture = ExtResource( 11 )
 24/tex_offset = Vector2( 0, 0 )
 24/modulate = Color( 1, 1, 1, 1 )
 24/region = Rect2( 256, 0, 64, 64 )
@@ -563,7 +567,7 @@ polygon = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 24/shapes = [  ]
 24/z_index = 0
 25/name = "floor_1_2.png 25"
-25/texture = ExtResource( 10 )
+25/texture = ExtResource( 11 )
 25/tex_offset = Vector2( 0, 0 )
 25/modulate = Color( 1, 1, 1, 1 )
 25/region = Rect2( 192, 128, 64, 64 )
@@ -574,7 +578,7 @@ polygon = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 25/shapes = [  ]
 25/z_index = 0
 26/name = "floor_1_2.png 26"
-26/texture = ExtResource( 10 )
+26/texture = ExtResource( 11 )
 26/tex_offset = Vector2( 0, 0 )
 26/modulate = Color( 1, 1, 1, 1 )
 26/region = Rect2( 256, 128, 64, 64 )
@@ -602,8 +606,13 @@ offset = Vector2( 25.2695, 12.0527 )
 [node name="Start" type="Position2D" parent="."]
 position = Vector2( 2613.04, -3450.34 )
 
-[node name="End_slide" type="Position2D" parent="."]
-position = Vector2( 2129.86, 451.931 )
+[node name="End_slide" type="Area2D" parent="."]
+editor/display_folded = true
+position = Vector2( 2067.3, 533.417 )
+script = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="End_slide"]
+shape = SubResource( 34 )
 
 [node name="StartPet" type="Position2D" parent="."]
 position = Vector2( -3200.54, 209.75 )
@@ -621,7 +630,7 @@ position = Vector2( -10334.6, 384.443 )
 
 [node name="Sprite" type="Sprite" parent="Area2D"]
 scale = Vector2( 3, 3 )
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2( 0.857422, -0.857422 )
@@ -631,7 +640,7 @@ shape = SubResource( 2 )
 position = Vector2( 2336.64, 161.25 )
 rotation = 3.06775
 scale = Vector2( 0.839115, 0.785626 )
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 offset = Vector2( -135.07, 47.3 )
 texture_scale = 5.0
 color = Color( 0.909804, 0.45098, 0.0431373, 1 )
@@ -661,7 +670,7 @@ tile_data = PoolIntArray( -65590, 6, 0, 131024, 4, 0, 131039, 5, 0, 131040, 7, 0
 position = Vector2( -3044.41, 122.185 )
 rotation = 1.5708
 z_index = 2
-texture = ExtResource( 9 )
+texture = ExtResource( 10 )
 texture_scale = 0.1
 color = Color( 0.392157, 0.666667, 1, 1 )
 energy = 1.2
@@ -672,7 +681,7 @@ shadow_filter_smooth = 15.5
 [node name="Light_Mush_2" type="Light2D" parent="Details_Dream"]
 position = Vector2( -3426.24, -76.2454 )
 rotation = 1.5708
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 texture_scale = 0.07
 color = Color( 0.392157, 0.666667, 1, 1 )
 energy = 1.2
@@ -682,7 +691,7 @@ shadow_filter_smooth = 15.5
 
 [node name="Light_Mush_3" type="Light2D" parent="Details_Dream"]
 position = Vector2( -2075.47, 122.426 )
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 texture_scale = 0.2
 color = Color( 0.392157, 0.666667, 1, 1 )
 energy = 1.2
@@ -702,9 +711,10 @@ format = 1
 tile_data = PoolIntArray( -3735514, 1073741842, 0, -3735513, 1073741842, 0, -3735512, 1073741842, 0, -3735511, 1073741842, 0, -3669978, 1073741842, 0, -3669977, 1073741842, 0, -3669976, 1073741842, 0, -3669975, 1073741842, 0, -3604442, 1073741842, 0, -3604441, 1073741842, 0, -3604440, 1073741842, 0, -3604439, 1073741842, 0, -3538906, 1073741842, 0, -3538905, 1073741842, 0, -3538904, 1073741842, 0, -3538903, 1073741842, 0, -3473370, 1073741842, 0, -3473369, 1073741842, 0, -3473368, 1073741842, 0, -3473367, 1073741842, 0, -3407834, 1073741842, 0, -3407833, 1073741842, 0, -3407832, 1073741842, 0, -3407831, 1073741842, 0, -3342298, 1073741842, 0, -3342297, 1073741842, 0, -3342296, 1073741842, 0, -3342295, 1073741842, 0, -3276762, 1073741842, 0, -3276761, 1073741842, 0, -3276760, 1073741842, 0, -3276759, 1073741842, 0, -3211226, 1073741842, 0, -3211225, 1073741842, 0, -3211224, 1073741842, 0, -3211223, 1073741842, 0, -3145690, 1073741842, 0, -3145689, 1073741842, 0, -3145688, 1073741842, 0, -3145687, 1073741842, 0, -3080154, 1073741842, 0, -3080153, 1073741842, 0, -3080152, 1073741842, 0, -3080151, 1073741842, 0, -3014618, 1073741842, 0, -3014617, 1073741842, 0, -3014616, 1073741842, 0, -3014615, 1073741842, 0, -2949082, 1073741842, 0, -2949081, 1073741842, 0, -2949080, 1073741842, 0, -2949079, 1073741842, 0, -2883546, 1073741842, 0, -2883545, 1073741842, 0, -2883544, 1073741842, 0, -2883543, 1073741842, 0, -2818010, 1073741842, 0, -2818009, 1073741842, 0, -2818008, 1073741842, 0, -2818007, 1073741842, 0, -2752474, 1073741842, 0, -2752473, 1073741842, 0, -2752472, 1073741842, 0, -2752471, 1073741842, 0, -2686938, 1073741842, 0, -2686937, 1073741842, 0, -2686936, 1073741842, 0, -2686935, 1073741842, 0, -2621402, 1073741842, 0, -2621401, 1073741842, 0, -2621400, 1073741842, 0, -2621399, 1073741842, 0, -2555866, 1073741842, 0, -2555865, 1073741842, 0, -2555864, 1073741842, 0, -2555863, 1073741842, 0, -2490330, 1073741842, 0, -2490329, 1073741842, 0, -2490328, 1073741842, 0, -2490327, 1073741842, 0, -2424794, 1073741842, 0, -2424793, 1073741842, 0, -2424792, 1073741842, 0, -2424791, 1073741842, 0, -2359258, 1073741842, 0, -2359257, 1073741842, 0, -2359256, 1073741842, 0, -2359255, 1073741842, 0, -2293722, 1073741842, 0, -2293721, 1073741842, 0, -2293720, 1073741842, 0, -2293719, 1073741842, 0, -2228186, 1073741842, 0, -2228185, 1073741842, 0, -2228184, 1073741842, 0, -2228183, 1073741842, 0, -2162650, 1073741842, 0, -2162649, 1073741842, 0, -2162648, 1073741842, 0, -2162647, 1073741842, 0, -2097114, 1073741842, 0, -2097113, 1073741842, 0, -2097112, 1073741842, 0, -2097111, 1073741842, 0, -2031578, 1073741842, 0, -2031577, 1073741842, 0, -2031576, 1073741842, 0, -2031575, 1073741842, 0, -1966042, 1073741842, 0, -1966041, 1073741842, 0, -1966040, 1073741842, 0, -1966039, 1073741842, 0, -1900506, 1073741842, 0, -1900505, 1073741842, 0, -1900504, 1073741842, 0, -1900503, 1073741842, 0, -1834970, 1073741842, 0, -1834969, 1073741842, 0, -1834968, 1073741842, 0, -1834967, 1073741842, 0, -1769434, 1073741842, 0, -1769433, 1073741842, 0, -1769432, 1073741842, 0, -1769431, 1073741842, 0, -1703898, 1073741842, 0, -1703897, 1073741842, 0, -1703896, 1073741842, 0, -1703895, 1073741842, 0, -1638362, 1073741842, 0, -1638361, 1073741842, 0, -1638360, 1073741842, 0, -1638359, 1073741842, 0, -1572826, 1073741842, 0, -1572825, 1073741842, 0, -1572824, 1073741842, 0, -1572823, 1073741842, 0, -1507290, 1073741842, 0, -1507289, 1073741842, 0, -1507288, 1073741842, 0, -1507287, 1073741842, 0, -1441754, 1073741842, 0, -1441753, 1073741842, 0, -1441752, 1073741842, 0, -1441751, 1073741842, 0, -1376218, 1073741842, 0, -1376217, 1073741842, 0, -1376216, 1073741842, 0, -1376215, 1073741842, 0, -1310682, 1073741842, 0, -1310681, 1073741842, 0, -1310680, 1073741842, 0, -1310679, 1073741842, 0, -1245146, 1073741842, 0, -1245145, 1073741842, 0, -1245144, 1073741842, 0, -1245143, 1073741842, 0, -1179610, 1073741842, 0, -1179609, 1073741842, 0, -1179608, 1073741842, 0, -1179607, 1073741842, 0, -1114074, 1073741842, 0, -1114073, 1073741842, 0, -1114072, 1073741842, 0, -1114071, 1073741842, 0, -1048538, 1073741842, 0, -1048537, 1073741842, 0, -1048536, 1073741842, 0, -1048535, 1073741842, 0, -983002, 1073741842, 0, -983001, 1073741842, 0, -983000, 1073741842, 0, -982999, 1073741842, 0, -917466, 1073741842, 0, -917465, 1073741842, 0, -917464, 1073741842, 0, -917463, 1073741842, 0, -851930, -2147483622, 0, -851929, 1073741842, 0, -851928, 1073741842, 0, -851927, 1073741842, 0, -786394, -2147483628, 0, -786393, 1073741842, 0, -786392, 1073741842, 0, -786391, 1073741842, 0, -720858, -2147483628, 0, -720857, 1073741842, 0, -720856, 1073741842, 0, -720855, 1073741842, 0, -655322, -2147483628, 0, -655321, 1073741842, 0, -655320, 1073741842, 0, -655319, 1073741842, 0, -589786, -2147483628, 0, -589785, 1073741842, 0, -589784, 1073741842, 0, -589783, 1073741842, 0, -524250, -2147483628, 0, -524249, 1073741842, 0, -524248, 1073741842, 0, -524247, 1073741842, 0, -458715, 22, 0, -458714, -2147483623, 0, -458713, 1073741842, 0, -458712, 1073741842, 0, -458711, 1073741842, 0, -393180, 22, 0, -393179, 25, 0, -393178, 1073741842, 0, -393177, 1073741842, 0, -393176, 1073741842, 0, -393175, 1073741842, 0, -327647, 22, 0, -327646, 20, 0, -327645, 20, 0, -327644, 25, 0, -327643, 1073741842, 0, -327642, 1073741842, 0, -327641, 1073741842, 0, -327640, 1073741842, 0, -327639, 1073741842, 0, -262112, 22, 0, -262111, 25, 0, -262110, 1073741842, 0, -262109, 1073741842, 0, -262108, 1073741842, 0, -262107, 1073741842, 0, -262106, 1073741842, 0, -262105, 1073741842, 0, -262104, 1073741842, 0, -262103, 1073741842, 0, -196576, 1073741846, 0, -196575, 1073741844, 0, -196574, 1073741849, 0, -196573, 1073741842, 0, -196572, 1073741842, 0, -196571, 1073741842, 0, -196570, 1073741842, 0, -196569, 1073741842, 0, -196568, 1073741842, 0, -196567, 1073741842, 0, -131038, 1073741846, 0, -131037, 1073741849, 0, -131036, 1073741842, 0, -131035, 1073741842, 0, -131034, 1073741842, 0, -131033, 1073741842, 0, -131032, 1073741842, 0, -131031, 1073741842, 0, -65501, 1073741846, 0, -65500, 1073741849, 0, -65499, 1073741842, 0, -65498, 1073741842, 0, -65497, 1073741842, 0, -65496, 1073741842, 0, -65495, 1073741842, 0, 36, 1073741846, 0, 37, 1073741844, 0, 38, -2147483622, 0, 39, 1073741842, 0, 40, 1073741842, 0, 41, 1073741842, 0, 65574, -2147483628, 0, 65575, 1073741842, 0, 65576, 1073741842, 0, 131110, -2147483628, 0, 131111, 1073741842, 0, 196646, -2147483623, 0 )
 
 [node name="Drips" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 11 )
+stream = ExtResource( 12 )
 bus = "Drips"
 
 [node name="Loop" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 12 )
+stream = ExtResource( 13 )
 bus = "CaveLoop"
+[connection signal="body_entered" from="End_slide" to="End_slide" method="_on_End_slide_body_entered"]
