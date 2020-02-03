@@ -8,8 +8,6 @@ func _ready():
 func _startLevel():
 	._startLevel()
 	
-# warning-ignore:return_value_discarded
-	connect("pet_activated",self,"pet_obtained")
 #	Audio settings
 	music.stream = load("res://ressources/music/cave-lvl1-theme.ogg")
 	Player._setStepType(Player.GROUND_TYPE.STONE)
@@ -18,6 +16,7 @@ func _startLevel():
 	$Loop.play()
 	$Drips.play()
 	
+	Fox.position = $Start_Fox.position
 	Player.playerControlled = false
 	Pet.get_node("StaticHover").play()
 	Pet.position = $StartPet.position
@@ -38,7 +37,7 @@ func _process(delta):
 		_setVisibility()
 	
 func player_slide(delta):
-	Player.get_node("PlayerSprite").animation = "static_"
+	Player.get_node("PlayerSprite").animation = "static_without_pet"
 	Player.get_node("PlayerSprite").flip_h = true
 	Player.look_right = false
 	Player.playerControlled = false

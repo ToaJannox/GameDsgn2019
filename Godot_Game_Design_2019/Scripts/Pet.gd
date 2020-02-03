@@ -17,49 +17,48 @@ var up = false
 var check_y = true
 var check_x = true
 var activated = false
-var show = true
+var is_moving_to_girl = true
 signal pet_activated
 
 func _process(delta):
-	
-	Player.hasPet = false
-	
+		
 	# Waiting for the girl
 	if !activated : 
 		$AnimatedSprite.animation = "sleep"
 		$CollisionShape2D_Pet.disabled = true
-		#up_down(delta)
+		up_down(delta)
 		waitGirl(Player)
 	# Is with the girl
 	elif !Player.launch_tuto: 
 		#Is controlled
 		if Input.is_key_pressed(KEY_F):
 			Player.petControlled = true
+			Player.playerControlled = false
 			$CollisionShape2D_Pet.disabled = false
 			$Camera2D_Pet.make_current()
 			controlled(delta)
-			$AnimatedSprite.show()
-			show = true
+			$AnimatedSprite.animation = "fly"
+			is_moving_to_girl = true
 			check_y = true
 			check_x = true
 			velocity = move_and_slide(velocity, Vector2(0, -1))
-		
 		# Isn't controlled
 		else:
-			$Camera2D_Pet.clear_current()
+			Player.petControlled = false
+			Player.playerControlled = true
 			$CollisionShape2D_Pet.disabled = true
+			$Camera2D_Pet.clear_current()
 			
 			#Is moving to the girl
-		if show:
-			$AnimatedSprite.animation = "fly"
-			$AnimatedSprite.show()
-			show = true
-			autonomous(Player)
-			velocity = move_and_slide(velocity, Vector2(0, -1))
-		#Is on the girl's hands
-		else:
-			Player.hasPet = true
-			position = Player.position
+			if is_moving_to_girl:
+				$AnimatedSprite.animation = "fly"
+				autonomous(Player)
+				velocity = move_and_slide(velocity, Vector2(0, -1))
+			#Is on the girl's hands
+			else:
+				Player.hasPet = true
+				position = Player.position
+				is_moving_to_girl = false
 
 func waitGirl(player):
 	if player.position.x < position.x + 30 && player.level == 2 && player.world == 1:
@@ -103,7 +102,6 @@ func controlled(delta):
 	checkVelocityX()
 	checkVelocityY()
 
-# When the pet just protect the Player
 func autonomous(var player):
 	var playerPos = Player.position
 	var playerLookRight = Player.look_right
@@ -144,10 +142,10 @@ func autonomous(var player):
 			check_x = false
 	
 	if !check_x && !check_y :
-		$AnimatedSprite.hide()
+		$AnimatedSprite.animation = "none"
 		velocity.x = 0
 		velocity.y = 0
-		show = false
+		is_moving_to_girl = false
 	
 # Make the up/down constant movement
 func up_down(delta):
