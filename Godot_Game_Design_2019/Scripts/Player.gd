@@ -12,7 +12,7 @@ const LADDER_SPEED = 250
 const STOP_FORCE = 4000
 
 const JUMP_SPEED = 500
-const MAX_JUMP_TIME = 0.3
+const MAX_JUMP_TIME = 0.1
 
 
 const GROUND_TYPE = preload("res://Scripts/Ground_Type.gd").GROUND_TYPE
@@ -35,7 +35,6 @@ var floor_y
 
 var on_air_time = 0
 
-# Called every frame, "delta" is the elapsed time since the previous frame.
 func _process(delta):
 	motion = Vector2(0, GRAVITY)
 

@@ -26,6 +26,7 @@ func _process(delta):
 	
 	# Waiting for the girl
 	if !activated : 
+		$AnimatedSprite.animation = "sleep"
 		$CollisionShape2D_Pet.disabled = true
 		up_down(delta)
 		waitGirl(Player)
@@ -49,15 +50,16 @@ func _process(delta):
 			$CollisionShape2D_Pet.disabled = true
 			
 			#Is moving to the girl
-			if show:
-				$Sprite.show()
-				show = true
-				autonomous(Player)
-				velocity = move_and_slide(velocity, Vector2(0, -1))
-			#Is on the girl's hands
-			else:
-				Player.hasPet = true
-				position = Player.position
+		if show:
+			$AnimatedSprite.animation = "fly"
+			$Sprite.show()
+			show = true
+			autonomous(Player)
+			velocity = move_and_slide(velocity, Vector2(0, -1))
+		#Is on the girl's hands
+		else:
+			Player.hasPet = true
+			position = Player.position
 
 func waitGirl(player):
 	if player.position.x < position.x + 30 && player.level == 2 && player.world == 1:

@@ -12,7 +12,6 @@ func launch_tuto(page_tuto):
 		show()
 		$Tutorial_text.start = true
 	else:
-		print("end")
 		$Timer.stop()
 		hide()
 		Player.launch_tuto = false

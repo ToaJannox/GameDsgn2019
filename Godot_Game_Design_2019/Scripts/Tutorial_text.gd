@@ -2,9 +2,9 @@ extends RichTextLabel
 
 var tuto_walk = ["Bienvenue dans le jeu Shades !",
 			"Voici Hana, jeune fille du village, je vous l'aurais bien présentée un peu plus mais pour le moment vous devez l'aider à récuperer son doudou",
-			"Première étape : utilisez les touches directionnelles pour vous déplacez"]
+			"Première étape : utilisez les touches directionnelles gauche et droite pour vous déplacez"]
 			
-var tuto_jump = ["moment de sauter"]
+var tuto_jump = ["Des caisses vous barrent la route", "Appuyez sur la flèche directionnelle du haut pour sauter"]
 
 var tuto = [tuto_walk, tuto_jump]
 			
@@ -27,7 +27,6 @@ func _ready():
 func set_tuto():
 	cur_page = 0
 	page_tuto = cur_page
-	print(tuto[wich_tuto][page_tuto])
 	set_bbcode(tuto[wich_tuto][page_tuto])
 	set_visible_characters(0)
 	setted = true
@@ -37,7 +36,6 @@ func _process(delta):
 		change_wait = true
 		if wait == 1000 || Input.is_action_just_pressed("ui_accept"): 
 			if cur_page < tuto[wich_tuto].size()-1:
-				print("change")
 				cur_page += 1
 				page_tuto = cur_page
 				set_bbcode(tuto[wich_tuto][page_tuto])

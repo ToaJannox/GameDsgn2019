@@ -3,8 +3,6 @@ var game
 var world = 0
 var level = 0
 var levelStarted = false
-var player
-var pet
 var visibility
 var music
 var tutorial

@@ -23,6 +23,14 @@ config/icon="res://icon.png"
 
 Player="*res://scenes/Player.tscn"
 Pet="*res://scenes/Pet.tscn"
+Fox="*res://scenes/Fox.tscn"
+
+[layer_names]
+
+2d_render/layer_1="World"
+2d_render/layer_2="Player"
+2d_render/layer_3="Pet"
+2d_render/layer_4="Fox"
 
 [rendering]
 
