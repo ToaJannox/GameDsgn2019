@@ -613,7 +613,6 @@ position = Vector2( -12389.5, 1596.74 )
 position = Vector2( -3590.63, 238.127 )
 
 [node name="End_slide" type="Area2D" parent="."]
-editor/display_folded = true
 position = Vector2( 2578.36, 226.278 )
 script = ExtResource( 3 )
 
@@ -623,7 +622,6 @@ scale = Vector2( 1.00007, 0.431974 )
 shape = SubResource( 1 )
 
 [node name="Exit" type="Area2D" parent="."]
-editor/display_folded = true
 position = Vector2( -10902.5, 393.393 )
 scale = Vector2( 0.2662, 1.54106 )
 
@@ -663,7 +661,6 @@ format = 1
 tile_data = PoolIntArray( -393201, 536870926, 0, -262254, 536870931, 0, 131045, 536870926, 0, 393084, 536870922, 0, 393125, 3, 0, 393151, 2, 0, 458642, 536870930, 0, 458648, 536870917, 0, 458671, 536870925, 0, 458712, 10, 0, 458720, 536870923, 0, 458722, 536870929, 0, 458724, 536870927, 0, 458725, 536870928, 0, 458745, 1, 0, 393219, 7, 0, 393230, 536870923, 0, 393241, 5, 0, 393246, 5, 0 )
 
 [node name="Details_Dream" type="TileMap" parent="."]
-editor/display_folded = true
 position = Vector2( 0, 67.76 )
 scale = Vector2( 3, 3 )
 z_index = 2

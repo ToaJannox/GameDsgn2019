@@ -111,9 +111,9 @@ func controlled(delta):
 		
 	# On ladder
 	if on_ladder == true:
-		if position.y < (floor_y - 10):
-			$PlayerSprite.animation= "climbing"
-			
+		#if position.y < (floor_y - 10) || position.y < (floor_y + 10):
+		#	$PlayerSprite.animation= "climbing"
+		$PlayerSprite.animation= "climbing"
 		# Climb
 		if walk_up && !walk_down:
 			velocity.y = -LADDER_SPEED

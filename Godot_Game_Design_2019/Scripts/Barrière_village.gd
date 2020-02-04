@@ -8,10 +8,10 @@ func _on_Barriere_Village_Area_body_entered(body):
 func _on_Barriere_Village_Area_Fox_body_entered(body):
 	if body.name == "Fox":
 		Player.get_node("Camera2D_Player").clear_current()
-		Fox.get_node("Camera2D_Player").make_current()
+		Fox.get_node("Camera2D").make_current()
 
 
 func _on_Barriere_Village_Area_Fox_body_exited(body):
 	if body.name == "Fox":
 		Player.get_node("Camera2D_Player").make_current()
-		Fox.get_node("Camera2D_Player").clear_current()
+		Fox.get_node("Camera2D").clear_current()

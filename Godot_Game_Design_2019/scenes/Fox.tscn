@@ -28,12 +28,13 @@ animations = [ {
 extents = Vector2( 204.629, 128.52 )
 
 [node name="Fox" type="KinematicBody2D"]
-collision_layer = 9
+collision_layer = 8
 script = ExtResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "static"
+playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -4.08112, -51.6941 )

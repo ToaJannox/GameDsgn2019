@@ -14,7 +14,7 @@ func _ready():
 	$AnimatedSprite.animation = "static"
 
 func _process(delta):
-	motion = Vector2(0, 0)
+	motion = Vector2(0, GRAVITY)
 	
 	if activated:
 		$AnimatedSprite.animation = "run"
