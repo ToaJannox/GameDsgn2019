@@ -9,8 +9,8 @@
 [ext_resource path="res://Scripts/Ladder.gd" type="Script" id=7]
 [ext_resource path="res://ressources/Decor/map_1_1/ladder6.png" type="Texture" id=8]
 [ext_resource path="res://Scripts/Barrière_village.gd" type="Script" id=9]
-[ext_resource path="res://ressources/Decor/map_1_1/Barriere_cassee.png" type="Texture" id=10]
-[ext_resource path="res://ressources/Decor/map_1_1/Barriere_pleine.png" type="Texture" id=11]
+[ext_resource path="res://ressources/Decor/map_1_1/Barriere_pleine.png" type="Texture" id=10]
+[ext_resource path="res://ressources/Decor/map_1_1/Barriere_cassee.png" type="Texture" id=11]
 [ext_resource path="res://Scripts/Panneau.gd" type="Script" id=12]
 [ext_resource path="res://ressources/Decor/map_1_1/Panneau.png" type="Texture" id=13]
 [ext_resource path="res://Scripts/Pnj_1.gd" type="Script" id=14]
@@ -50,12 +50,12 @@ extents = Vector2( 69.7571, 430.991 )
 animations = [ {
 "frames": [ ExtResource( 10 ) ],
 "loop": true,
-"name": "Cassee",
+"name": "Pleine",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 11 ) ],
 "loop": true,
-"name": "Pleine",
+"name": "Cassee",
 "speed": 5.0
 } ]
 
@@ -1085,7 +1085,6 @@ script = ExtResource( 14 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Pnj 1"]
 scale = Vector2( 0.8, 0.8 )
 frames = SubResource( 13 )
-frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pnj 1"]
