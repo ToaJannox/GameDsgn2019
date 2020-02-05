@@ -25,7 +25,7 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 204.629, 128.52 )
+extents = Vector2( 204.629, 118.306 )
 
 [node name="Fox" type="KinematicBody2D"]
 collision_layer = 8

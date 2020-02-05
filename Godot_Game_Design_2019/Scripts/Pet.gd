@@ -21,6 +21,7 @@ var is_moving_to_girl = true
 signal pet_activated
 
 func _process(delta):
+	Player.hasPet = false
 		
 	# Waiting for the girl
 	if !activated : 
@@ -84,12 +85,12 @@ func controlled(delta):
 	# Left
 	if walk_left:
 		velocity.x -= FLY_SPEED
-		$AnimatedSprite.flip_h = true
+		$AnimatedSprite.flip_h = false
 		
 	# Right
 	if walk_right:
 		velocity.x += FLY_SPEED
-		$AnimatedSprite.flip_h = false
+		$AnimatedSprite.flip_h = true
 		
 	# Up
 	if walk_up:
@@ -117,7 +118,7 @@ func autonomous(var player):
 	
 	# Look right
 	if playerLookRight :
-		$AnimatedSprite.flip_h = false
+		$AnimatedSprite.flip_h = true
 		# Too far left
 		if (position.x - playerPos.x) < DISTANCE_MIN:
 			velocity.x = FLY_SPEED
@@ -130,7 +131,7 @@ func autonomous(var player):
 			
 	# Look left
 	if !playerLookRight:
-		$AnimatedSprite.flip_h = true
+		$AnimatedSprite.flip_h = false
 		# Too far left
 		if (playerPos.x - position.x) > DISTANCE_MAX:
 			velocity.x = FLY_SPEED

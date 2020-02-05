@@ -610,7 +610,7 @@ position = Vector2( 2613.04, -3450.34 )
 position = Vector2( -12389.5, 1596.74 )
 
 [node name="StartPet" type="Position2D" parent="."]
-position = Vector2( -3590.63, 238.127 )
+position = Vector2( -1712.4, 281.388 )
 
 [node name="End_slide" type="Area2D" parent="."]
 position = Vector2( 2578.36, 226.278 )
