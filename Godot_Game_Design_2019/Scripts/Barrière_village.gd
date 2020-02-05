@@ -2,11 +2,9 @@ extends StaticBody2D
 
 func _on_Barriere_Village_Area_Fox_body_entered(body):
 	if body.name == "Fox":
-		print(get_node("Collision_barriere").disabled)
 		Player.playerControlled = false
 		Player.get_node("Camera2D_Player").clear_current()
-		get_node("Collision_barriere").disabled = true
-		print(get_node("Collision_barriere").disabled)
+		self.remove_child(get_node("Collision_barriere"))
 		Fox.get_node("Camera2D").make_current()
 
 
