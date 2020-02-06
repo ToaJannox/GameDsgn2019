@@ -11,7 +11,7 @@ var motion
 var activated = false
 
 func _ready():
-	$AnimatedSprite.animation = "static"
+	$AnimatedSprite.animation = "None"
 
 func _process(delta):
 	motion = Vector2(0, GRAVITY)

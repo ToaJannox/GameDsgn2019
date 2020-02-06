@@ -5,7 +5,7 @@ var GRAVITY = 1500.0
 
 const FALL_SPEED = 1500
 
-const WALK_SPEED = 300
+const WALK_SPEED = 350
 
 const LADDER_SPEED = 250
 
