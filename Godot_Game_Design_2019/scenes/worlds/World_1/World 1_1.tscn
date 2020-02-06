@@ -1,4 +1,4 @@
-[gd_scene load_steps=93 format=2]
+[gd_scene load_steps=94 format=2]
 
 [ext_resource path="res://Scripts/World 1_1.gd" type="Script" id=1]
 [ext_resource path="res://ressources/Decor/Background.png" type="Texture" id=2]
@@ -25,6 +25,7 @@
 [ext_resource path="res://ressources/Decor/map_1_1/tileset_floor_1_1.png" type="Texture" id=23]
 [ext_resource path="res://ressources/Decor/map_1_1/Scaffolding.png" type="Texture" id=24]
 [ext_resource path="res://ressources/Decor/ambiant.png" type="Texture" id=25]
+[ext_resource path="res://ressources/Decor/map_1_1/rock.png" type="Texture" id=26]
 
 [sub_resource type="RectangleShape2D" id=38]
 extents = Vector2( 786.563, 159.238 )
@@ -1073,7 +1074,7 @@ text = "Hana ? Que fais tu ici ?"
 scroll_active = false
 
 [node name="Sun" type="Light2D" parent="."]
-position = Vector2( 6914.17, -17340.9 )
+position = Vector2( 6884.02, -17314 )
 rotation = 1.57079
 scale = Vector2( 10, 10 )
 texture = ExtResource( 17 )
@@ -1189,7 +1190,14 @@ tile_set = SubResource( 85 )
 format = 1
 tile_data = PoolIntArray( -1310748, 22, 0, -1310739, 26, 0 )
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+[node name="rock" type="CollisionPolygon2D" parent="."]
+position = Vector2( -8805.98, -4283.99 )
+scale = Vector2( 12.5, 12 )
+polygon = PoolVector2Array( 6.10352e-05, 0, 64, 0, 64, 44.1666, 6.10352e-05, 44.1666 )
+
+[node name="rock" type="Sprite" parent="rock"]
+position = Vector2( 32.0001, 25 )
+texture = ExtResource( 26 )
 [connection signal="body_entered" from="Start_Fox/Fox_hide" to="Start_Fox" method="_on_Fox_hide_body_entered"]
 [connection signal="body_entered" from="Exit" to="." method="_on_Exit_body_entered"]
 [connection signal="body_entered" from="Launch_tuto_jump" to="Launch_tuto_jump" method="_on_Launch_tuto_jump_body_entered"]
