@@ -30,16 +30,13 @@ func set_tuto():
 func _process(delta):
 	if get_visible_characters() > get_total_character_count():
 		change_wait = true
-		print(finish)
 		if wait == 1000 || Input.is_action_just_pressed("ui_accept"): 
 			if cur_page < dialog[wich_dialog].size()-1:
-				print("change")
 				cur_page += 1
 				page = cur_page
 				set_bbcode(dialog[wich_dialog][page])
 				set_visible_characters(0)
 			elif cur_page >= dialog[wich_dialog].size()-1:
-				print("end")
 				finish = true
 				setted = false
 			change_wait = false

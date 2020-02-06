@@ -1,6 +1,8 @@
 extends Polygon2D
 
 func launch_girl_speak(page):
+	position.x = Player.get_node("Camera2D_Player").get_camera_position().x - Player.position.x
+	# keep his y position
 	if !$TextGirl.finish :
 		Player.playerControlled = false
 		$TextGirl.page = page
@@ -12,7 +14,6 @@ func launch_girl_speak(page):
 		show()
 		$TextGirl.start = true
 	else:
-		print("here")
 		$Timer.stop()
 		hide()
 		Player.launch_dialog = false

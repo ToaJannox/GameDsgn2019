@@ -6,7 +6,11 @@ var tuto_walk = ["Bienvenue dans le jeu Shades !",
 			
 var tuto_jump = ["Des caisses vous barrent la route", "Appuyez sur la flèche directionnelle du haut pour sauter"]
 
-var tuto = [tuto_walk, tuto_jump]
+var end_demo = ["Vous voici à l'emplacement de la dinette, dans Shades, chaque niveau se fini ici et vous permettra de sauvegarder.",
+			"Cet endroit est la fin de la démo",
+			"Merci d'y avoir joué !"]
+
+var tuto = [tuto_walk, tuto_jump, end_demo]
 			
 var wich_tuto
 var page_tuto
@@ -29,6 +33,7 @@ func set_tuto():
 	page_tuto = cur_page
 	set_bbcode(tuto[wich_tuto][page_tuto])
 	set_visible_characters(0)
+	print(tuto[wich_tuto][page_tuto])
 	setted = true
 
 func _process(delta):
@@ -41,8 +46,8 @@ func _process(delta):
 				set_bbcode(tuto[wich_tuto][page_tuto])
 				set_visible_characters(0)
 			elif cur_page >= tuto[wich_tuto].size()-1:
-				finish = true
 				setted = false
+				finish = true
 			change_wait = false
 			wait = 0
 	elif get_visible_characters() > 0:

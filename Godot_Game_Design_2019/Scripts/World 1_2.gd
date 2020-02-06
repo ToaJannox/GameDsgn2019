@@ -61,3 +61,7 @@ func _setVisibility():
 		
 func pet_obtained():
 	music.play()
+
+func _on_Exit_1_2_body_entered(body):
+	if body.name == "Player":
+		Player.position = $"Start_save".position

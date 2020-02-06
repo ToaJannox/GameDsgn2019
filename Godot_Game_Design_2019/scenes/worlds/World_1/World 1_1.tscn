@@ -895,6 +895,7 @@ position = Vector2( -5885.58, -3932.56 )
 scale = Vector2( 1.079, 1.00456 )
 
 [node name="Start_Fox" type="Position2D" parent="."]
+editor/display_folded = true
 position = Vector2( -9889.5, -3917.63 )
 script = ExtResource( 3 )
 
@@ -986,6 +987,7 @@ script = ExtResource( 9 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Pnj 1"]
 scale = Vector2( 0.8, 0.8 )
 frames = SubResource( 8 )
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pnj 1"]
@@ -994,6 +996,7 @@ shape = SubResource( 9 )
 
 [node name="Texte Pnj 1" type="Polygon2D" parent="Pnj 1"]
 visible = false
+light_mask = 2
 position = Vector2( 0.314941, -234.477 )
 scale = Vector2( 0.62439, 0.610103 )
 z_index = 3

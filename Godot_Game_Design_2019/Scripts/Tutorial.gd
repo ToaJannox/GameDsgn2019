@@ -1,6 +1,9 @@
 extends Polygon2D
 
 func launch_tuto(page_tuto):
+	position.x = Player.get_node("Camera2D_Player").get_camera_position().x - Player.position.x - 57
+	#57 is x gap
+	#keep his y position
 	if !$Tutorial_text.finish :
 		Player.playerControlled = false
 		$Tutorial_text.wich_tuto = page_tuto
