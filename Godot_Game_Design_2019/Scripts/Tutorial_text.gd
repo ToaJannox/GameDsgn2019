@@ -33,7 +33,6 @@ func set_tuto():
 	page_tuto = cur_page
 	set_bbcode(tuto[wich_tuto][page_tuto])
 	set_visible_characters(0)
-	print(tuto[wich_tuto][page_tuto])
 	setted = true
 
 func _process(delta):

@@ -1,9 +1,8 @@
 extends RichTextLabel
 
-var mom_speak = ["Coucou maman !"]
-var enter_1_2 = ["Mais, comment je vais remonter tout ça moi ?", "Et mon doudou !"]
+var mom = ["Coucou Hana !"]
 
-var dialog = [enter_1_2, mom_speak]
+var dialog = [mom]
 
 var wich_dialog
 var page
@@ -18,10 +17,10 @@ var wait = 0
 
 func _ready():
 	wich_dialog = 0
-	set_tuto()
+	set_dialog()
 	set_process_input(true)
 	
-func set_tuto():
+func set_dialog():
 	cur_page = 0
 	page = cur_page
 	set_bbcode(dialog[wich_dialog][page])
@@ -31,7 +30,7 @@ func set_tuto():
 func _process(delta):
 	if get_visible_characters() > get_total_character_count():
 		change_wait = true
-		if wait == 1000 || Input.is_action_just_pressed("ui_accept"): 
+		if wait == 20 || Input.is_action_just_pressed("ui_accept"): 
 			if cur_page < dialog[wich_dialog].size()-1:
 				cur_page += 1
 				page = cur_page
@@ -51,4 +50,3 @@ func _on_Timer_timeout():
 		if change_wait:
 			wait = wait + 1
 		set_visible_characters(get_visible_characters()+1)
-

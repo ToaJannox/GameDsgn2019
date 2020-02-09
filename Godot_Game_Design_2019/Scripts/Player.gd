@@ -30,7 +30,7 @@ var stop_1_2
 
 var launch_tuto = false
 var launch_dialog = false
-var page_tuto = 0
+var page = 0
 
 var floor_y
 
@@ -43,9 +43,11 @@ func _process(delta):
 		$Camera2D_Player.make_current()
 		playerControlled = false
 		if is_on_floor() && launch_tuto:
-			$Tutorial.launch_tuto(page_tuto)
+			print("here")
+			print(page)
+			$Tutorial.launch_tuto(page)
 		if is_on_floor() && launch_dialog:
-			$Girl_speak.launch_girl_speak(0)
+			$Girl_speak.launch_girl_speak(page)
 
 	if petControlled: 
 		$Camera2D_Player.clear_current()

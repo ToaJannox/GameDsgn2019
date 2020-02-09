@@ -10,7 +10,7 @@ func _startLevel():
 	music.stream = load("res://ressources/music/desert-theme.ogg");
 	Player._setStepType(Player.GROUND_TYPE.SAND)
 	Player.launch_tuto = true
-	Player.page_tuto = 0
+	Player.page = 0
 	$Loop.play()
 	music.play()
 	Fox.position = $Start_Fox.position
@@ -21,7 +21,7 @@ func _endLevel():
 	
 func _process(delta):
 	if Player.position.x > $Pos_Disable_NoCollFront.position.x && Player.position.y > $Pos_Disable_NoCollFront.position.y:
-		$Tilemaps/No_Collsisions/NoCollisionMap_front.set_z_index(-4)
+		$Tilemaps/No_Collsisions/NoCollisionMap_front.hide()
 	_setVisibility()
 	
 func _setVisibility():
