@@ -4,7 +4,6 @@ func _ready():
 	world = 1
 	level = 1
 	
-	
 func _startLevel():
 	._startLevel()
 	music.stream = load("res://ressources/music/desert-theme.ogg");
@@ -14,6 +13,7 @@ func _startLevel():
 	$Loop.play()
 	music.play()
 	Fox.position = $Start_Fox.position
+	Fox.position_end = $End_Fox.position
 	
 func _endLevel():
 	._endLevel()

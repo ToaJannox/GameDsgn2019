@@ -13,6 +13,7 @@ func _on_Barriere_Village_Area_Fox_body_exited(body):
 		Player.playerControlled = true
 		Player.get_node("Camera2D_Player").make_current()
 		Fox.get_node("Camera2D").clear_current()
+		Fox.end = true
 
 
 func _on_Barriere_Village_Area_Destroyed_body_entered(body):

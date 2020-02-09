@@ -9,6 +9,8 @@ var velocity = Vector2()
 var motion
 
 var activated = false
+var end = false
+var position_end
 
 func _ready():
 	$AnimatedSprite.animation = "None"
@@ -17,8 +19,14 @@ func _process(delta):
 	motion = Vector2(0, GRAVITY)
 	
 	if activated:
-		$AnimatedSprite.animation = "run"
-		velocity.x = WALK_SPEED
+		if !end:
+			$AnimatedSprite.animation = "run"
+			velocity.x = WALK_SPEED
+		else:
+			velocity.x = 0
+			$AnimatedSprite.flip_h = true
+			$AnimatedSprite.animation = "sit"
+			Fox.position = position_end
 	else:
 		velocity.x = 0
 		
