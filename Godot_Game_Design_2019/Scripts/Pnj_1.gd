@@ -2,9 +2,6 @@ extends Area2D
 
 var Fox_passed = false
 
-func _process(delta):
-	$AnimatedSprite.animation = "default"
-
 func _on_Pnj_1_body_entered(body):
 	if body.name == "Player":
 		$"Texte Pnj 1".show()

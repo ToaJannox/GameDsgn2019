@@ -70,6 +70,7 @@ current = true
 zoom = Vector2( 2, 2 )
 
 [node name="Girl_speak" type="Polygon2D" parent="."]
+editor/display_folded = true
 visible = false
 light_mask = 16
 z_index = 7
@@ -93,6 +94,7 @@ wait_time = 0.05
 autostart = true
 
 [node name="Tutorial" type="Polygon2D" parent="."]
+editor/display_folded = true
 visible = false
 light_mask = 16
 position = Vector2( -57, -812.936 )

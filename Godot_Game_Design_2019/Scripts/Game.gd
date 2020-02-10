@@ -10,7 +10,7 @@ func _ready():
 	dir.open(worldsPath)
 	dir.list_dir_begin()
 	_add_dir_contents(dir,world_list)
-	self.call_deferred("switchlevel",getlevel(1,2),null)
+	self.call_deferred("switchlevel",getlevel(1,1),null)
 
 func switchlevel(newlevel,oldlevel,keep = false):
 	if oldlevel != null:
