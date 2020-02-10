@@ -71,13 +71,14 @@ zoom = Vector2( 2, 2 )
 
 [node name="Girl_speak" type="Polygon2D" parent="."]
 visible = false
-light_mask = 2
+light_mask = 16
 z_index = 7
 color = Color( 0.392157, 0.392157, 0.392157, 1 )
 polygon = PoolVector2Array( -412.3, -301.446, 367.7, -301.446, 367.7, -131.446, -412.3, -131.446 )
 script = ExtResource( 10 )
 
 [node name="TextGirl" type="RichTextLabel" parent="Girl_speak"]
+light_mask = 16
 margin_left = -393.0
 margin_top = -282.0
 margin_right = -174.0
@@ -93,7 +94,7 @@ autostart = true
 
 [node name="Tutorial" type="Polygon2D" parent="."]
 visible = false
-light_mask = 2
+light_mask = 16
 position = Vector2( -57, -812.936 )
 scale = Vector2( 0.941573, 0.851061 )
 z_index = 5
@@ -102,13 +103,13 @@ polygon = PoolVector2Array( -990, 240, 1112.86, 238.451, 1112.86, -67.05, -990, 
 script = ExtResource( 12 )
 
 [node name="Controles_Text" type="Polygon2D" parent="Tutorial"]
-editor/display_folded = true
-light_mask = 2
+light_mask = 16
 color = Color( 1, 0.705882, 0.705882, 1 )
 polygon = PoolVector2Array( -979.379, 238.451, 1091.62, 238.451, 1091.62, 320.701, -979.379, 320.701 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Tutorial/Controles_Text"]
 modulate = Color( 0, 0, 0, 1 )
+light_mask = 16
 margin_left = -967.0
 margin_top = 250.0
 margin_right = -425.0
@@ -118,6 +119,7 @@ text = "Appuyez sur la flèche du haut pour faire défiler le texte plus vite"
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="Tutorial/Controles_Text"]
 modulate = Color( 0, 0, 0, 1 )
+light_mask = 16
 anchor_bottom = 0.78
 margin_left = 69.0
 margin_top = 249.0
@@ -127,6 +129,7 @@ rect_scale = Vector2( 1.89427, 2.27807 )
 text = "Appuyez sur la touche entrée pour passer."
 
 [node name="Tutorial_text" type="RichTextLabel" parent="Tutorial"]
+light_mask = 16
 margin_left = -965.0
 margin_top = -34.0
 margin_right = -360.0

@@ -43,10 +43,8 @@ func _process(delta):
 		$Camera2D_Player.make_current()
 		playerControlled = false
 		if is_on_floor() && launch_tuto:
-			print("tuto")
 			$Tutorial.launch_tuto(page)
 		elif is_on_floor() && launch_dialog:
-			print("dialog")
 			$Girl_speak.launch_girl_speak(page)
 
 	if petControlled: 
