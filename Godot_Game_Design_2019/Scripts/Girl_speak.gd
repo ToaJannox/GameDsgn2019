@@ -14,8 +14,9 @@ func launch_girl_speak(page):
 		show()
 		$TextGirl.start = true
 	else:
+		$TextGirl.start = false
+		$TextGirl.finish = false
 		$Timer.stop()
 		hide()
 		Player.launch_dialog = false
 		Player.playerControlled = true
-		$TextGirl.finish = false

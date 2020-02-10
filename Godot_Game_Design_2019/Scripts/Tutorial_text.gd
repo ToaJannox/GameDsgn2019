@@ -26,35 +26,37 @@ var wait = 0
 func _ready():
 	wich_tuto = 0
 	set_tuto()
+	setted = false
 	set_process_input(true)
 	
 func set_tuto():
 	cur_page = 0
 	page_tuto = cur_page
 	set_bbcode(tuto[wich_tuto][page_tuto])
+	print(tuto[wich_tuto][page_tuto])
 	set_visible_characters(0)
 	setted = true
 
 func _process(delta):
-	if get_visible_characters() > get_total_character_count():
-		change_wait = true
-		if wait == 1000 || Input.is_action_just_pressed("ui_accept"): 
-			if cur_page < tuto[wich_tuto].size()-1:
-				cur_page += 1
-				page_tuto = cur_page
-				set_bbcode(tuto[wich_tuto][page_tuto])
-				set_visible_characters(0)
-			elif cur_page >= tuto[wich_tuto].size()-1:
-				setted = false
-				finish = true
-			change_wait = false
-			wait = 0
-	elif get_visible_characters() > 0:
-		if Input.is_action_pressed("ui_up"):
-			set_visible_characters(get_total_character_count())
+	if start :
+		if get_visible_characters() > get_total_character_count():
+			change_wait = true
+			if wait == 1000 || Input.is_action_just_pressed("ui_accept"): 
+				if cur_page < tuto[wich_tuto].size()-1:
+					cur_page += 1
+					page_tuto = cur_page
+					set_bbcode(tuto[wich_tuto][page_tuto])
+					set_visible_characters(0)
+				elif cur_page >= tuto[wich_tuto].size()-1:
+					setted = false
+					finish = true
+				change_wait = false
+				wait = 0
+		elif get_visible_characters() > 0:
+			if Input.is_action_pressed("ui_up"):
+				set_visible_characters(get_total_character_count())
 
 func _on_Timer_timeout():
-	if start :
-		if change_wait:
-			wait = wait + 1
-		set_visible_characters(get_visible_characters()+1)
+	if change_wait:
+		wait = wait + 1
+	set_visible_characters(get_visible_characters()+1)

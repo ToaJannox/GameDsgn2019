@@ -5,7 +5,7 @@ var GRAVITY = 1500.0
 
 const FALL_SPEED = 1500
 
-const WALK_SPEED = 350
+const WALK_SPEED = 500 #350
 
 const LADDER_SPEED = 250
 
@@ -43,8 +43,10 @@ func _process(delta):
 		$Camera2D_Player.make_current()
 		playerControlled = false
 		if is_on_floor() && launch_tuto:
+			print("tuto")
 			$Tutorial.launch_tuto(page)
-		if is_on_floor() && launch_dialog:
+		elif is_on_floor() && launch_dialog:
+			print("dialog")
 			$Girl_speak.launch_girl_speak(page)
 
 	if petControlled: 

@@ -71,7 +71,7 @@ zoom = Vector2( 2, 2 )
 
 [node name="Girl_speak" type="Polygon2D" parent="."]
 visible = false
-light_mask = 3
+light_mask = 2
 z_index = 7
 color = Color( 0.392157, 0.392157, 0.392157, 1 )
 polygon = PoolVector2Array( -412.3, -301.446, 367.7, -301.446, 367.7, -131.446, -412.3, -131.446 )
@@ -103,6 +103,7 @@ script = ExtResource( 12 )
 
 [node name="Controles_Text" type="Polygon2D" parent="Tutorial"]
 editor/display_folded = true
+light_mask = 2
 color = Color( 1, 0.705882, 0.705882, 1 )
 polygon = PoolVector2Array( -979.379, 238.451, 1091.62, 238.451, 1091.62, 320.701, -979.379, 320.701 )
 
