@@ -1,4 +1,4 @@
-[gd_scene load_steps=77 format=2]
+[gd_scene load_steps=76 format=2]
 
 [ext_resource path="res://Scripts/World 1_2.gd" type="Script" id=1]
 [ext_resource path="res://ressources/Decor/Background.png" type="Texture" id=2]
@@ -15,11 +15,10 @@
 [ext_resource path="res://ressources/Decor/map_1_2/Rochers_Gris.png" type="Texture" id=13]
 [ext_resource path="res://ressources/Decor/map_1_2/Herbe_Gris.png" type="Texture" id=14]
 [ext_resource path="res://ressources/Decor/map_1_2/Champignons_Gris.png" type="Texture" id=15]
-[ext_resource path="res://Scripts/Dinette.gd" type="Script" id=16]
-[ext_resource path="res://ressources/Decor/table.png" type="Texture" id=17]
-[ext_resource path="res://ressources/Decor/map_1_2/floor_1_2.png" type="Texture" id=18]
-[ext_resource path="res://ressources/sounds/world/cave/drops_loop.ogg" type="AudioStream" id=19]
-[ext_resource path="res://ressources/sounds/world/cave/loop_creepy_01.ogg" type="AudioStream" id=20]
+[ext_resource path="res://ressources/Decor/table.png" type="Texture" id=16]
+[ext_resource path="res://ressources/Decor/map_1_2/floor_1_2.png" type="Texture" id=17]
+[ext_resource path="res://ressources/sounds/world/cave/drops_loop.ogg" type="AudioStream" id=18]
+[ext_resource path="res://ressources/sounds/world/cave/loop_creepy_01.ogg" type="AudioStream" id=19]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 37.9133, 334.362 )
@@ -629,7 +628,7 @@ points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 
 [sub_resource type="TileSet" id=28]
 8/name = "floor_1_2.png 8"
-8/texture = ExtResource( 18 )
+8/texture = ExtResource( 17 )
 8/tex_offset = Vector2( 0, 0 )
 8/modulate = Color( 1, 1, 1, 1 )
 8/region = Rect2( 0, 0, 64, 64 )
@@ -646,7 +645,7 @@ points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 } ]
 8/z_index = 0
 9/name = "floor_1_2.png 9"
-9/texture = ExtResource( 18 )
+9/texture = ExtResource( 17 )
 9/tex_offset = Vector2( 0, 0 )
 9/modulate = Color( 1, 1, 1, 1 )
 9/region = Rect2( 64, 0, 64, 64 )
@@ -663,7 +662,7 @@ points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 } ]
 9/z_index = 0
 10/name = "floor_1_2.png 10"
-10/texture = ExtResource( 18 )
+10/texture = ExtResource( 17 )
 10/tex_offset = Vector2( 0, 0 )
 10/modulate = Color( 1, 1, 1, 1 )
 10/region = Rect2( 128, 0, 64, 64 )
@@ -680,7 +679,7 @@ points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 } ]
 10/z_index = 0
 11/name = "floor_1_2.png 11"
-11/texture = ExtResource( 18 )
+11/texture = ExtResource( 17 )
 11/tex_offset = Vector2( 0, 0 )
 11/modulate = Color( 1, 1, 1, 1 )
 11/region = Rect2( 192, 0, 64, 64 )
@@ -697,7 +696,7 @@ points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 } ]
 11/z_index = 0
 12/name = "floor_1_2.png 12"
-12/texture = ExtResource( 18 )
+12/texture = ExtResource( 17 )
 12/tex_offset = Vector2( 0, 0 )
 12/modulate = Color( 1, 1, 1, 1 )
 12/region = Rect2( 192, 64, 64, 64 )
@@ -714,7 +713,7 @@ points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 } ]
 12/z_index = 0
 13/name = "floor_1_2.png 13"
-13/texture = ExtResource( 18 )
+13/texture = ExtResource( 17 )
 13/tex_offset = Vector2( 0, 0 )
 13/modulate = Color( 1, 1, 1, 1 )
 13/region = Rect2( 256, 64, 64, 64 )
@@ -731,7 +730,7 @@ points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 } ]
 13/z_index = 0
 14/name = "floor_1_2.png 14"
-14/texture = ExtResource( 18 )
+14/texture = ExtResource( 17 )
 14/tex_offset = Vector2( 0, 0 )
 14/modulate = Color( 1, 1, 1, 1 )
 14/region = Rect2( 192, 128, 64, 64 )
@@ -748,7 +747,7 @@ points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 } ]
 14/z_index = 0
 15/name = "floor_1_2.png 15"
-15/texture = ExtResource( 18 )
+15/texture = ExtResource( 17 )
 15/tex_offset = Vector2( 0, 0 )
 15/modulate = Color( 1, 1, 1, 1 )
 15/region = Rect2( 256, 128, 64, 64 )
@@ -794,7 +793,7 @@ polygon = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 
 [sub_resource type="TileSet" id=38]
 18/name = "floor_1_2.png 18"
-18/texture = ExtResource( 18 )
+18/texture = ExtResource( 17 )
 18/tex_offset = Vector2( 0, 0 )
 18/modulate = Color( 1, 1, 1, 1 )
 18/region = Rect2( 0, 0, 64, 64 )
@@ -805,7 +804,7 @@ polygon = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 18/shapes = [  ]
 18/z_index = 0
 19/name = "floor_1_2.png 19"
-19/texture = ExtResource( 18 )
+19/texture = ExtResource( 17 )
 19/tex_offset = Vector2( 0, 0 )
 19/modulate = Color( 1, 1, 1, 1 )
 19/region = Rect2( 64, 0, 64, 64 )
@@ -816,7 +815,7 @@ polygon = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 19/shapes = [  ]
 19/z_index = 0
 20/name = "floor_1_2.png 20"
-20/texture = ExtResource( 18 )
+20/texture = ExtResource( 17 )
 20/tex_offset = Vector2( 0, 0 )
 20/modulate = Color( 1, 1, 1, 1 )
 20/region = Rect2( 128, 0, 64, 64 )
@@ -827,7 +826,7 @@ polygon = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 20/shapes = [  ]
 20/z_index = 0
 21/name = "floor_1_2.png 21"
-21/texture = ExtResource( 18 )
+21/texture = ExtResource( 17 )
 21/tex_offset = Vector2( 0, 0 )
 21/modulate = Color( 1, 1, 1, 1 )
 21/region = Rect2( 192, 0, 64, 64 )
@@ -838,7 +837,7 @@ polygon = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 21/shapes = [  ]
 21/z_index = 0
 22/name = "floor_1_2.png 22"
-22/texture = ExtResource( 18 )
+22/texture = ExtResource( 17 )
 22/tex_offset = Vector2( 0, 0 )
 22/modulate = Color( 1, 1, 1, 1 )
 22/region = Rect2( 192, 64, 64, 64 )
@@ -849,7 +848,7 @@ polygon = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 22/shapes = [  ]
 22/z_index = 0
 23/name = "floor_1_2.png 23"
-23/texture = ExtResource( 18 )
+23/texture = ExtResource( 17 )
 23/tex_offset = Vector2( 0, 0 )
 23/modulate = Color( 1, 1, 1, 1 )
 23/region = Rect2( 256, 64, 64, 64 )
@@ -860,7 +859,7 @@ polygon = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 23/shapes = [  ]
 23/z_index = 0
 24/name = "floor_1_2.png 24"
-24/texture = ExtResource( 18 )
+24/texture = ExtResource( 17 )
 24/tex_offset = Vector2( 0, 0 )
 24/modulate = Color( 1, 1, 1, 1 )
 24/region = Rect2( 256, 0, 64, 64 )
@@ -871,7 +870,7 @@ polygon = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 24/shapes = [  ]
 24/z_index = 0
 25/name = "floor_1_2.png 25"
-25/texture = ExtResource( 18 )
+25/texture = ExtResource( 17 )
 25/tex_offset = Vector2( 0, 0 )
 25/modulate = Color( 1, 1, 1, 1 )
 25/region = Rect2( 192, 128, 64, 64 )
@@ -882,7 +881,7 @@ polygon = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 25/shapes = [  ]
 25/z_index = 0
 26/name = "floor_1_2.png 26"
-26/texture = ExtResource( 18 )
+26/texture = ExtResource( 17 )
 26/tex_offset = Vector2( 0, 0 )
 26/modulate = Color( 1, 1, 1, 1 )
 26/region = Rect2( 256, 128, 64, 64 )
@@ -943,7 +942,7 @@ points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 
 [sub_resource type="TileSet" id=55]
 0/name = "floor_1_2.png 0"
-0/texture = ExtResource( 18 )
+0/texture = ExtResource( 17 )
 0/tex_offset = Vector2( 0, 0 )
 0/modulate = Color( 1, 1, 1, 1 )
 0/region = Rect2( 64, 0, 64, 64 )
@@ -960,7 +959,7 @@ points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 } ]
 0/z_index = 0
 1/name = "floor_1_2.png 1"
-1/texture = ExtResource( 18 )
+1/texture = ExtResource( 17 )
 1/tex_offset = Vector2( 0, 0 )
 1/modulate = Color( 1, 1, 1, 1 )
 1/region = Rect2( 128, 0, 64, 64 )
@@ -977,7 +976,7 @@ points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 } ]
 1/z_index = 0
 2/name = "floor_1_2.png 2"
-2/texture = ExtResource( 18 )
+2/texture = ExtResource( 17 )
 2/tex_offset = Vector2( 0, 0 )
 2/modulate = Color( 1, 1, 1, 1 )
 2/region = Rect2( 192, 0, 64, 64 )
@@ -994,7 +993,7 @@ points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 } ]
 2/z_index = 0
 3/name = "floor_1_2.png 3"
-3/texture = ExtResource( 18 )
+3/texture = ExtResource( 17 )
 3/tex_offset = Vector2( 0, 0 )
 3/modulate = Color( 1, 1, 1, 1 )
 3/region = Rect2( 192, 64, 64, 64 )
@@ -1011,7 +1010,7 @@ points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 } ]
 3/z_index = 0
 4/name = "floor_1_2.png 4"
-4/texture = ExtResource( 18 )
+4/texture = ExtResource( 17 )
 4/tex_offset = Vector2( 0, 0 )
 4/modulate = Color( 1, 1, 1, 1 )
 4/region = Rect2( 256, 64, 64, 64 )
@@ -1028,7 +1027,7 @@ points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 } ]
 4/z_index = 0
 5/name = "floor_1_2.png 5"
-5/texture = ExtResource( 18 )
+5/texture = ExtResource( 17 )
 5/tex_offset = Vector2( 0, 0 )
 5/modulate = Color( 1, 1, 1, 1 )
 5/region = Rect2( 192, 128, 64, 64 )
@@ -1045,7 +1044,7 @@ points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 } ]
 5/z_index = 0
 6/name = "floor_1_2.png 6"
-6/texture = ExtResource( 18 )
+6/texture = ExtResource( 17 )
 6/tex_offset = Vector2( 0, 0 )
 6/modulate = Color( 1, 1, 1, 1 )
 6/region = Rect2( 256, 128, 64, 64 )
@@ -1062,7 +1061,7 @@ points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 } ]
 6/z_index = 0
 7/name = "floor_1_2.png 7"
-7/texture = ExtResource( 18 )
+7/texture = ExtResource( 17 )
 7/tex_offset = Vector2( 0, 0 )
 7/modulate = Color( 1, 1, 1, 1 )
 7/region = Rect2( 0, 0, 64, 64 )
@@ -1106,7 +1105,7 @@ texture = ExtResource( 2 )
 offset = Vector2( 25.2695, 12.0527 )
 
 [node name="Start" type="Position2D" parent="."]
-position = Vector2( 2700.32, -2898.7 )
+position = Vector2( 2583.88, -2634.06 )
 
 [node name="Start_Fox" type="Position2D" parent="."]
 position = Vector2( -12389.5, 1596.74 )
@@ -1147,7 +1146,6 @@ tile_data = PoolIntArray( 3473390, 0, 0, 3473391, 1, 0 )
 editor/display_folded = true
 
 [node name="Light_pink" type="Light2D" parent="Decor_environment_lights/Light_mushroom_22"]
-visible = false
 light_mask = 2
 position = Vector2( -710.51, 6771.52 )
 scale = Vector2( 2, 2 )
@@ -1159,7 +1157,6 @@ shadow_filter = 4
 shadow_item_cull_mask = 2
 
 [node name="Light_pink2" type="Light2D" parent="Decor_environment_lights/Light_mushroom_22"]
-visible = false
 light_mask = 2
 position = Vector2( -956.826, 6763.1 )
 scale = Vector2( 2, 2 )
@@ -1170,7 +1167,6 @@ shadow_enabled = true
 shadow_filter = 4
 
 [node name="Light_pink3" type="Light2D" parent="Decor_environment_lights/Light_mushroom_22"]
-visible = false
 light_mask = 2
 position = Vector2( -1084.19, 6748.36 )
 scale = Vector2( 2, 2 )
@@ -1181,7 +1177,6 @@ shadow_enabled = true
 shadow_filter = 4
 
 [node name="Light_pink4" type="Light2D" parent="Decor_environment_lights/Light_mushroom_22"]
-visible = false
 light_mask = 2
 position = Vector2( -1339.98, 6714.68 )
 scale = Vector2( 2, 2 )
@@ -1193,7 +1188,6 @@ shadow_enabled = true
 shadow_filter = 4
 
 [node name="Light_pink5" type="Light2D" parent="Decor_environment_lights/Light_mushroom_22"]
-visible = false
 light_mask = 2
 position = Vector2( -2516.71, 6690.19 )
 scale = Vector2( 2, 2 )
@@ -1205,7 +1199,6 @@ shadow_enabled = true
 shadow_filter = 4
 
 [node name="Light_pink6" type="Light2D" parent="Decor_environment_lights/Light_mushroom_22"]
-visible = false
 light_mask = 2
 position = Vector2( -2749.33, 6748.69 )
 scale = Vector2( 2, 2 )
@@ -1217,7 +1210,6 @@ shadow_enabled = true
 shadow_filter = 4
 
 [node name="Light_pink7" type="Light2D" parent="Decor_environment_lights/Light_mushroom_22"]
-visible = false
 light_mask = 2
 position = Vector2( -3007.8, 6741.89 )
 scale = Vector2( 2, 2 )
@@ -1229,7 +1221,6 @@ shadow_enabled = true
 shadow_filter = 4
 
 [node name="Light_red" type="Light2D" parent="Decor_environment_lights/Light_mushroom_22"]
-visible = false
 light_mask = 2
 position = Vector2( -2372.51, 6732.36 )
 scale = Vector2( 2, 2 )
@@ -1241,7 +1232,6 @@ shadow_enabled = true
 shadow_filter = 4
 
 [node name="Light_red2" type="Light2D" parent="Decor_environment_lights/Light_mushroom_22"]
-visible = false
 light_mask = 2
 position = Vector2( -2636.81, 6738.23 )
 scale = Vector2( -1.09716, 2.03529 )
@@ -1253,7 +1243,6 @@ shadow_enabled = true
 shadow_filter = 4
 
 [node name="Light_red7" type="Light2D" parent="Decor_environment_lights/Light_mushroom_22"]
-visible = false
 light_mask = 2
 position = Vector2( -1466.8, 6741.42 )
 scale = Vector2( 4.75159, 2 )
@@ -1265,7 +1254,6 @@ shadow_enabled = true
 shadow_filter = 4
 
 [node name="Light_red8" type="Light2D" parent="Decor_environment_lights/Light_mushroom_22"]
-visible = false
 light_mask = 2
 position = Vector2( -1208.73, 6749.6 )
 scale = Vector2( 2, 2 )
@@ -1277,7 +1265,6 @@ shadow_enabled = true
 shadow_filter = 4
 
 [node name="Light_red9" type="Light2D" parent="Decor_environment_lights/Light_mushroom_22"]
-visible = false
 light_mask = 2
 position = Vector2( -323.127, 6753.68 )
 scale = Vector2( 2, 2 )
@@ -1289,7 +1276,6 @@ shadow_enabled = true
 shadow_filter = 4
 
 [node name="Light_green" type="Light2D" parent="Decor_environment_lights/Light_mushroom_22"]
-visible = false
 light_mask = 2
 position = Vector2( -1726.55, 6760.32 )
 rotation = 4.71239
@@ -1454,11 +1440,10 @@ tile_data = PoolIntArray( 6946792, 14, 0, 6946802, 3, 0, 6946803, 8, 0, 6946804,
 editor/display_folded = true
 light_mask = 2
 position = Vector2( -1656.07, 6711.7 )
-script = ExtResource( 16 )
 
 [node name="Sprite" type="Sprite" parent="Decor_environment_lights/Dinette"]
 scale = Vector2( 3, 3 )
-texture = ExtResource( 17 )
+texture = ExtResource( 16 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Decor_environment_lights/Dinette"]
 position = Vector2( 0.857422, -0.857422 )
@@ -1493,12 +1478,12 @@ format = 1
 tile_data = PoolIntArray( 6946792, 7, 0, 6946797, 536870919, 0, 6946799, 7, 0, 6946801, 7, 0, 6946807, 536870919, 0, 6946809, 536870919, 0, 6946813, 536870919, 0 )
 
 [node name="Drips" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 19 )
+stream = ExtResource( 18 )
 bus = "Drips"
 
 [node name="Loop" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 20 )
+stream = ExtResource( 19 )
 bus = "CaveLoop"
 [connection signal="body_entered" from="End_slide" to="End_slide" method="_on_End_slide_body_entered"]
 [connection signal="body_entered" from="Exit_1_2" to="." method="_on_Exit_1_2_body_entered"]
-[connection signal="body_entered" from="Decor_environment_lights/Dinette" to="Decor_environment_lights/Dinette" method="_on_Dinette_body_entered"]
+[connection signal="body_entered" from="Decor_environment_lights/Dinette" to="." method="_on_Dinette_body_entered"]

@@ -1,5 +1,7 @@
 extends "res://Scripts/AbstractWorld.gd"
 var stepBus
+var dinette_is_passed = false
+
 func _ready():
 	world = 1
 	level = 2
@@ -29,13 +31,12 @@ func _endLevel():
 
 # warning-ignore:unused_argument
 func _process(delta):
-	if levelStarted:
+	if levelStarted && !dinette_is_passed:
 		Player.stop_1_2 = get_node("End_slide").position.x
 		Player.look_right = false
 			
 		_setVisibility()
 
-	
 func _setVisibility():
 	if Pet.activated:
 		visibility.set_color(Color(0.2, 0.2, 0.2))
@@ -48,3 +49,10 @@ func pet_obtained():
 func _on_Exit_1_2_body_entered(body):
 	if body.name == "Player":
 		Player.position = $"Start_save".position
+
+func _on_Dinette_body_entered(body):
+	if body.name == "Player" && !dinette_is_passed:
+		Player.page = 2
+		Player.launch_tuto = true
+		dinette_is_passed = true
+
