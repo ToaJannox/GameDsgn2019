@@ -1,4 +1,4 @@
-[gd_scene load_steps=123 format=2]
+[gd_scene load_steps=117 format=2]
 
 [ext_resource path="res://Scripts/World 1_1.gd" type="Script" id=1]
 [ext_resource path="res://ressources/Decor/Background.png" type="Texture" id=2]
@@ -9,42 +9,38 @@
 [ext_resource path="res://Scripts/Launch_tuto_jump.gd" type="Script" id=7]
 [ext_resource path="res://Scripts/Panneau.gd" type="Script" id=8]
 [ext_resource path="res://ressources/Decor/map_1_1/Panneau.png" type="Texture" id=9]
-[ext_resource path="res://Scripts/Mom.gd" type="Script" id=10]
-[ext_resource path="res://ressources/graphics/npcs/woman/Frame001.png" type="Texture" id=11]
-[ext_resource path="res://ressources/graphics/npcs/woman/Frame002.png" type="Texture" id=12]
-[ext_resource path="res://Scripts/Text_Mom.gd" type="Script" id=13]
-[ext_resource path="res://Scripts/Pnj_1.gd" type="Script" id=14]
-[ext_resource path="res://ressources/graphics/npcs/elder/Frame001.png" type="Texture" id=15]
-[ext_resource path="res://ressources/graphics/npcs/elder/Frame002.png" type="Texture" id=16]
-[ext_resource path="res://Scripts/Pnj_2_enfant.gd" type="Script" id=17]
-[ext_resource path="res://ressources/graphics/npcs/Villager/Villager5.png" type="Texture" id=18]
-[ext_resource path="res://ressources/graphics/npcs/Villager/Villager6.png" type="Texture" id=19]
-[ext_resource path="res://Scripts/Pnj_3_dame.gd" type="Script" id=20]
-[ext_resource path="res://ressources/graphics/npcs/Villager/Woman PixelArt.png" type="Texture" id=21]
-[ext_resource path="res://ressources/Light/light_demi.png" type="Texture" id=22]
-[ext_resource path="res://ressources/sounds/world/desert/desert_loop.ogg" type="AudioStream" id=23]
-[ext_resource path="res://Scripts/Barrière_village.gd" type="Script" id=24]
-[ext_resource path="res://ressources/Decor/map_1_1/Barriere_cassee.png" type="Texture" id=25]
-[ext_resource path="res://ressources/Decor/map_1_1/Barriere_pleine.png" type="Texture" id=26]
-[ext_resource path="res://ressources/Decor/map_1_1/Caisses.png" type="Texture" id=27]
-[ext_resource path="res://Scripts/Ladder.gd" type="Script" id=28]
-[ext_resource path="res://ressources/Decor/map_1_1/ladder6.png" type="Texture" id=29]
-[ext_resource path="res://ressources/Decor/map_1_1/House 1(bleu).png" type="Texture" id=30]
-[ext_resource path="res://ressources/Decor/map_1_1/House 1.png" type="Texture" id=31]
-[ext_resource path="res://ressources/Decor/map_1_1/House 2.png" type="Texture" id=32]
-[ext_resource path="res://ressources/Decor/map_1_1/House 1(orange).png" type="Texture" id=33]
-[ext_resource path="res://ressources/Decor/map_1_1/House 3.png" type="Texture" id=34]
-[ext_resource path="res://ressources/Decor/map_1_1/House 3(rouge).png" type="Texture" id=35]
-[ext_resource path="res://ressources/Decor/map_1_1/House 2(orange).png" type="Texture" id=36]
-[ext_resource path="res://ressources/Decor/map_1_1/House 1(rouge).png" type="Texture" id=37]
-[ext_resource path="res://ressources/Decor/map_1_1/tileset_floor_1_1.png" type="Texture" id=38]
-[ext_resource path="res://ressources/Decor/map_1_1/Scaffolding.png" type="Texture" id=39]
-[ext_resource path="res://ressources/Decor/ambiant.png" type="Texture" id=40]
-[ext_resource path="res://ressources/Decor/map_1_1/nuage 2.png" type="Texture" id=41]
-[ext_resource path="res://ressources/Decor/map_1_1/nuage 3.png" type="Texture" id=42]
-[ext_resource path="res://ressources/Decor/map_1_1/nuage 4.png" type="Texture" id=43]
-[ext_resource path="res://ressources/World 1_1_tilemap_1.tres" type="TileSet" id=44]
-[ext_resource path="res://ressources/World 1_1_tilemap_2.tres" type="TileSet" id=45]
+[ext_resource path="res://Scripts/Pnj_1.gd" type="Script" id=10]
+[ext_resource path="res://ressources/graphics/npcs/elder/Frame001.png" type="Texture" id=11]
+[ext_resource path="res://ressources/graphics/npcs/elder/Frame002.png" type="Texture" id=12]
+[ext_resource path="res://Scripts/Pnj_2_enfant.gd" type="Script" id=13]
+[ext_resource path="res://ressources/graphics/npcs/Villager/Villager5.png" type="Texture" id=14]
+[ext_resource path="res://ressources/graphics/npcs/Villager/Villager6.png" type="Texture" id=15]
+[ext_resource path="res://Scripts/Pnj_3_dame.gd" type="Script" id=16]
+[ext_resource path="res://ressources/graphics/npcs/Villager/Woman PixelArt.png" type="Texture" id=17]
+[ext_resource path="res://ressources/Light/light_demi.png" type="Texture" id=18]
+[ext_resource path="res://ressources/sounds/world/desert/desert_loop.ogg" type="AudioStream" id=19]
+[ext_resource path="res://Scripts/Barrière_village.gd" type="Script" id=20]
+[ext_resource path="res://ressources/Decor/map_1_1/Barriere_cassee.png" type="Texture" id=21]
+[ext_resource path="res://ressources/Decor/map_1_1/Barriere_pleine.png" type="Texture" id=22]
+[ext_resource path="res://ressources/Decor/map_1_1/Caisses.png" type="Texture" id=23]
+[ext_resource path="res://Scripts/Ladder.gd" type="Script" id=24]
+[ext_resource path="res://ressources/Decor/map_1_1/ladder6.png" type="Texture" id=25]
+[ext_resource path="res://ressources/Decor/map_1_1/House 1(bleu).png" type="Texture" id=26]
+[ext_resource path="res://ressources/Decor/map_1_1/House 1.png" type="Texture" id=27]
+[ext_resource path="res://ressources/Decor/map_1_1/House 2.png" type="Texture" id=28]
+[ext_resource path="res://ressources/Decor/map_1_1/House 1(orange).png" type="Texture" id=29]
+[ext_resource path="res://ressources/Decor/map_1_1/House 3.png" type="Texture" id=30]
+[ext_resource path="res://ressources/Decor/map_1_1/House 3(rouge).png" type="Texture" id=31]
+[ext_resource path="res://ressources/Decor/map_1_1/House 2(orange).png" type="Texture" id=32]
+[ext_resource path="res://ressources/Decor/map_1_1/House 1(rouge).png" type="Texture" id=33]
+[ext_resource path="res://ressources/Decor/map_1_1/tileset_floor_1_1.png" type="Texture" id=34]
+[ext_resource path="res://ressources/Decor/map_1_1/Scaffolding.png" type="Texture" id=35]
+[ext_resource path="res://ressources/Decor/ambiant.png" type="Texture" id=36]
+[ext_resource path="res://ressources/Decor/map_1_1/nuage 2.png" type="Texture" id=37]
+[ext_resource path="res://ressources/Decor/map_1_1/nuage 3.png" type="Texture" id=38]
+[ext_resource path="res://ressources/Decor/map_1_1/nuage 4.png" type="Texture" id=39]
+[ext_resource path="res://ressources/World 1_1_tilemap_1.tres" type="TileSet" id=40]
+[ext_resource path="res://ressources/World 1_1_tilemap_2.tres" type="TileSet" id=41]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 195.04, 159.238 )
@@ -58,20 +54,9 @@ extents = Vector2( 10, 187.329 )
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 98.0117, 146.072 )
 
-[sub_resource type="SpriteFrames" id=5]
-animations = [ {
-"frames": [ ExtResource( 11 ), ExtResource( 12 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
-
-[sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 135.467, 193.34 )
-
 [sub_resource type="SpriteFrames" id=7]
 animations = [ {
-"frames": [ ExtResource( 15 ), ExtResource( 16 ) ],
+"frames": [ ExtResource( 11 ), ExtResource( 12 ) ],
 "loop": true,
 "name": "default",
 "speed": 1.5
@@ -82,12 +67,12 @@ extents = Vector2( 159.128, 73.3918 )
 
 [sub_resource type="SpriteFrames" id=75]
 animations = [ {
-"frames": [ ExtResource( 18 ) ],
+"frames": [ ExtResource( 14 ) ],
 "loop": true,
 "name": "point",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 19 ) ],
+"frames": [ ExtResource( 15 ) ],
 "loop": true,
 "name": "static",
 "speed": 5.0
@@ -101,12 +86,12 @@ extents = Vector2( 211.319, 267.666 )
 
 [sub_resource type="SpriteFrames" id=9]
 animations = [ {
-"frames": [ ExtResource( 25 ) ],
+"frames": [ ExtResource( 21 ) ],
 "loop": true,
 "name": "Cassee",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 26 ) ],
+"frames": [ ExtResource( 22 ) ],
 "loop": true,
 "name": "Pleine",
 "speed": 5.0
@@ -219,7 +204,7 @@ points = PoolVector2Array( 64, 64, 0, 64, 64, 0 )
 
 [sub_resource type="TileSet" id=45]
 0/name = "tileset_floor_1_1.png 0"
-0/texture = ExtResource( 38 )
+0/texture = ExtResource( 34 )
 0/tex_offset = Vector2( 0, 0 )
 0/modulate = Color( 1, 1, 1, 1 )
 0/region = Rect2( 64, 0, 64, 64 )
@@ -236,7 +221,7 @@ points = PoolVector2Array( 64, 64, 0, 64, 64, 0 )
 } ]
 0/z_index = 0
 1/name = "tileset_floor_1_1.png 1"
-1/texture = ExtResource( 38 )
+1/texture = ExtResource( 34 )
 1/tex_offset = Vector2( 0, 0 )
 1/modulate = Color( 1, 1, 1, 1 )
 1/region = Rect2( 128, 0, 64, 64 )
@@ -253,7 +238,7 @@ points = PoolVector2Array( 64, 64, 0, 64, 64, 0 )
 } ]
 1/z_index = 0
 2/name = "tileset_floor_1_1.png 2"
-2/texture = ExtResource( 38 )
+2/texture = ExtResource( 34 )
 2/tex_offset = Vector2( 0, 0 )
 2/modulate = Color( 1, 1, 1, 1 )
 2/region = Rect2( 192, 0, 64, 64 )
@@ -270,7 +255,7 @@ points = PoolVector2Array( 64, 64, 0, 64, 64, 0 )
 } ]
 2/z_index = 0
 3/name = "tileset_floor_1_1.png 3"
-3/texture = ExtResource( 38 )
+3/texture = ExtResource( 34 )
 3/tex_offset = Vector2( 0, 0 )
 3/modulate = Color( 1, 1, 1, 1 )
 3/region = Rect2( 0, 0, 64, 64 )
@@ -287,7 +272,7 @@ points = PoolVector2Array( 64, 64, 0, 64, 64, 0 )
 } ]
 3/z_index = 0
 4/name = "tileset_floor_1_1.png 4"
-4/texture = ExtResource( 38 )
+4/texture = ExtResource( 34 )
 4/tex_offset = Vector2( 0, 0 )
 4/modulate = Color( 1, 1, 1, 1 )
 4/region = Rect2( 256, 0, 64, 64 )
@@ -304,7 +289,7 @@ points = PoolVector2Array( 64, 64, 0, 64, 64, 0 )
 } ]
 4/z_index = 0
 5/name = "tileset_floor_1_1.png 5"
-5/texture = ExtResource( 38 )
+5/texture = ExtResource( 34 )
 5/tex_offset = Vector2( 0, 0 )
 5/modulate = Color( 1, 1, 1, 1 )
 5/region = Rect2( 256, 128, 64, 64 )
@@ -321,7 +306,7 @@ points = PoolVector2Array( 64, 64, 0, 64, 64, 0 )
 } ]
 5/z_index = 0
 6/name = "tileset_floor_1_1.png 6"
-6/texture = ExtResource( 38 )
+6/texture = ExtResource( 34 )
 6/tex_offset = Vector2( 0, 0 )
 6/modulate = Color( 1, 1, 1, 1 )
 6/region = Rect2( 192, 128, 64, 64 )
@@ -338,7 +323,7 @@ points = PoolVector2Array( 64, 64, 0, 64, 64, 0 )
 } ]
 6/z_index = 0
 7/name = "tileset_floor_1_1.png 7"
-7/texture = ExtResource( 38 )
+7/texture = ExtResource( 34 )
 7/tex_offset = Vector2( 0, 0 )
 7/modulate = Color( 1, 1, 1, 1 )
 7/region = Rect2( 256, 64, 64, 64 )
@@ -355,7 +340,7 @@ points = PoolVector2Array( 64, 64, 0, 64, 64, 0 )
 } ]
 7/z_index = 0
 8/name = "tileset_floor_1_1.png 8"
-8/texture = ExtResource( 38 )
+8/texture = ExtResource( 34 )
 8/tex_offset = Vector2( 0, 0 )
 8/modulate = Color( 1, 1, 1, 1 )
 8/region = Rect2( 192, 64, 64, 64 )
@@ -422,7 +407,7 @@ points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 
 [sub_resource type="TileSet" id=62]
 0/name = "tileset_floor_1_1.png 0"
-0/texture = ExtResource( 38 )
+0/texture = ExtResource( 34 )
 0/tex_offset = Vector2( 0, 0 )
 0/modulate = Color( 1, 1, 1, 1 )
 0/region = Rect2( 128, 0, 64, 64 )
@@ -439,7 +424,7 @@ points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 } ]
 0/z_index = 0
 1/name = "tileset_floor_1_1.png 1"
-1/texture = ExtResource( 38 )
+1/texture = ExtResource( 34 )
 1/tex_offset = Vector2( 0, 0 )
 1/modulate = Color( 1, 1, 1, 1 )
 1/region = Rect2( 192, 0, 64, 64 )
@@ -456,7 +441,7 @@ points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 } ]
 1/z_index = 0
 2/name = "tileset_floor_1_1.png 2"
-2/texture = ExtResource( 38 )
+2/texture = ExtResource( 34 )
 2/tex_offset = Vector2( 0, 0 )
 2/modulate = Color( 1, 1, 1, 1 )
 2/region = Rect2( 64, 0, 64, 64 )
@@ -473,7 +458,7 @@ points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 } ]
 2/z_index = 0
 3/name = "tileset_floor_1_1.png 3"
-3/texture = ExtResource( 38 )
+3/texture = ExtResource( 34 )
 3/tex_offset = Vector2( 0, 0 )
 3/modulate = Color( 1, 1, 1, 1 )
 3/region = Rect2( 256, 64, 64, 64 )
@@ -490,7 +475,7 @@ points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 } ]
 3/z_index = 0
 4/name = "tileset_floor_1_1.png 4"
-4/texture = ExtResource( 38 )
+4/texture = ExtResource( 34 )
 4/tex_offset = Vector2( 0, 0 )
 4/modulate = Color( 1, 1, 1, 1 )
 4/region = Rect2( 192, 64, 64, 64 )
@@ -507,7 +492,7 @@ points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 } ]
 4/z_index = 0
 5/name = "tileset_floor_1_1.png 5"
-5/texture = ExtResource( 38 )
+5/texture = ExtResource( 34 )
 5/tex_offset = Vector2( 0, 0 )
 5/modulate = Color( 1, 1, 1, 1 )
 5/region = Rect2( 256, 128, 64, 64 )
@@ -524,7 +509,7 @@ points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 } ]
 5/z_index = 0
 6/name = "tileset_floor_1_1.png 6"
-6/texture = ExtResource( 38 )
+6/texture = ExtResource( 34 )
 6/tex_offset = Vector2( 0, 0 )
 6/modulate = Color( 1, 1, 1, 1 )
 6/region = Rect2( 192, 128, 64, 64 )
@@ -541,7 +526,7 @@ points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 } ]
 6/z_index = 0
 7/name = "tileset_floor_1_1.png 7"
-7/texture = ExtResource( 38 )
+7/texture = ExtResource( 34 )
 7/tex_offset = Vector2( 0, 0 )
 7/modulate = Color( 1, 1, 1, 1 )
 7/region = Rect2( 0, 0, 64, 64 )
@@ -569,7 +554,7 @@ points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 
 [sub_resource type="TileSet" id=66]
 0/name = "Scaffolding.png 0"
-0/texture = ExtResource( 39 )
+0/texture = ExtResource( 35 )
 0/tex_offset = Vector2( 0, 0 )
 0/modulate = Color( 1, 1, 1, 1 )
 0/region = Rect2( 64, 0, 64, 64 )
@@ -585,7 +570,7 @@ points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 } ]
 0/z_index = 0
 1/name = "Scaffolding.png 1"
-1/texture = ExtResource( 39 )
+1/texture = ExtResource( 35 )
 1/tex_offset = Vector2( 0, 0 )
 1/modulate = Color( 1, 1, 1, 1 )
 1/region = Rect2( 128, 0, 64, 64 )
@@ -601,7 +586,7 @@ points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 } ]
 1/z_index = 0
 2/name = "Scaffolding.png 2"
-2/texture = ExtResource( 39 )
+2/texture = ExtResource( 35 )
 2/tex_offset = Vector2( 0, 0 )
 2/modulate = Color( 1, 1, 1, 1 )
 2/region = Rect2( 192, 0, 64, 64 )
@@ -622,7 +607,7 @@ points = PoolVector2Array( 0, -128, 64, -128, 64, 64, 0, 64 )
 
 [sub_resource type="TileSet" id=68]
 0/name = "ambiant.png 0"
-0/texture = ExtResource( 40 )
+0/texture = ExtResource( 36 )
 0/tex_offset = Vector2( 0, 0 )
 0/modulate = Color( 1, 1, 1, 1 )
 0/region = Rect2( 576, 256, 64, 64 )
@@ -640,7 +625,7 @@ points = PoolVector2Array( 0, -128, 64, -128, 64, 64, 0, 64 )
 
 [sub_resource type="TileSet" id=69]
 0/name = "nuage 2.png 0"
-0/texture = ExtResource( 41 )
+0/texture = ExtResource( 37 )
 0/tex_offset = Vector2( 0, 0 )
 0/modulate = Color( 1, 1, 1, 1 )
 0/region = Rect2( 0, 64, 128, 64 )
@@ -650,7 +635,7 @@ points = PoolVector2Array( 0, -128, 64, -128, 64, 64, 0, 64 )
 0/shapes = [  ]
 0/z_index = 0
 1/name = "nuage 3.png 1"
-1/texture = ExtResource( 42 )
+1/texture = ExtResource( 38 )
 1/tex_offset = Vector2( 0, 0 )
 1/modulate = Color( 1, 1, 1, 1 )
 1/region = Rect2( 0, 0, 128, 32 )
@@ -660,7 +645,7 @@ points = PoolVector2Array( 0, -128, 64, -128, 64, 64, 0, 64 )
 1/shapes = [  ]
 1/z_index = 0
 2/name = "nuage 4.png 2"
-2/texture = ExtResource( 43 )
+2/texture = ExtResource( 39 )
 2/tex_offset = Vector2( 0, 0 )
 2/modulate = Color( 1, 1, 1, 1 )
 2/region = Rect2( 0, 0, 128, 32 )
@@ -672,7 +657,7 @@ points = PoolVector2Array( 0, -128, 64, -128, 64, 64, 0, 64 )
 
 [sub_resource type="TileSet" id=70]
 0/name = "nuage 4.png 0"
-0/texture = ExtResource( 43 )
+0/texture = ExtResource( 39 )
 0/tex_offset = Vector2( 0, 0 )
 0/modulate = Color( 1, 1, 1, 1 )
 0/region = Rect2( 0, 0, 128, 32 )
@@ -682,7 +667,7 @@ points = PoolVector2Array( 0, -128, 64, -128, 64, 64, 0, 64 )
 0/shapes = [  ]
 0/z_index = 0
 1/name = "nuage 3.png 1"
-1/texture = ExtResource( 42 )
+1/texture = ExtResource( 38 )
 1/tex_offset = Vector2( 0, 0 )
 1/modulate = Color( 1, 1, 1, 1 )
 1/region = Rect2( 0, 0, 128, 32 )
@@ -692,7 +677,7 @@ points = PoolVector2Array( 0, -128, 64, -128, 64, 64, 0, 64 )
 1/shapes = [  ]
 1/z_index = 0
 2/name = "nuage 2.png 2"
-2/texture = ExtResource( 41 )
+2/texture = ExtResource( 37 )
 2/tex_offset = Vector2( 0, 0 )
 2/modulate = Color( 1, 1, 1, 1 )
 2/region = Rect2( 0, 64, 128, 64 )
@@ -704,7 +689,7 @@ points = PoolVector2Array( 0, -128, 64, -128, 64, 64, 0, 64 )
 
 [sub_resource type="TileSet" id=71]
 0/name = "tileset_floor_1_1.png 0"
-0/texture = ExtResource( 38 )
+0/texture = ExtResource( 34 )
 0/tex_offset = Vector2( 0, 0 )
 0/modulate = Color( 1, 1, 1, 1 )
 0/region = Rect2( 0, 0, 64, 64 )
@@ -714,7 +699,7 @@ points = PoolVector2Array( 0, -128, 64, -128, 64, 64, 0, 64 )
 0/shapes = [  ]
 0/z_index = 0
 1/name = "tileset_floor_1_1.png 1"
-1/texture = ExtResource( 38 )
+1/texture = ExtResource( 34 )
 1/tex_offset = Vector2( 0, 0 )
 1/modulate = Color( 1, 1, 1, 1 )
 1/region = Rect2( 128, 0, 64, 64 )
@@ -732,7 +717,7 @@ polygon = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 
 [sub_resource type="TileSet" id=74]
 0/name = "tileset_floor_1_1.png 0"
-0/texture = ExtResource( 38 )
+0/texture = ExtResource( 34 )
 0/tex_offset = Vector2( 0, 0 )
 0/modulate = Color( 1, 1, 1, 1 )
 0/region = Rect2( 0, 0, 64, 64 )
@@ -743,7 +728,7 @@ polygon = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 0/shapes = [  ]
 0/z_index = 0
 1/name = "tileset_floor_1_1.png 1"
-1/texture = ExtResource( 38 )
+1/texture = ExtResource( 34 )
 1/tex_offset = Vector2( 0, 0 )
 1/modulate = Color( 1, 1, 1, 1 )
 1/region = Rect2( 128, 0, 64, 64 )
@@ -863,44 +848,13 @@ text = "Appuyez
 sur
 Entrée"
 
-[node name="Mom" type="Area2D" parent="."]
-editor/display_folded = true
-visible = false
-position = Vector2( -5934.56, -3869.22 )
-script = ExtResource( 10 )
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="Mom"]
-scale = Vector2( 0.85, 0.85 )
-frames = SubResource( 5 )
-frame = 1
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Mom"]
-shape = SubResource( 6 )
-disabled = true
-
-[node name="Polygon2D" type="Polygon2D" parent="Mom"]
-visible = false
-color = Color( 0.392157, 0.392157, 0.392157, 1 )
-polygon = PoolVector2Array( 148.58, -214.776, 148.58, -324.776, -171.42, -324.776, -171.42, -214.776 )
-
-[node name="Text_Mom" type="RichTextLabel" parent="Mom/Polygon2D"]
-margin_left = -163.0
-margin_top = -320.0
-margin_right = -43.0
-margin_bottom = -260.0
-rect_scale = Vector2( 2.53934, 1.60454 )
-script = ExtResource( 13 )
-
-[node name="Timer" type="Timer" parent="Mom/Polygon2D"]
-wait_time = 0.05
-autostart = true
-
 [node name="Pnj" type="Node" parent="."]
+editor/display_folded = true
 
 [node name="Pnj_1_vieux" type="Area2D" parent="Pnj"]
 editor/display_folded = true
 position = Vector2( -586.245, -3873.74 )
-script = ExtResource( 14 )
+script = ExtResource( 10 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Pnj/Pnj_1_vieux"]
 scale = Vector2( 0.8, 0.8 )
@@ -945,7 +899,7 @@ Il a cassé la barrière du village."
 
 [node name="Pnj_2_enfant" type="Area2D" parent="Pnj"]
 position = Vector2( -6268.67, -3803.69 )
-script = ExtResource( 17 )
+script = ExtResource( 13 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Pnj/Pnj_2_enfant"]
 scale = Vector2( 0.6, 0.6 )
@@ -993,17 +947,19 @@ text = "Le renard !
 Il avais ton doudou dans la bouche !"
 
 [node name="Pnj_3_dame" type="Area2D" parent="Pnj"]
+editor/display_folded = true
 position = Vector2( -4258.29, -3865.22 )
 scale = Vector2( 0.9, 0.9 )
-script = ExtResource( 20 )
+script = ExtResource( 16 )
 
 [node name="Sprite" type="Sprite" parent="Pnj/Pnj_3_dame"]
-texture = ExtResource( 21 )
+texture = ExtResource( 17 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pnj/Pnj_3_dame"]
 shape = SubResource( 77 )
 
 [node name="Texte Pnj 3" type="Polygon2D" parent="Pnj/Pnj_3_dame"]
+visible = false
 light_mask = 16
 color = Color( 0.392157, 0.392157, 0.392157, 1 )
 polygon = PoolVector2Array( -224.118, -294.204, 231.438, -294.204, 231.438, -449.76, -224.118, -449.76 )
@@ -1032,7 +988,7 @@ text = "Ca fait longtemps que je n'avais pas vu de renard, il me fait penser au 
 position = Vector2( -2739.85, -21378.3 )
 rotation = 1.59285
 scale = Vector2( 10, 10 )
-texture = ExtResource( 22 )
+texture = ExtResource( 18 )
 texture_scale = 10.26
 energy = 1.8
 shadow_enabled = true
@@ -1041,12 +997,12 @@ shadow_gradient_length = 2.0
 shadow_filter = 5
 
 [node name="Loop" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 23 )
+stream = ExtResource( 19 )
 
 [node name="Barriere_Village" type="StaticBody2D" parent="."]
 editor/display_folded = true
 position = Vector2( 1106.23, -3840.11 )
-script = ExtResource( 24 )
+script = ExtResource( 20 )
 
 [node name="Sprite_barriere_village" type="AnimatedSprite" parent="Barriere_Village"]
 scale = Vector2( 3.5, 3.5 )
@@ -1080,14 +1036,14 @@ collision_layer = 1024
 [node name="Sprite" type="Sprite" parent="Caisses"]
 position = Vector2( 0, 33.7661 )
 scale = Vector2( 3, 3 )
-texture = ExtResource( 27 )
+texture = ExtResource( 23 )
 
 [node name="Collsisions_Caisses" type="CollisionPolygon2D" parent="Caisses"]
 polygon = PoolVector2Array( -294.665, 128.143, -293.584, 51.4119, -198.48, 51.9524, -197.94, -13.9717, -126.072, -14.512, -126.613, -62.0637, 24.1479, -61.5232, 25.2285, 34.6609, 83.0471, 33.0398, 84.1277, 52.4927, 288.384, 51.9524, 289.465, 131.385 )
 
 [node name="Ladder" type="Node" parent="."]
 editor/display_folded = true
-script = ExtResource( 28 )
+script = ExtResource( 24 )
 
 [node name="Ladder_1" type="Area2D" parent="Ladder"]
 editor/display_folded = true
@@ -1096,7 +1052,7 @@ scale = Vector2( 1, 2 )
 
 [node name="LadderSprite" type="Sprite" parent="Ladder/Ladder_1"]
 scale = Vector2( 0.301, 0.15 )
-texture = ExtResource( 29 )
+texture = ExtResource( 25 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladder/Ladder_1"]
 position = Vector2( -1.22778, 6.13867 )
@@ -1120,7 +1076,7 @@ position = Vector2( 2428.87, -1946.58 )
 
 [node name="Sprite" type="Sprite" parent="Ladder/Ladder_3"]
 scale = Vector2( 0.301, 0.349 )
-texture = ExtResource( 29 )
+texture = ExtResource( 25 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladder/Ladder_3"]
 position = Vector2( 0, 8.592 )
@@ -1146,7 +1102,7 @@ position = Vector2( 1921.51, -1016.19 )
 
 [node name="Sprite" type="Sprite" parent="Ladder/Ladder_4"]
 scale = Vector2( 0.301, 0.283 )
-texture = ExtResource( 29 )
+texture = ExtResource( 25 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladder/Ladder_4"]
 position = Vector2( 0, 8.79047 )
@@ -1167,13 +1123,14 @@ scale = Vector2( 1, 2 )
 shape = SubResource( 14 )
 
 [node name="Batiments" type="Node" parent="."]
+editor/display_folded = true
 
 [node name="Bat_0" type="Sprite" parent="Batiments"]
 editor/display_folded = true
 position = Vector2( -10496.1, -4358.89 )
 scale = Vector2( 4, 4 )
 z_index = -1
-texture = ExtResource( 30 )
+texture = ExtResource( 26 )
 flip_h = true
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="Batiments/Bat_0"]
@@ -1185,7 +1142,7 @@ editor/display_folded = true
 position = Vector2( -9385.29, -4041.18 )
 scale = Vector2( 3, 3 )
 z_index = -1
-texture = ExtResource( 31 )
+texture = ExtResource( 27 )
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="Batiments/Bat_1"]
 occluder = SubResource( 18 )
@@ -1195,7 +1152,7 @@ editor/display_folded = true
 position = Vector2( -8244.24, -4298.86 )
 scale = Vector2( 3, 3 )
 z_index = -1
-texture = ExtResource( 32 )
+texture = ExtResource( 28 )
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="Batiments/Bat_2"]
 occluder = SubResource( 19 )
@@ -1205,7 +1162,7 @@ editor/display_folded = true
 position = Vector2( -5785.19, -4377.79 )
 scale = Vector2( 4, 4 )
 z_index = -1
-texture = ExtResource( 33 )
+texture = ExtResource( 29 )
 flip_h = true
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="Batiments/Bat_3"]
@@ -1217,7 +1174,7 @@ editor/display_folded = true
 position = Vector2( -4289.09, -4282.14 )
 scale = Vector2( 3, 3 )
 z_index = -1
-texture = ExtResource( 34 )
+texture = ExtResource( 30 )
 
 [node name="LightOccluder2D2" type="LightOccluder2D" parent="Batiments/Bat_5"]
 position = Vector2( -380.558, 81.9508 )
@@ -1228,7 +1185,7 @@ editor/display_folded = true
 position = Vector2( -6567.76, -4385.8 )
 scale = Vector2( 4, 4 )
 z_index = -1
-texture = ExtResource( 35 )
+texture = ExtResource( 31 )
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="Batiments/Bat_6"]
 occluder = SubResource( 22 )
@@ -1238,7 +1195,7 @@ editor/display_folded = true
 position = Vector2( -3393.68, -4381.13 )
 scale = Vector2( 4, 4 )
 z_index = -1
-texture = ExtResource( 33 )
+texture = ExtResource( 29 )
 flip_h = true
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="Batiments/Bat_7"]
@@ -1249,7 +1206,7 @@ editor/display_folded = true
 position = Vector2( -2185.62, -4396.65 )
 scale = Vector2( 4, 4 )
 z_index = -1
-texture = ExtResource( 36 )
+texture = ExtResource( 32 )
 flip_h = true
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="Batiments/Bat_8"]
@@ -1260,7 +1217,7 @@ editor/display_folded = true
 position = Vector2( -555.991, -4475 )
 scale = Vector2( 4, 4 )
 z_index = -1
-texture = ExtResource( 34 )
+texture = ExtResource( 30 )
 flip_h = true
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="Batiments/Bat_9"]
@@ -1271,7 +1228,7 @@ editor/display_folded = true
 position = Vector2( 721.797, -4386.03 )
 scale = Vector2( 4, 4 )
 z_index = -1
-texture = ExtResource( 37 )
+texture = ExtResource( 33 )
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="Batiments/Bat_10"]
 occluder = SubResource( 26 )
@@ -1335,7 +1292,7 @@ tile_data = PoolIntArray( -589737, 1, 0, -589736, 1, 0, -589735, 1, 0, -589734, 
 position = Vector2( 0, 62.96 )
 scale = Vector2( 3, 3 )
 z_index = -1
-tile_set = ExtResource( 44 )
+tile_set = ExtResource( 40 )
 cell_size = Vector2( 64, 32 )
 format = 1
 tile_data = PoolIntArray( -2621499, 1, 0, -2621477, 536870914, 0, -2621472, 536870913, 0, -2621447, 2, 0 )
@@ -1343,20 +1300,20 @@ tile_data = PoolIntArray( -2621499, 1, 0, -2621477, 536870914, 0, -2621472, 5368
 [node name="Decor_2_top" type="TileMap" parent="Tilemaps/No_Collsisions"]
 position = Vector2( 0, 63.52 )
 scale = Vector2( 3, 3 )
-tile_set = ExtResource( 45 )
+tile_set = ExtResource( 41 )
 format = 1
 tile_data = PoolIntArray( -1310778, 21, 0, -1310763, 20, 0, -1310758, 536870937, 0, -1310748, 22, 0, -1310746, 536870936, 0, -1310739, 26, 0 )
 
 [node name="Decor_1_bot" type="TileMap" parent="Tilemaps/No_Collsisions"]
 scale = Vector2( 3, 3 )
-tile_set = ExtResource( 44 )
+tile_set = ExtResource( 40 )
 cell_size = Vector2( 64, 32 )
 format = 1
 tile_data = PoolIntArray( -458745, 1, 0, -458730, 0, 0 )
 
 [node name="Decor_2_bot" type="TileMap" parent="Tilemaps/No_Collsisions"]
 scale = Vector2( 3, 3 )
-tile_set = ExtResource( 45 )
+tile_set = ExtResource( 41 )
 format = 1
 tile_data = PoolIntArray( -262133, 5, 0, -262130, 8, 0, -262127, 21, 0, -262125, 15, 0, -262118, 23, 0 )
 [connection signal="body_entered" from="Start_Fox/Fox_hide" to="Start_Fox" method="_on_Fox_hide_body_entered"]
@@ -1364,8 +1321,6 @@ tile_data = PoolIntArray( -262133, 5, 0, -262130, 8, 0, -262127, 21, 0, -262125,
 [connection signal="body_entered" from="Launch_tuto_jump" to="Launch_tuto_jump" method="_on_Launch_tuto_jump_body_entered"]
 [connection signal="body_entered" from="Panneau" to="Panneau" method="_on_Panneau_body_entered"]
 [connection signal="body_exited" from="Panneau" to="Panneau" method="_on_Panneau_body_exited"]
-[connection signal="body_entered" from="Mom" to="Mom" method="_on_Mom_body_entered"]
-[connection signal="timeout" from="Mom/Polygon2D/Timer" to="Mom/Polygon2D/Text_Mom" method="_on_Timer_timeout"]
 [connection signal="body_entered" from="Pnj/Pnj_1_vieux" to="Pnj/Pnj_1_vieux" method="_on_Pnj_1_body_entered"]
 [connection signal="body_entered" from="Pnj/Pnj_1_vieux" to="Pnj/Pnj_1_vieux" method="_on_Pnj_1_vieux_body_entered"]
 [connection signal="body_exited" from="Pnj/Pnj_1_vieux" to="Pnj/Pnj_1_vieux" method="_on_Pnj_1_body_exited"]
