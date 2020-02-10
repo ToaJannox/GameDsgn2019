@@ -748,7 +748,7 @@ scale = Vector2( 1.079, 1.00456 )
 
 [node name="Start_Fox" type="Position2D" parent="."]
 editor/display_folded = true
-position = Vector2( -3961.05, -3907.72 )
+position = Vector2( -8994.11, -3901.59 )
 script = ExtResource( 3 )
 
 [node name="Fox_hide" type="Area2D" parent="Start_Fox"]
@@ -879,7 +879,6 @@ script = ExtResource( 14 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Pnj 1"]
 scale = Vector2( 0.8, 0.8 )
 frames = SubResource( 81 )
-frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pnj 1"]
