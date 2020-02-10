@@ -1,9 +1,9 @@
 extends RichTextLabel
 
-var mom_speak = ["Coucou maman !"]
+var fox_run = ["C'était mon doudou que ce renard tenais dans sa gueule !", "Il faut que je le rattrappe !"]
 var enter_1_2 = ["Mais, comment je vais remonter tout ça moi ?", "Et mon doudou !"]
 
-var dialog = [enter_1_2, mom_speak]
+var dialog = [enter_1_2, fox_run]
 
 var wich_dialog
 var page
@@ -19,9 +19,11 @@ var wait = 0
 func _ready():
 	wich_dialog = 0
 	set_tuto()
+	setted = false
 	set_process_input(true)
 	
 func set_tuto():
+	print("set")
 	cur_page = 0
 	page = cur_page
 	set_bbcode(dialog[wich_dialog][page])

@@ -5,7 +5,7 @@ func launch_girl_speak(page):
 	# keep his y position
 	if !$TextGirl.finish :
 		Player.playerControlled = false
-		$TextGirl.page = page
+		$TextGirl.wich_dialog = page
 		
 		if page > 0 && !$TextGirl.setted:
 			$TextGirl.set_tuto()

@@ -3,7 +3,7 @@ extends KinematicBody2D
 var GRAVITY = 1500.0
 
 const FALL_SPEED = 1500
-const WALK_SPEED = 1000
+const WALK_SPEED = 1100
 
 var velocity = Vector2()
 var motion
@@ -23,10 +23,10 @@ func _process(delta):
 			$AnimatedSprite.animation = "run"
 			velocity.x = WALK_SPEED
 		else:
-			velocity.x = 0
 			$AnimatedSprite.flip_h = true
 			$AnimatedSprite.animation = "sit"
 			Fox.position = position_end
+			activated = false
 	else:
 		velocity.x = 0
 		
