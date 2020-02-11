@@ -1,12 +1,12 @@
 [gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
-[ext_resource path="res://ressources/graphics/player/Hana_with_pet/walk0.png" type="Texture" id=2]
-[ext_resource path="res://ressources/graphics/player/climb1.png" type="Texture" id=3]
-[ext_resource path="res://ressources/graphics/player/climb2.png" type="Texture" id=4]
-[ext_resource path="res://ressources/graphics/player/Hana_without_pet/walk0.png" type="Texture" id=5]
-[ext_resource path="res://ressources/graphics/player/Hana_without_pet/walk1.png" type="Texture" id=6]
-[ext_resource path="res://ressources/graphics/player/Hana_without_pet/walk3.png" type="Texture" id=7]
+[ext_resource path="res://ressources/graphics/player/climb1.png" type="Texture" id=2]
+[ext_resource path="res://ressources/graphics/player/climb2.png" type="Texture" id=3]
+[ext_resource path="res://ressources/graphics/player/Hana_without_pet/walk0.png" type="Texture" id=4]
+[ext_resource path="res://ressources/graphics/player/Hana_without_pet/walk1.png" type="Texture" id=5]
+[ext_resource path="res://ressources/graphics/player/Hana_without_pet/walk3.png" type="Texture" id=6]
+[ext_resource path="res://ressources/graphics/player/Hana_with_pet/walk0.png" type="Texture" id=7]
 [ext_resource path="res://ressources/graphics/player/Hana_with_pet/walk1.png" type="Texture" id=8]
 [ext_resource path="res://ressources/graphics/player/Hana_with_pet/walk3.png" type="Texture" id=9]
 [ext_resource path="res://Scripts/Girl_speak.gd" type="Script" id=10]
@@ -17,29 +17,29 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 2 ) ],
-"loop": false,
-"name": "static_with_pet",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 3 ), ExtResource( 4 ) ],
+"frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
 "loop": true,
 "name": "climbing",
 "speed": 2.0
 }, {
-"frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ],
+"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ) ],
 "loop": true,
 "name": "walk_without_pet",
 "speed": 4.0
 }, {
-"frames": [ ExtResource( 2 ), ExtResource( 8 ), ExtResource( 9 ) ],
+"frames": [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ],
 "loop": true,
 "name": "walk_with_pet",
 "speed": 4.0
 }, {
-"frames": [ ExtResource( 5 ) ],
+"frames": [ ExtResource( 4 ) ],
 "loop": false,
 "name": "static_without_pet",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": false,
+"name": "static_with_pet",
 "speed": 5.0
 } ]
 
@@ -70,11 +70,10 @@ current = true
 zoom = Vector2( 2, 2 )
 
 [node name="Girl_speak" type="Polygon2D" parent="."]
-editor/display_folded = true
 visible = false
 light_mask = 16
 z_index = 7
-color = Color( 0.392157, 0.392157, 0.392157, 1 )
+color = Color( 0.247059, 0.247059, 0.247059, 1 )
 polygon = PoolVector2Array( -412.3, -301.446, 367.7, -301.446, 367.7, -131.446, -412.3, -131.446 )
 script = ExtResource( 10 )
 
@@ -85,6 +84,7 @@ margin_top = -282.0
 margin_right = -174.0
 margin_bottom = -240.0
 rect_scale = Vector2( 3.2409, 2.76114 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
 bbcode_enabled = true
 tab_size = 1
 script = ExtResource( 11 )
@@ -94,17 +94,17 @@ wait_time = 0.05
 autostart = true
 
 [node name="Tutorial" type="Polygon2D" parent="."]
-editor/display_folded = true
 visible = false
 light_mask = 16
 position = Vector2( -57, -812.936 )
 scale = Vector2( 0.941573, 0.851061 )
 z_index = 5
-color = Color( 0.376471, 0.376471, 0.376471, 1 )
+color = Color( 0.247059, 0.247059, 0.247059, 1 )
 polygon = PoolVector2Array( -990, 240, 1112.86, 238.451, 1112.86, -67.05, -990, -67.05 )
 script = ExtResource( 12 )
 
 [node name="Controles_Text" type="Polygon2D" parent="Tutorial"]
+editor/display_folded = true
 light_mask = 16
 color = Color( 1, 0.705882, 0.705882, 1 )
 polygon = PoolVector2Array( -979.379, 238.451, 1091.62, 238.451, 1091.62, 320.701, -979.379, 320.701 )
@@ -137,6 +137,7 @@ margin_top = -34.0
 margin_right = -360.0
 margin_bottom = 41.0
 rect_scale = Vector2( 3.37199, 3.30021 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
 bbcode_enabled = true
 tab_size = 1
 script = ExtResource( 13 )

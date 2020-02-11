@@ -8,8 +8,10 @@ var tuto_jump = ["Des caisses vous barrent la route", "Appuyez sur la flèche di
 
 var end_demo = ["Vous voici à l'emplacement de la dinette", "Dans Shades, chaque niveau se fini ici et vous permettra de sauvegarder.",
 			"Cet endroit est la fin de la démo, merci d'y avoir joué !"]
+			
+var tuto_pet_fly = ["Vous venez de récupérer le doudou d'Hana", "Il a l'air d'avoir gagné des pouvoirs étranges, maintenez la touche \"F\" pour le controler"]
 
-var tuto = [tuto_walk, tuto_jump, end_demo]
+var tuto = [tuto_walk, tuto_jump, end_demo, tuto_pet_fly]
 			
 var wich_tuto
 var page_tuto

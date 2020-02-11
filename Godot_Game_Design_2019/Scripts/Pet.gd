@@ -20,6 +20,8 @@ var activated = false
 var is_moving_to_girl = true
 signal pet_activated
 
+var pet_controlled = false
+
 func _process(delta):
 	Player.hasPet = false
 		
@@ -28,11 +30,11 @@ func _process(delta):
 		$AnimatedSprite.animation = "sleep"
 		$CollisionShape2D_Pet.disabled = true
 		up_down(delta)
-		waitGirl(Player)
 	# Is with the girl
 	elif !Player.launch_tuto: 
 		#Is controlled
-		if Input.is_key_pressed(KEY_F):
+		
+		if pet_controlled:
 			Player.petControlled = true
 			Player.playerControlled = false
 			$CollisionShape2D_Pet.disabled = false
@@ -60,10 +62,10 @@ func _process(delta):
 				Player.hasPet = true
 				position = Player.position
 				is_moving_to_girl = false
-
-func waitGirl(player):
-	if player.position.x < position.x + 30 && player.level == 2 && player.world == 1:
-		_activate()
+				
+func _input(ev):
+    if Input.is_key_just_pressed(KEY_F):
+		pet_controlled = !pet_controlled
 	
 func controlled(delta):
 		

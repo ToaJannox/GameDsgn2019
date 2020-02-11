@@ -2,8 +2,9 @@ extends RichTextLabel
 
 var fox_run = ["C'était mon doudou que ce renard tenais dans sa gueule !", "Il faut que je le rattrappe !"]
 var enter_1_2 = ["Mais, comment je vais remonter tout ça moi ?", "Et mon doudou !"]
+var meet_pet = ["Doudou !"]
 
-var dialog = [enter_1_2, fox_run]
+var dialog = [enter_1_2, fox_run, meet_pet]
 
 var wich_dialog
 var page

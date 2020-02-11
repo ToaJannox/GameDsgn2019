@@ -40,7 +40,8 @@ script = ExtResource( 1 )
 scale = Vector2( 0.25, 0.25 )
 z_index = 1
 frames = SubResource( 1 )
-animation = "fly"
+animation = "sleep"
+frame = 1
 playing = true
 flip_h = true
 

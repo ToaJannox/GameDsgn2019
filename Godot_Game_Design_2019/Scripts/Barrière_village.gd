@@ -10,7 +10,6 @@ func _on_Barriere_Village_Area_Fox_body_exited(body):
 		Player.get_node("Camera2D_Player").make_current()
 		Fox.get_node("Camera2D").clear_current()
 		Fox.end = true
-		print("-------------")
 		Player.page = 1
 		Player.launch_dialog = true
 

@@ -20,8 +20,6 @@ func _endLevel():
 	$Loop.stop()
 	
 func _process(delta):
-	if Player.position.x > $Pos_Disable_NoCollFront.position.x && Player.position.y > $Pos_Disable_NoCollFront.position.y:
-		$Tilemaps/No_Collsisions/NoCollisionMap_front.hide()
 	_setVisibility()
 	
 func _setVisibility():
@@ -41,3 +39,8 @@ func _setVisibility():
 func _on_Exit_body_entered(body):
 	if body.name == "Player":
 		game.call_deferred("switchlevel",game.getlevel(1,2),self)
+
+
+func _on_Pos_Disable_NoCollFront_body_entered(body):
+	if body.name == "Player":
+		$Tilemaps/No_Collsisions/NoCollisionMap_front.hide()
