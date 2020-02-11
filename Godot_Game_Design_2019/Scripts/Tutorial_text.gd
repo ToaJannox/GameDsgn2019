@@ -2,7 +2,7 @@ extends RichTextLabel
 
 var tuto_walk = ["Bienvenue dans le jeu Shades !",
 			"Voici Hana, jeune fille du village, je vous l'aurais bien présentée un peu plus mais pour le moment vous devez l'aider à récuperer son doudou",
-			"Première étape : utilisez les touches directionnelles gauche et droite pour vous déplacez"]
+			"Première étape : utilisez les touches directionnelles gauche et droite pour vous déplacer"]
 			
 var tuto_jump = ["Des caisses vous barrent la route", "Appuyez sur la flèche directionnelle du haut pour sauter"]
 
