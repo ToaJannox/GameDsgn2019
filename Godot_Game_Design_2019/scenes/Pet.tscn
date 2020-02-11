@@ -1,21 +1,16 @@
 [gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scripts/Pet.gd" type="Script" id=1]
-[ext_resource path="res://ressources/graphics/pet/Pet_sleep/Frame001.png" type="Texture" id=2]
-[ext_resource path="res://ressources/graphics/pet/Pet_sleep/Frame002.png" type="Texture" id=3]
-[ext_resource path="res://ressources/graphics/pet/Frame001.png" type="Texture" id=4]
-[ext_resource path="res://ressources/graphics/pet/Frame002.png" type="Texture" id=5]
+[ext_resource path="res://ressources/graphics/pet/Frame001.png" type="Texture" id=2]
+[ext_resource path="res://ressources/graphics/pet/Frame002.png" type="Texture" id=3]
+[ext_resource path="res://ressources/graphics/pet/Pet_sleep/Frame001.png" type="Texture" id=4]
+[ext_resource path="res://ressources/graphics/pet/Pet_sleep/Frame002.png" type="Texture" id=5]
 [ext_resource path="res://ressources/Light/light.png" type="Texture" id=6]
 [ext_resource path="res://ressources/sounds/pet/hover.wav" type="AudioStream" id=7]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
-"loop": false,
-"name": "sleep",
-"speed": 2.0
-}, {
-"frames": [ ExtResource( 4 ), ExtResource( 5 ) ],
 "loop": true,
 "name": "fly",
 "speed": 1.75
@@ -24,6 +19,11 @@ animations = [ {
 "loop": true,
 "name": "none",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 5 ) ],
+"loop": false,
+"name": "sleep",
+"speed": 2.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]

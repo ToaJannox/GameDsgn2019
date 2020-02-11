@@ -20,8 +20,6 @@ var activated = false
 var is_moving_to_girl = true
 signal pet_activated
 
-var pet_controlled = false
-
 func _process(delta):
 	Player.hasPet = false
 		
@@ -33,7 +31,6 @@ func _process(delta):
 	# Is with the girl
 	elif !Player.launch_tuto: 
 		#Is controlled
-		
 		if pet_controlled:
 			Player.petControlled = true
 			Player.playerControlled = false
@@ -62,10 +59,13 @@ func _process(delta):
 				Player.hasPet = true
 				position = Player.position
 				is_moving_to_girl = false
-				
+
+var pet_controlled = false
 func _input(ev):
-    if Input.is_key_just_pressed(KEY_F):
-		pet_controlled = !pet_controlled
+	if activated:
+		if Input.is_action_just_pressed("ui_select"):
+			pet_controlled = !pet_controlled
+	
 	
 func controlled(delta):
 		

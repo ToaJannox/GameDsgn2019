@@ -6,7 +6,6 @@ var wait_push_button = false
 func _ready():
 	world = 1
 	level = 2
-	
 
 func _startLevel():
 	._startLevel()
@@ -43,7 +42,7 @@ var pressed_e = false
 var done = false
 			
 func check_end_1_1():
-	if Input.is_key_pressed(KEY_E) && !pressed_e:
+	if Input.is_action_just_pressed("ui_accept"):
 		pressed_e = true
 	if pressed_e && !done:
 		Player.get_node("Camera2D_Player").clear_current()
