@@ -39,9 +39,9 @@ func _process(delta):
 
 func _setVisibility():
 	if Pet.activated:
-		visibility.set_color(Color(0.2, 0.2, 0.2))
+		visibility.set_color(Color(0.5, 0.5, 0.5))
 	else:
-		visibility.set_color(Color(0.0, 0.0, 0.0))
+		visibility.set_color(Color(0.1, 0.1, 0.1))
 		
 func pet_obtained():
 	music.play()
