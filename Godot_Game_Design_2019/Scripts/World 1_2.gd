@@ -29,6 +29,9 @@ func _endLevel():
 	$Loop.stop()
 	$Drips.stop()
 	
+var pressed_e = false
+var done = false
+
 # warning-ignore:unused_argument
 func _process(delta):
 	if levelStarted && !dinette_is_passed:
@@ -37,24 +40,24 @@ func _process(delta):
 		_setVisibility()
 	if wait_push_button:
 		check_end_1_1()
-
-var pressed_e = false
-var done = false
-			
-func check_end_1_1():
-	if Input.is_action_just_pressed("ui_accept"):
-		pressed_e = true
 	if pressed_e && !done:
 		Player.get_node("Camera2D_Player").clear_current()
 		$Camera_door.make_current()
-		$Camera_door/Timer.start()
+		$Decor_environment_lights/Door_end.hide()
+		$Decor_environment_lights/Door_end_body/CollisionPolygon2D.disabled = true
+		$Decor_environment_lights/Exit_light.show()
+			
+func check_end_1_1():
+	if Input.is_action_just_pressed("ui_accept") && !pressed_e:
+		pressed_e = true
 
 func _on_Timer_timeout():
-	self.remove_child(get_node("Decor_environment_lights/Door_end"))
-	Player.get_node("Camera2D_Player").make_current()
-	$Camera_door.clear_current()
-	$Camera_door/Timer.stop()
-	done = true
+	if pressed_e:
+		Player.get_node("Camera2D_Player").make_current()
+		$Camera_door.clear_current()
+		$Camera_door/Timer.stop()
+		done = true
+		pressed_e = false
 
 func _setVisibility():
 	if Pet.activated:
@@ -83,6 +86,7 @@ func _on_Light_end_on_body_entered(body):
 		
 func _on_Button_end_body_entered(body):
 	if body.name == "Pet":
+		print("wait push")
 		wait_push_button = true
 		$Button_end/Polygon2D.show()
 

@@ -21,8 +21,8 @@
 [ext_resource path="res://ressources/Light/light_demi.png" type="Texture" id=19]
 [ext_resource path="res://ressources/sounds/world/desert/desert_loop.ogg" type="AudioStream" id=20]
 [ext_resource path="res://Scripts/Barrière_village.gd" type="Script" id=21]
-[ext_resource path="res://ressources/Decor/map_1_1/Barriere_pleine.png" type="Texture" id=22]
-[ext_resource path="res://ressources/Decor/map_1_1/Barriere_cassee.png" type="Texture" id=23]
+[ext_resource path="res://ressources/Decor/map_1_1/Barriere_cassee.png" type="Texture" id=22]
+[ext_resource path="res://ressources/Decor/map_1_1/Barriere_pleine.png" type="Texture" id=23]
 [ext_resource path="res://ressources/Decor/map_1_1/Caisses.png" type="Texture" id=24]
 [ext_resource path="res://Scripts/Ladder.gd" type="Script" id=25]
 [ext_resource path="res://ressources/Decor/map_1_1/ladder6.png" type="Texture" id=26]
@@ -92,12 +92,12 @@ extents = Vector2( 211.319, 267.666 )
 animations = [ {
 "frames": [ ExtResource( 22 ) ],
 "loop": true,
-"name": "Pleine",
+"name": "Cassee",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 23 ) ],
 "loop": true,
-"name": "Cassee",
+"name": "Pleine",
 "speed": 5.0
 } ]
 
@@ -812,6 +812,7 @@ scale = Vector2( 2.68, 1 )
 shape = SubResource( 4 )
 
 [node name="Panneau" type="Area2D" parent="."]
+editor/display_folded = true
 position = Vector2( 742.914, -3912.58 )
 script = ExtResource( 9 )
 
