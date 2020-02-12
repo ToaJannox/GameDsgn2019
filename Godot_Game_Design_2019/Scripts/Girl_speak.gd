@@ -7,7 +7,7 @@ func launch_girl_speak(page):
 		Player.playerControlled = false
 		$TextGirl.wich_dialog = page
 		
-		if page > 0 && !$TextGirl.setted:
+		if !$TextGirl.setted:
 			$TextGirl.set_tuto()
 			$Timer.start()
 		

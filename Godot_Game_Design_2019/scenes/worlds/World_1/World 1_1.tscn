@@ -756,7 +756,7 @@ z_index = -5
 texture = ExtResource( 2 )
 
 [node name="Start" type="Position2D" parent="."]
-position = Vector2( -5654.08, -4387.9 )
+position = Vector2( -5688.03, -3923.99 )
 scale = Vector2( 1.079, 1.00456 )
 
 [node name="Start_Fox" type="Position2D" parent="."]
@@ -868,6 +868,7 @@ script = ExtResource( 11 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Pnj/Pnj_1_vieux"]
 scale = Vector2( 0.8, 0.8 )
 frames = SubResource( 6 )
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pnj/Pnj_1_vieux"]
